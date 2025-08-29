@@ -16,61 +16,19 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-  /* Fondo que ya te gustaba */
-  body {
-    background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615);
-  }
+      /* Fondo lila original */
+      body {
+        background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615);
+      }
 
-  .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
-  .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
-  .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
-  html { scroll-behavior: smooth; }
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
-  :root { --accent: #8b5cf6; }
-
-  /* ====== CONTRASTE DEL TITULAR ====== */
-  .hero-title-wrap{
-    position: relative;
-    isolation: isolate; /* asegura que el ::before quede detrás sin mezclas raras */
-    display: inline-block;
-  }
-  .hero-title-wrap::before{
-    content:"";
-    position:absolute;
-    inset:-12px -16px -10px -16px; /* margen alrededor del h1 */
-    pointer-events:none;
-    border-radius: 28px;
-    /* Halo suave oscuro para levantar el texto sobre el degradado */
-    background:
-      radial-gradient(120% 120% at 10% 15%, rgba(10,10,10,.65) 0%, rgba(10,10,10,.42) 45%, rgba(10,10,10,0) 72%),
-      linear-gradient(0deg, rgba(0,0,0,.18), rgba(0,0,0,.18));
-    filter: blur(10px);
-    z-index:-1;
-  }
-  /* Refuerzo en móviles: un poco más de blur y cobertura */
-  @media (max-width: 640px){
-    .hero-title-wrap::before{
-      inset:-10px -14px -8px -14px;
-      filter: blur(14px);
-      background:
-        radial-gradient(130% 130% at 12% 12%, rgba(10,10,10,.72) 0%, rgba(10,10,10,.48) 50%, rgba(10,10,10,0) 76%),
-        linear-gradient(0deg, rgba(0,0,0,.20), rgba(0,0,0,.20));
-    }
-  }
-  /* Usuarios que piden más contraste */
-  @media (prefers-contrast: more){
-    .hero-title-wrap::before{
-      background:
-        radial-gradient(120% 120% at 12% 12%, rgba(0,0,0,.85) 0%, rgba(0,0,0,.6) 52%, rgba(0,0,0,0) 78%),
-        linear-gradient(0deg, rgba(0,0,0,.25), rgba(0,0,0,.25));
-    }
-  }
-  /* Ligero refuerzo del texto para fondos muy claros (fallback simple) */
-  .hero-title-wrap h1{
-    text-shadow: 0 1px 0 rgba(0,0,0,.20), 0 2px 24px rgba(0,0,0,.28);
-  }
-</style>
-
+      .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
+      .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
+      .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
+      html { scroll-behavior: smooth; }
+      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
+      :root { --accent: #8b5cf6; }
+      /* (El halo negro del titular y su wrapper han sido eliminados) */
+    </style>
   </head>
   <body class="text-neutral-100 min-h-screen">
     <!-- =============== QUICK EDIT ZONE =============== -->
@@ -149,17 +107,15 @@
             <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i> Disponible para proyectos
           </span>
 
-          <!-- ENVOLTURA QUE AÑADE EL HALO DE CONTRASTE -->
-          <div class="hero-title-wrap mt-4">
-            <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
-              <span class="text-white" data-text="role"></span>:
-              <span class="text-white">
-                <span class="text-accent-400">operaciones de</span>
-                <span class="text-accent-500"> contenido</span>
-              </span>
-              <span class="text-white">para crecer</span>
-            </h1>
-          </div>
+          <!-- Titular sin halo -->
+          <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight">
+            <span class="text-white" data-text="role"></span>:
+            <span class="text-white">
+              <span class="text-accent-400">operaciones de</span>
+              <span class="text-accent-500"> contenido</span>
+            </span>
+            <span class="text-white">para crecer</span>
+          </h1>
 
           <p class="mt-4 text-neutral-300" data-text="tagline"></p>
           <div class="mt-6 flex flex-wrap items-center gap-3">
