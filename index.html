@@ -16,14 +16,14 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-      body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.22), rgba(14,6,24,1)); }
-      .card { border: 1px solid rgb(38,38,38); background: rgba(18,18,18,0.6); }
-      .chip { border: 1px solid rgb(38,38,38); background: rgb(10,10,10); }
-      .glass { background: rgba(10,10,10,0.7); backdrop-filter: blur(8px); }
-      html { scroll-behavior: smooth; }
-      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
-      :root { --accent: #8b5cf6; }
-    </style>
+body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.22), rgba(14,6,24,1)); }
+.card { border: 1px solid rgb(38,38,38); background: rgba(28,28,28,0.85); }
+.chip { border: 1px solid rgb(58,58,58); background: rgb(20,20,20); }
+.glass { background: rgba(20,20,20,0.85); backdrop-filter: blur(8px); }
+html { scroll-behavior: smooth; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
+:root { --accent: #8b5cf6; }
+</style>
   </head>
   <body class="text-neutral-100 min-h-screen">
     <!-- =============== QUICK EDIT ZONE =============== -->
@@ -68,8 +68,6 @@
           <a href="#packs" class="hover:text-white">Packs</a>
           <a href="#proceso" class="hover:text-white">Proceso</a>
           <a href="#formacion" class="hover:text-white">Formación</a>
-          <a href="#galeria" class="hover:text-white">Galería</a>
-          <a href="#video" class="hover:text-white">Vídeo</a>
           <a href="#contacto" class="hover:text-white">Contacto</a>
         </nav>
         <a data-href="email" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm text-accent-300 hover:bg-accent-500/20" data-border-accent>
@@ -345,57 +343,6 @@
       </div>
     </section>
 
-
-    <!-- GALERÍA (imágenes) -->
-    <!-- Reemplaza las rutas assets/placeholder*.svg por tus fotos (JPG/PNG/SVG) -->
-    <section id="galeria" class="py-20 scroll-mt-24">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mb-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Galería</h2>
-          <p class="text-neutral-400 mt-2 max-w-3xl">Algunos ejemplos visuales. Añade o quita imágenes como quieras.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder1.svg" alt="Proyecto o pieza 1" class="w-full h-56 object-cover" />
-          </figure>
-          <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder2.svg" alt="Proyecto o pieza 2" class="w-full h-56 object-cover" />
-          </figure>
-          <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder3.svg" alt="Proyecto o pieza 3" class="w-full h-56 object-cover" />
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- VÍDEO -->
-    <!-- Cambia el src del iframe por el de tu vídeo de YouTube o añade un <video> con tu MP4 -->
-    <section id="video" class="py-20 scroll-mt-24">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mb-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Vídeo</h2>
-          <p class="text-neutral-400 mt-2 max-w-3xl">Muestra una pieza destacada o tu reel.</p>
-        </div>
-        <div class="card rounded-2xl p-3">
-          <div class="relative" style="padding-top: 56.25%;">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="YouTube video player"
-              class="absolute top-0 left-0 w-full h-full rounded-xl"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <!-- Alternativa con archivo propio:
-          <video controls class="w-full rounded-xl mt-3">
-            <source src="assets/tu-video.mp4" type="video/mp4" />
-          </video>
-          -->
-        </div>
-      </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="border-t border-neutral-900/80 py-10">
       <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -405,6 +352,11 @@
           <a data-href="ig" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
         </div>
       </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear(); lucide.createIcons();</script>
+    </footer>
+  </body>
+</html>
+
       <script>document.getElementById('year').textContent = new Date().getFullYear(); lucide.createIcons();</script>
     </footer>
   </body>
