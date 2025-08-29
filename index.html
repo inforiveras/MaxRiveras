@@ -16,42 +16,15 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-  body {
-    background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.3), #0a0615);
-  }
-
-  .card {
-    border: 1px solid rgb(38, 38, 38);
-    background: rgba(20, 20, 20, 0.88);
-  }
-
-  .chip {
-    border: 1px solid rgb(58, 58, 58);
-    background: rgb(15, 15, 15);
-  }
-
-  .glass {
-    background: rgba(15, 15, 15, 0.85);
-    backdrop-filter: blur(10px);
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  a:focus-visible,
-  button:focus-visible,
-  input:focus-visible,
-  textarea:focus-visible {
-    outline: 2px solid var(--accent, #8b5cf6);
-    outline-offset: 2px;
-  }
-
-  :root {
-    --accent: #8b5cf6;
-  }
-</style>
-
+      /* Fondo violeta actual, con ligera mejora de contraste manteniendo tu estilo */
+      body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615); }
+      .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
+      .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
+      .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
+      html { scroll-behavior: smooth; }
+      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
+      :root { --accent: #8b5cf6; }
+    </style>
   </head>
   <body class="text-neutral-100 min-h-screen">
     <!-- =============== QUICK EDIT ZONE =============== -->
@@ -62,7 +35,7 @@
         tagline: "Creo sistemas de contenido que funcionan y crecen: guiones, edición, gestión de redes y automatizaciones a medida.",
         email: "inforiveras.yt@gmail.com",
         phone: "",
-        location: "Barcelona, España",
+        location: "Tarragona, España",
         instagramHandle: "@maxxriveras",
         instagramUrl: "https://instagram.com/maxxriveras",
         accentHex: "#8b5cf6"
@@ -96,6 +69,8 @@
           <a href="#packs" class="hover:text-white">Packs</a>
           <a href="#proceso" class="hover:text-white">Proceso</a>
           <a href="#formacion" class="hover:text-white">Formación</a>
+          <a href="#galeria" class="hover:text-white">Galería</a>
+          <a href="#video" class="hover:text-white">Vídeo</a>
           <a href="#contacto" class="hover:text-white">Contacto</a>
         </nav>
         <a data-href="email" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm text-accent-300 hover:bg-accent-500/20" data-border-accent>
@@ -123,25 +98,41 @@
               Pedir presupuesto
             </a>
           </div>
-          <div class="mt-8 flex flex-wrap gap-2 text-xs text-neutral-400">
+
+          <!-- Herramientas -->
+          <div class="mt-8 flex flex-wrap gap-2 text-xs text-neutral-300">
             <span class="chip px-3 py-1 rounded-full">CapCut Pro</span>
+            <span class="chip px-3 py-1 rounded-full">Adobe Premiere</span>
+            <span class="chip px-3 py-1 rounded-full">Adobe Photoshop</span>
+            <span class="chip px-3 py-1 rounded-full">DaVinci Resolve</span>
             <span class="chip px-3 py-1 rounded-full">n8n</span>
+            <span class="chip px-3 py-1 rounded-full">Node.js</span>
+            <span class="chip px-3 py-1 rounded-full">Claude</span>
+            <span class="chip px-3 py-1 rounded-full">ChatGPT</span>
+            <span class="chip px-3 py-1 rounded-full">Figma</span>
+            <span class="chip px-3 py-1 rounded-full">Canva</span>
             <span class="chip px-3 py-1 rounded-full">Google Search Console</span>
             <span class="chip px-3 py-1 rounded-full">YouTube Studio</span>
-            <span class="chip px-3 py-1 rounded-full">ChatGPT</span>
             <span class="chip px-3 py-1 rounded-full">Google Sheets</span>
+            <span class="chip px-3 py-1 rounded-full">Marfeel</span>
             <span class="chip px-3 py-1 rounded-full">Trello/Notion</span>
           </div>
         </div>
+
+        <!-- QUIÉN SOY (antes: Datos rápidos) -->
         <div class="card rounded-2xl p-6">
-          <h2 class="text-lg font-semibold">Datos rápidos</h2>
+          <h2 class="text-lg font-semibold">Quién soy</h2>
           <ul class="mt-3 space-y-2 text-sm text-neutral-300">
-            <li class="flex gap-2"><i data-lucide="user" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <span data-text="name"></span> — 21 años</li>
-            <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <span data-text="location"></span></li>
+            <li class="flex gap-2"><i data-lucide="user" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Max Riveras Gil — 21 años</li>
+            <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Tarragona, España</li>
             <li class="flex gap-2"><i data-lucide="instagram" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer" aria-label="Instagram"></a></li>
             <li class="flex gap-2"><i data-lucide="mail" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-text="email" data-href="email" href="#" aria-label="Email"></a></li>
-            <li class="flex gap-2" data-cond="phone"><i data-lucide="phone" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <span data-text="phone"></span></li>
           </ul>
+          <!-- Hueco para tu foto profesional -->
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
+            <!-- Reemplaza src por tu foto (ideal 1200x1500) -->
+            <img src="placeholder1.svg" alt="Foto profesional de Max Riveras Gil" class="w-full h-56 object-cover" />
+          </div>
         </div>
       </div>
     </header>
@@ -233,8 +224,8 @@
     <section id="packs" class="py-20 scroll-mt-24">
       <div class="mx-auto max-w-6xl px-4">
         <div class="mb-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Packs rápidos</h2>
-          <p class="text-neutral-400 mt-2 max-w-3xl">Opciones sencillas para empezar ya. Personalizo cualquier paquete a tu operación.</p>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Packs ideales para ti</h2>
+          <p class="text-neutral-400 mt-2 max-w-3xl">Opciones para empezar ya. Si necesitas algo más específico, lo ajustamos a medida y cerramos presupuesto según tu operación.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="card rounded-2xl p-6">
@@ -260,8 +251,9 @@
             <p class="mt-2 text-sm text-neutral-300">Edición de vídeo (Shorts/largo) + miniaturas enfocadas a CTR y coherencia visual.</p>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Guion/ajuste de copy</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Edición CapCut Pro</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Miniatura lista para publicar</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Edición en Premiere/DaVinci</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Corrección de color</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Miniatura optimizada (Photoshop/Canva)</li>
             </ul>
           </div>
         </div>
@@ -306,7 +298,6 @@
       <div class="mx-auto max-w-6xl px-4">
         <div class="mb-10">
           <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Formación y experiencia</h2>
-          <p class="text-neutral-400 mt-2 max-w-3xl">Perfil transversal: contenido, vídeo, coordinación y automatización.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="card rounded-2xl p-6 md:col-span-2">
@@ -316,7 +307,8 @@
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Trabajo remoto en medio digital: rol transversal (redacción, edición, miniaturas, coordinación, automatizaciones, análisis de audiencia/competencia).</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Colaboraciones con medios locales y clientes particulares.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Cursos: doblaje y edición de vídeo.</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Habilidades: redacción, guion YouTube, edición (CapCut Pro), miniaturas, gestión de redes, análisis de audiencia, Search Console, Sheets, Trello/Notion, n8n, documentación/SOPs.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Speaker en torneos de baloncesto y eventos públicos.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Habilidades: redacción, guion YouTube, edición (CapCut Pro, Premiere, DaVinci Resolve), miniaturas (Photoshop/Canva), gestión de redes, análisis de audiencia, Search Console, Sheets, Trello/Notion, n8n, Node.js, Claude, ChatGPT, Murf.ai, Figma, Marfeel, documentación/SOPs.</li>
             </ul>
           </div>
           <div class="card rounded-2xl p-6">
@@ -346,9 +338,6 @@
               <a data-href="email" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
                 Escríbeme <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
               </a>
-              <a href="#" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800">
-                <i data-lucide="download" class="w-4 h-4" aria-hidden="true"></i> Descargar CV (PDF)
-              </a>
             </div>
           </div>
           <div class="card rounded-2xl p-6 md:col-span-2">
@@ -371,6 +360,49 @@
       </div>
     </section>
 
+    <!-- GALERÍA -->
+    <section id="galeria" class="py-20 scroll-mt-24">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="mb-10">
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Galería</h2>
+          <p class="text-neutral-400 mt-2 max-w-3xl">Algunos ejemplos visuales. Añade o quita imágenes como quieras.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <figure class="card rounded-2xl overflow-hidden">
+            <img src="assets/placeholder1.svg" alt="Proyecto o pieza 1" class="w-full h-56 object-cover" />
+          </figure>
+          <figure class="card rounded-2xl overflow-hidden">
+            <img src="assets/placeholder2.svg" alt="Proyecto o pieza 2" class="w-full h-56 object-cover" />
+          </figure>
+          <figure class="card rounded-2xl overflow-hidden">
+            <img src="assets/placeholder3.svg" alt="Proyecto o pieza 3" class="w-full h-56 object-cover" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- VÍDEO -->
+    <section id="video" class="py-20 scroll-mt-24">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="mb-10">
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Vídeo</h2>
+          <p class="text-neutral-400 mt-2 max-w-3xl">Muestra una pieza destacada o tu reel.</p>
+        </div>
+        <div class="card rounded-2xl p-3">
+          <div class="relative" style="padding-top: 56.25%;">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="YouTube video player"
+              class="absolute top-0 left-0 w-full h-full rounded-xl"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="border-t border-neutral-900/80 py-10">
       <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -380,10 +412,12 @@
           <a data-href="ig" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
         </div>
       </div>
+      <p class="text-center text-neutral-500 text-sm mt-6">El contenido que transforma no se improvisa. Se diseña. Se mide. Se mejora.</p>
       <script>document.getElementById('year').textContent = new Date().getFullYear(); lucide.createIcons();</script>
     </footer>
   </body>
 </html>
+
 
       <script>document.getElementById('year').textContent = new Date().getFullYear(); lucide.createIcons();</script>
     </footer>
