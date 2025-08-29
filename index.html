@@ -16,14 +16,42 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.22), rgba(14,6,24,1)); }
-.card { border: 1px solid rgb(38,38,38); background: rgba(28,28,28,0.85); }
-.chip { border: 1px solid rgb(58,58,58); background: rgb(20,20,20); }
-.glass { background: rgba(20,20,20,0.85); backdrop-filter: blur(8px); }
-html { scroll-behavior: smooth; }
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
-:root { --accent: #8b5cf6; }
+  body {
+    background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.3), #0a0615);
+  }
+
+  .card {
+    border: 1px solid rgb(38, 38, 38);
+    background: rgba(20, 20, 20, 0.88);
+  }
+
+  .chip {
+    border: 1px solid rgb(58, 58, 58);
+    background: rgb(15, 15, 15);
+  }
+
+  .glass {
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(10px);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--accent, #8b5cf6);
+    outline-offset: 2px;
+  }
+
+  :root {
+    --accent: #8b5cf6;
+  }
 </style>
+
   </head>
   <body class="text-neutral-100 min-h-screen">
     <!-- =============== QUICK EDIT ZONE =============== -->
