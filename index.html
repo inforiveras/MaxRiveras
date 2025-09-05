@@ -16,7 +16,7 @@
     </script>
     <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
-      /* Fondo lila original */
+      /* Fondo lila original SIN halo */
       body {
         background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615);
       }
@@ -102,11 +102,10 @@
           <a href="#servicios" class="hover:text-white">Servicios</a>
           <a href="#packs" class="hover:text-white">Packs</a>
           <a href="#flujo" class="hover:text-white">¿Qué es un flujo?</a>
-          <a href="#locucion" class="hover:text-white">Locución</a>
           <a href="#proceso" class="hover:text-white">Proceso</a>
           <a href="#formacion" class="hover:text-white">Formación</a>
-          <a href="#galeria" class="hover:text-white">Galería</a>
-          <a href="#video" class="hover:text-white">Vídeo</a>
+          <a href="#logos" class="hover:text-white">Clientes</a>
+          <a href="#faq" class="hover:text-white">FAQ</a>
           <a href="#contacto" class="hover:text-white">Contacto</a>
         </nav>
         <a data-href="email" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm text-accent-300 hover:bg-accent-500/20" data-border-accent aria-label="Escríbeme por email">
@@ -209,7 +208,7 @@
               <h3 class="text-lg font-semibold">Contenido y guiones</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Piezas que retienen y convierten (hooks, estructura, claridad).</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Piezas que retienen y convierten (hooks y estructura).</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Guías y calendario editorial para publicar sin fricción.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Optimización on-page para captar búsqueda y suscriptores.</li>
             </ul>
@@ -257,7 +256,7 @@
               <h3 class="text-lg font-semibold">Automatizaciones (n8n)</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> 3 flujos clave para tu operación (publicación, reporting, alertas).</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> 3 flujos clave (publicación, reporting, alertas).</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Ahorro de 8–40 h/mes según volumen.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Setup, pruebas y monitorización con soporte.</li>
             </ul>
@@ -274,6 +273,20 @@
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Onboarding limpio para freelance o agencias.</li>
             </ul>
           </div>
+
+          <!-- NUEVO: Locución como servicio (sin reproductores) -->
+          <div class="card rounded-2xl p-6 hover:bg-neutral-900">
+            <div class="flex items-center gap-3">
+              <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="mic" class="w-6 h-6" aria-hidden="true"></i></div>
+              <h3 class="text-lg font-semibold">Locución y voz en off</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Experiencia: SER Catalunya, RAC1, COPE y canales de YouTube.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Formación: Escuela de Doblaje de Barcelona (EDB) y Radiofonics.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Spots, vídeos explicativos y narración. Demos a solicitud.</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
@@ -287,18 +300,24 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="card rounded-2xl p-6">
-            <h3 class="text-lg font-semibold">Pack n8n — 3 flujos</h3>
+            <div class="flex items-center gap-3">
+              <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="workflow" class="w-6 h-6"></i></div>
+              <h3 class="text-lg font-semibold">Pack n8n — 3 flujos</h3>
+            </div>
             <p class="mt-2 text-sm text-neutral-300">Automatiza tareas repetitivas (publicación, reporting, alertas). Incluye diagnóstico, diseño e implementación de 3 flujos + pruebas + monitorización.</p>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Ahorro estimado: 8–40 h/mes según volumen</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Sin lock-in: flujos documentados y editables</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Soporte y ajustes iniciales incluidos</li>
             </ul>
-            <p class="mt-3 text-sm text-neutral-400">¿Necesitas un flujo específico para tu operación? Personalizamos el pack y alineamos el precio contigo.</p>
+            <p class="mt-3 text-sm text-neutral-400">¿Necesitas un flujo específico? Personalizamos el pack y alineamos el precio contigo.</p>
           </div>
 
           <div class="card rounded-2xl p-6">
-            <h3 class="text-lg font-semibold">Gestión de redes</h3>
+            <div class="flex items-center gap-3">
+              <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="share-2" class="w-6 h-6"></i></div>
+              <h3 class="text-lg font-semibold">Gestión de redes</h3>
+            </div>
             <p class="mt-2 text-sm text-neutral-300">Plan mensual + publicación + reporting simple. Crecimiento consistente con foco en aprendizajes por plataforma.</p>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Calendario y guidelines</li>
@@ -308,7 +327,10 @@
           </div>
 
           <div class="card rounded-2xl p-6">
-            <h3 class="text-lg font-semibold">Edición y miniaturas</h3>
+            <div class="flex items-center gap-3">
+              <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="clapperboard" class="w-6 h-6"></i></div>
+              <h3 class="text-lg font-semibold">Edición y miniaturas</h3>
+            </div>
             <p class="mt-2 text-sm text-neutral-300">Edición de vídeo (Shorts/Largo) + miniaturas centradas en CTR y coherencia visual.</p>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Guion/ajuste de copy</li>
@@ -379,44 +401,6 @@
       </div>
     </section>
 
-    <!-- LOCUCIÓN / VOZ -->
-    <section id="locucion" class="py-20 scroll-mt-24">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mb-6">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Locución y voz en off</h2>
-          <p class="text-neutral-300 mt-2 max-w-3xl">
-            Voz masculina joven, clara y versátil para anuncios, vídeos corporativos y contenido digital. Formación en
-            <strong>Escuela de Doblaje de Barcelona</strong> y <strong>Radiophonics</strong>. Experiencia en radio y canales de YouTube (economía, fútbol y baloncesto).
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="card rounded-2xl p-6">
-            <h3 class="font-semibold">Spot / Anuncio</h3>
-            <audio controls class="w-full mt-3">
-              <source src="assets/audio/demo-spot.mp3" type="audio/mpeg" />
-              Tu navegador no soporta audio.
-            </audio>
-            <p class="text-xs text-neutral-400 mt-2">Tono enérgico y comercial.</p>
-          </div>
-          <div class="card rounded-2xl p-6">
-            <h3 class="font-semibold">Video explicativo</h3>
-            <audio controls class="w-full mt-3">
-              <source src="assets/audio/demo-explicativo.mp3" type="audio/mpeg" />
-            </audio>
-            <p class="text-xs text-neutral-400 mt-2">Tono claro y didáctico.</p>
-          </div>
-          <div class="card rounded-2xl p-6">
-            <h3 class="font-semibold">Narración / Documental</h3>
-            <audio controls class="w-full mt-3">
-              <source src="assets/audio/demo-narracion.mp3" type="audio/mpeg" />
-            </audio>
-            <p class="text-xs text-neutral-400 mt-2">Tono pausado y cercano.</p>
-          </div>
-        </div>
-        <p class="text-neutral-300 mt-6">¿Necesitas una <strong>demo adaptada</strong> a tu guion? Te la preparo sin compromiso.</p>
-      </div>
-    </section>
-
     <!-- FORMACIÓN Y EXPERIENCIA -->
     <section id="formacion" class="py-20 scroll-mt-24">
       <div class="mx-auto max-w-6xl px-4">
@@ -429,7 +413,7 @@
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Grado en Periodismo — URV.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Experiencia: RAC1, COPE, SER Catalunya.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Rol transversal: redacción, edición, miniaturas, coordinación, automatizaciones, análisis de audiencia/competencia.</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Cursos: doblaje de voz (EDB) y Radiophonics.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Cursos: doblaje de voz (EDB) y Radiofonics.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Speaker en torneos de baloncesto y eventos públicos.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Habilidades: YouTube, Search Console, Sheets, n8n, Node.js, Premiere, DaVinci, CapCut, Photoshop/Canva, Figma, documentación/SOPs.</li>
             </ul>
@@ -448,44 +432,43 @@
       </div>
     </section>
 
-    <!-- GALERÍA -->
-    <section id="galeria" class="py-20 scroll-mt-24">
+    <!-- FAQ -->
+    <section id="faq" class="py-20 scroll-mt-24">
       <div class="mx-auto max-w-6xl px-4">
         <div class="mb-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Galería</h2>
-          <p class="text-neutral-400 mt-2 max-w-3xl">Algunos ejemplos visuales. Añade o quita imágenes como quieras.</p>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Preguntas frecuentes (FAQ)</h2>
+          <p class="text-neutral-400 mt-2 max-w-3xl">Si no ves tu duda aquí, escríbeme y te respondo rápido.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder1.svg" alt="Proyecto o pieza 1" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
-          </figure>
-          <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder2.svg" alt="Proyecto o pieza 2" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
-          </figure>
-          <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder3.svg" alt="Proyecto o pieza 3" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
-          </figure>
-        </div>
-      </div>
-    </section>
 
-    <!-- VÍDEO -->
-    <section id="video" class="py-20 scroll-mt-24">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mb-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Vídeo</h2>
-          <p class="text-neutral-400 mt-2 max-w-3xl">Muestra una pieza destacada o tu reel.</p>
-        </div>
-        <div class="card rounded-2xl p-3">
-          <div class="relative" style="padding-top: 56.25%;">
-            <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-              title="YouTube video player"
-              class="absolute top-0 left-0 w-full h-full rounded-xl"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">¿Se pueden personalizar los packs?</h3>
+            <p class="text-sm text-neutral-300 mt-2">Sí. Ajusto alcance y precio a tu operación. Si necesitas un flujo muy específico, lo diseñamos a medida.</p>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">¿Qué es un “flujo” y cuántas horas ahorra?</h3>
+            <p class="text-sm text-neutral-300 mt-2">Un flujo es una automatización en n8n. Según el volumen, puede ahorrarte de 8 a 40 horas al mes eliminando tareas repetitivas.</p>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">¿Quién es dueño de los flujos?</h3>
+            <p class="text-sm text-neutral-300 mt-2">Tú. Entrego documentación y archivos editables para que no dependas de mí si no quieres.</p>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">Plazos y forma de trabajo</h3>
+            <p class="text-sm text-neutral-300 mt-2">Trabajamos en sprints semanales con entregables. Alineamos metas al inicio y medimos resultados de forma continua.</p>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">Herramientas</h3>
+            <p class="text-sm text-neutral-300 mt-2">CapCut, Premiere, DaVinci, Photoshop/Canva, n8n, Node.js, Search Console, YouTube Studio, Sheets y Notion/Trello.</p>
+          </div>
+
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">¿Incluye revisiones?</h3>
+            <p class="text-sm text-neutral-300 mt-2">Sí. Definimos un número razonable por sprint para avanzar sin fricciones y llegar a tiempo.</p>
           </div>
         </div>
       </div>
