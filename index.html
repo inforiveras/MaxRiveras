@@ -17,19 +17,31 @@
     <!-- IMPORTANTE: sin 'defer' para que esté disponible antes de createIcons() -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-      /* Fondo lila original SIN halo */
-      body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615); }
-      .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
-      .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
-      .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
-      html { scroll-behavior: smooth; }
-      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
-      :root { --accent: #8b5cf6; }
+  /* Fondo lila original SIN halo */
+  body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615); }
+  .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
+  .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
+  .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
+  html { scroll-behavior: smooth; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
+  :root { --accent: #8b5cf6; }
 
-      /* Logos: estilo discreto y responsive */
-      .logo-wrap img { filter: grayscale(100%); opacity: .7; transition: opacity .2s ease, filter .2s ease, transform .2s ease; }
-      .logo-wrap img:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-2px); }
-    </style>
+  /* Logos: estabilidad + GPU (evita parpadeos y saltos) */
+  .logo-wrap { contain: layout paint; }
+  .logo-wrap img{
+    display:block;
+    max-height:100%;
+    width:auto;
+    object-fit:contain;
+    filter:grayscale(100%);
+    opacity:.75;
+    transition:opacity .2s ease, filter .2s ease, transform .2s ease;
+    backface-visibility:hidden;
+    transform:translateZ(0);
+  }
+  .logo-wrap img:hover{ filter:grayscale(0%); opacity:1; transform:translateY(-2px) translateZ(0); }
+</style>
+
 
     <!-- Schema Person -->
     <script type="application/ld+json">
@@ -198,55 +210,56 @@
       </div>
     </header>
 
-    <!-- LOGOS / PRUEBA SOCIAL (optimizado) -->
-    <section id="logos" aria-labelledby="confian-title" class="py-12 md:py-14">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mb-6 flex items-center justify-between gap-4">
-          <h2 id="confian-title" class="text-sm uppercase tracking-wider text-neutral-400 flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-4 h-4" aria-hidden="true"></i>
-            Confían en mí / he colaborado con
-          </h2>
-          <span class="text-xs text-neutral-500">Medios, instituciones y clubes</span>
-        </div>
+    <!-- LOGOS / PRUEBA SOCIAL (estable y sin anclas) -->
+<section id="logos" aria-labelledby="confian-title" class="py-12 md:py-14">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="mb-6 flex items-center justify-between gap-4">
+      <h2 id="confian-title" class="text-sm uppercase tracking-wider text-neutral-400 flex items-center gap-2">
+        <i data-lucide="shield-check" class="w-4 h-4" aria-hidden="true"></i>
+        Confían en mí / he colaborado con
+      </h2>
+      <span class="text-xs text-neutral-500">Medios, instituciones y clubes</span>
+    </div>
 
-        <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6 items-center">
-          <a href="#" class="block" aria-label="RAC1" title="RAC1">
-            <img src="assets/logos/rac1.svg" onerror="this.src='assets/logos/rac1.png'" alt="Logo de RAC1" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="SER Catalunya" title="SER Catalunya">
-            <img src="assets/logos/ser-catalunya.svg" onerror="this.src='assets/logos/ser-catalunya.png'" alt="Logo de SER Catalunya" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="COPE" title="COPE">
-            <img src="assets/logos/cope.svg" onerror="this.src='assets/logos/cope.png'" alt="Logo de COPE" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="XCatalunya" title="XCatalunya">
-            <img src="assets/logos/xcatalunya.svg" onerror="this.src='assets/logos/xcatalunya.png'" alt="Logo de XCatalunya" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="MareNostrum Basket" title="MareNostrum Basket">
-            <img src="assets/logos/marenostrum-basket.svg" onerror="this.src='assets/logos/marenostrum-basket.png'" alt="Logo de MareNostrum Basket" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="EMD Valldoreix" title="Entitat Municipal Descentralitzada de Valldoreix">
-            <img src="assets/logos/emd-valldoreix.svg" onerror="this.src='assets/logos/emd-valldoreix.png'" alt="Logo de la EMD de Valldoreix" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="Club Bàsquet Salou" title="Club Bàsquet Salou">
-            <img src="assets/logos/cb-salou.svg" onerror="this.src='assets/logos/cb-salou.png'" alt="Logo del Club Bàsquet Salou" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="Club Bàsquet AD Torreforta" title="Club Bàsquet AD Torreforta">
-            <img src="assets/logos/ad-torreforta.svg" onerror="this.src='assets/logos/ad-torreforta.png'" alt="Logo del Club Bàsquet AD Torreforta" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
-          <a href="#" class="block" aria-label="Universitat Rovira i Virgili (URV)" title="Universitat Rovira i Virgili">
-            <img src="assets/logos/urv.svg" onerror="this.src='assets/logos/urv.png'" alt="Logo de la Universitat Rovira i Virgili (URV)" class="mx-auto h-8 sm:h-10 md:h-12 w-auto" loading="lazy" decoding="async">
-          </a>
+    <!-- Tarjetas con altura fija para evitar “jumps” -->
+    <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/rac1.svg" onerror="this.onerror=null;this.src='assets/logos/rac1.png';" alt="RAC1" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/ser-catalunya.svg" onerror="this.onerror=null;this.src='assets/logos/ser-catalunya.png';" alt="SER Catalunya" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/cope.svg" onerror="this.onerror=null;this.src='assets/logos/cope.png';" alt="COPE" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/xcatalunya.svg" onerror="this.onerror=null;this.src='assets/logos/xcatalunya.png';" alt="XCatalunya" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/marenostrum-basket.svg" onerror="this.onerror=null;this.src='assets/logos/marenostrum-basket.png';" alt="MareNostrum Basket" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/emd-valldoreix.svg" onerror="this.onerror=null;this.src='assets/logos/emd-valldoreix.png';" alt="EMD Valldoreix" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/cb-salou.svg" onerror="this.onerror=null;this.src='assets/logos/cb-salou.png';" alt="Club Bàsquet Salou" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/ad-torreforta.svg" onerror="this.onerror=null;this.src='assets/logos/ad-torreforta.png';" alt="Club Bàsquet AD Torreforta" loading="lazy" decoding="async">
+      </figure>
+      <figure class="h-12 sm:h-14 md:h-16 flex items-center justify-center">
+        <img src="assets/logos/urv.svg" onerror="this.onerror=null;this.src='assets/logos/urv.png';" alt="Universitat Rovira i Virgili (URV)" loading="lazy" decoding="async">
+      </figure>
 
-          <!-- Hueco para futuros logos -->
-          <div class="hidden md:flex items-center justify-center h-full">
-            <span class="text-xs text-neutral-500">Tu logo aquí</span>
-          </div>
-        </div>
-
-        <p class="mt-5 text-xs text-neutral-500">*Selección de colaboraciones y clientes recientes. Referencias ampliables a solicitud.</p>
+      <!-- Hueco para futuros logos -->
+      <div class="hidden md:flex items-center justify-center h-12 sm:h-14 md:h-16">
+        <span class="text-xs text-neutral-500">Tu logo aquí</span>
       </div>
-    </section>
+    </div>
+
+    <p class="mt-5 text-xs text-neutral-500">*Selección de colaboraciones y clientes recientes. Referencias ampliables a solicitud.</p>
+  </div>
+</section>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="py-20 scroll-mt-24">
