@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Max Riveras Gil — Contenido, Vídeo y Automatización</title>
-    <meta name="description" content="Tarjeta de presentación de Max Riveras Gil: contenido, edición de vídeo, miniaturas, gestión de redes y automatizaciones n8n." />
-    <meta property="og:title" content="Max Riveras Gil — Contenido, Vídeo y Automatización" />
-    <meta property="og:description" content="Contenido que rinde, operaciones estables y decisiones con datos." />
+    <title>Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil</title>
+    <meta name="description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
+    <meta property="og:title" content="Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil" />
+    <meta property="og:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#8b5cf6" />
     <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
@@ -14,29 +14,45 @@
     <script>
       tailwind.config = { theme: { extend: { colors: { accent: { 50: '#f5f3ff',100: '#ede9fe',200: '#ddd6fe',300: '#c4b5fd',400: '#a78bfa',500: '#8b5cf6',600: '#7c3aed',700: '#6d28d9',800: '#5b21b6',900: '#4c1d95'}}}}};
     </script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <style>
       /* Fondo lila original */
       body {
         background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615);
       }
-
       .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
       .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
       .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
       html { scroll-behavior: smooth; }
       a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
       :root { --accent: #8b5cf6; }
-      /* (El halo negro del titular y su wrapper han sido eliminados) */
+
+      /* Logos: estilo discreto y responsive */
+      .logo-wrap img { filter: grayscale(100%); opacity: .7; transition: opacity .2s ease, filter .2s ease, transform .2s ease; }
+      .logo-wrap img:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-2px); }
     </style>
+
+    <!-- Schema Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Max Riveras Gil",
+      "jobTitle": "Consultor de contenido y automatización",
+      "email": "mailto:inforiveras.yt@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Tarragona", "addressCountry": "ES" },
+      "sameAs": ["https://instagram.com/maxxriveras"]
+    }
+    </script>
   </head>
+
   <body class="text-neutral-100 min-h-screen">
     <!-- =============== QUICK EDIT ZONE =============== -->
     <script>
       const MAX_DATA = {
         name: "Max Riveras Gil",
         role: "Contenido, Vídeo y Automatización",
-        tagline: "Creo sistemas de contenido que funcionan y crecen: guiones, edición, gestión de redes y automatizaciones a medida.",
+        tagline: "Implanto sistemas de contenido que te ahorran horas y hacen crecer tu marca: guiones, edición y miniaturas, gestión de redes y automatizaciones n8n a medida. Resultado: más consistencia, menos tareas repetitivas y decisiones con datos.",
         email: "inforiveras.yt@gmail.com",
         phone: "",
         location: "Tarragona, España",
@@ -64,9 +80,9 @@
     <!-- NAV -->
     <div class="sticky top-0 z-50 border-b border-neutral-900/80 glass">
       <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
-        <!-- Logo MR (reemplaza el cuadrado) -->
-        <a href="#" class="flex items-center gap-3 group">
-          <svg width="28" height="28" viewBox="0 0 32 32" aria-label="Logo MR" class="shrink-0">
+        <!-- Logo MR -->
+        <a href="#" class="flex items-center gap-3 group" aria-label="Inicio">
+          <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" class="shrink-0">
             <defs>
               <linearGradient id="mrGrad" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0" stop-color="#a78bfa"/>
@@ -75,9 +91,7 @@
             </defs>
             <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="url(#mrGrad)" stroke-width="2"/>
             <g fill="url(#mrGrad)">
-              <!-- M -->
               <path d="M7.5 22V10h2.6l2.1 4.2 2.1-4.2h2.6v12h-2.4v-7.2l-2.3 4.5h-0.1l-2.3-4.5V22H7.5z"/>
-              <!-- R -->
               <path d="M20 10h4.2c2.3 0 3.8 1.3 3.8 3.3 0 1.5-0.8 2.6-2.1 3.1l2.4 5.6h-2.7l-2.1-5h-1.1V22H20V10zm2.6 4.7h1.4c1.1 0 1.8-0.6 1.8-1.5 0-0.9-0.7-1.5-1.8-1.5h-1.4v3z"/>
             </g>
           </svg>
@@ -87,14 +101,16 @@
         <nav class="hidden md:flex gap-6 text-sm text-neutral-300" aria-label="Principal">
           <a href="#servicios" class="hover:text-white">Servicios</a>
           <a href="#packs" class="hover:text-white">Packs</a>
+          <a href="#flujo" class="hover:text-white">¿Qué es un flujo?</a>
+          <a href="#locucion" class="hover:text-white">Locución</a>
           <a href="#proceso" class="hover:text-white">Proceso</a>
           <a href="#formacion" class="hover:text-white">Formación</a>
           <a href="#galeria" class="hover:text-white">Galería</a>
           <a href="#video" class="hover:text-white">Vídeo</a>
           <a href="#contacto" class="hover:text-white">Contacto</a>
         </nav>
-        <a data-href="email" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm text-accent-300 hover:bg-accent-500/20" data-border-accent>
-          <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i> <span class="sr-only">Enviar email a </span><span>Escríbeme</span>
+        <a data-href="email" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm text-accent-300 hover:bg-accent-500/20" data-border-accent aria-label="Escríbeme por email">
+          <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i> <span>Escríbeme</span>
         </a>
       </div>
     </div>
@@ -107,7 +123,6 @@
             <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i> Disponible para proyectos
           </span>
 
-          <!-- Titular sin halo -->
           <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight">
             <span class="text-white" data-text="role"></span>:
             <span class="text-white">
@@ -118,14 +133,16 @@
           </h1>
 
           <p class="mt-4 text-neutral-300" data-text="tagline"></p>
+
           <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="#servicios" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
+            <a href="#servicios" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Ver qué hago">
               Ver qué hago <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
             </a>
-            <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800">
-              Pedir presupuesto
+            <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800" aria-label="Solicitar propuesta">
+              Solicitar propuesta
             </a>
           </div>
+          <p class="mt-2 text-xs text-neutral-400">⏱️ Respondo en 24–48 h laborables.</p>
 
           <!-- Herramientas -->
           <div class="mt-8 flex flex-wrap gap-2 text-xs text-neutral-300">
@@ -156,16 +173,29 @@
             <li class="flex gap-2"><i data-lucide="instagram" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer" aria-label="Instagram"></a></li>
             <li class="flex gap-2"><i data-lucide="mail" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-text="email" data-href="email" href="#" aria-label="Email"></a></li>
           </ul>
-          <!-- Hueco para tu foto profesional -->
           <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
-            <!-- Reemplaza src por tu foto (ideal 1200x1500) -->
-            <img src="placeholder1.svg" alt="Foto profesional de Max Riveras Gil" class="w-full h-56 object-cover" />
+            <img src="placeholder1.svg" alt="Foto profesional de Max Riveras Gil" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
     </header>
 
-    <!-- SERVICES -->
+    <!-- LOGOS / PRUEBA SOCIAL -->
+    <section id="logos" class="py-8 md:py-10">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
+          <!-- Sustituye src por tus PNG/SVG en /assets/logos/ -->
+          <img src="assets/logos/rac1.png" alt="RAC1" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+          <img src="assets/logos/cope.png" alt="COPE" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+          <img src="assets/logos/ser-catalunya.png" alt="SER Catalunya" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+          <img src="assets/logos/marfeel.png" alt="Marfeel" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+          <img src="assets/logos/cliente1.png" alt="Cliente 1" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+          <img src="assets/logos/cliente2.png" alt="Cliente 2" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
     <section id="servicios" class="py-20 scroll-mt-24">
       <div class="mx-auto max-w-6xl px-4">
         <div class="mb-10">
@@ -179,9 +209,9 @@
               <h3 class="text-lg font-semibold">Contenido y guiones</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Redacción periodística y optimización on-page</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Guiones de YouTube (hooks, ritmo, retención)</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Calendario editorial y guidelines</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Piezas que retienen y convierten (hooks, estructura, claridad).</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Guías y calendario editorial para publicar sin fricción.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Optimización on-page para captar búsqueda y suscriptores.</li>
             </ul>
           </div>
 
@@ -191,9 +221,9 @@
               <h3 class="text-lg font-semibold">Edición de vídeo y miniaturas</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Edición en CapCut Pro (Shorts y largo)</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Miniaturas enfocadas a CTR</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Packaging visual consistente</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Edición ágil (Shorts y largo) orientada a retención.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Miniaturas con hipótesis de CTR y tests iterativos.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Packaging visual consistente por canal/serie.</li>
             </ul>
           </div>
 
@@ -203,9 +233,9 @@
               <h3 class="text-lg font-semibold">Gestión de redes</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Plan de contenidos y publicación</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Moderación básica y reporting</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Adaptaciones por plataforma</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Plan + publicación sin cuellos de botella.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Adaptaciones por plataforma y tono.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Moderación básica y reporting accionable.</li>
             </ul>
           </div>
 
@@ -215,9 +245,9 @@
               <h3 class="text-lg font-semibold">Audiencia y competencia</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Lectura de métricas (YouTube / Search Console / Sheets)</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Estudios de competencia y audiencia</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Planes de mejora accionables</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Lectura de métricas (YouTube / Search Console / Sheets).</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Benchmark de contenidos ganadores y huecos.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Plan de mejora con acciones y responsables.</li>
             </ul>
           </div>
 
@@ -227,9 +257,9 @@
               <h3 class="text-lg font-semibold">Automatizaciones (n8n)</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Pack: 3 flujos adaptados a tu operación</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Setup + mantenimiento mensual</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Alertas, RSS, reporting y más</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> 3 flujos clave para tu operación (publicación, reporting, alertas).</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Ahorro de 8–40 h/mes según volumen.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Setup, pruebas y monitorización con soporte.</li>
             </ul>
           </div>
 
@@ -239,9 +269,9 @@
               <h3 class="text-lg font-semibold">Coordinación & Ops</h3>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Feedbacks, QA y coordinación del equipo</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Documentación y SOPs claros</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Onboarding y handoffs sin fricción</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Feedbacks, QA y coordinación del equipo creativo.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> SOPs claros y handoffs sin fricción.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Onboarding limpio para freelance o agencias.</li>
             </ul>
           </div>
         </div>
@@ -253,35 +283,64 @@
       <div class="mx-auto max-w-6xl px-4">
         <div class="mb-10">
           <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Packs ideales para ti</h2>
+          <p class="text-neutral-400 mt-2 max-w-3xl">Empieza ya. Si necesitas algo más específico, lo ajustamos a medida y cerramos presupuesto según tu operación.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div class="card rounded-2xl p-6">
             <h3 class="text-lg font-semibold">Pack n8n — 3 flujos</h3>
-            <p class="mt-2 text-sm text-neutral-300">Automatiza tareas repetitivas (RSS, alertas, reporting). Setup inicial + mantenimiento mensual.</p>
+            <p class="mt-2 text-sm text-neutral-300">Automatiza tareas repetitivas (publicación, reporting, alertas). Incluye diagnóstico, diseño e implementación de 3 flujos + pruebas + monitorización.</p>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Diagnóstico y diseño de 3 flujos</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Implementación y pruebas</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Monitorización y soporte continuo</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Ahorro estimado: 8–40 h/mes según volumen</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Sin lock-in: flujos documentados y editables</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Soporte y ajustes iniciales incluidos</li>
             </ul>
+            <p class="mt-3 text-sm text-neutral-400">¿Necesitas un flujo específico para tu operación? Personalizamos el pack y alineamos el precio contigo.</p>
           </div>
+
           <div class="card rounded-2xl p-6">
             <h3 class="text-lg font-semibold">Gestión de redes</h3>
-            <p class="mt-2 text-sm text-neutral-300">Plan de contenidos, publicación y reporting simple. Crecimiento consistente, sin ruido.</p>
+            <p class="mt-2 text-sm text-neutral-300">Plan mensual + publicación + reporting simple. Crecimiento consistente con foco en aprendizajes por plataforma.</p>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Calendario mensual</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Adaptaciones por plataforma</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Informe básico con aprendizajes</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Calendario y guidelines</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Adaptaciones por canal</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Informe con “qué repetir” y “qué cortar”</li>
             </ul>
           </div>
+
           <div class="card rounded-2xl p-6">
             <h3 class="text-lg font-semibold">Edición y miniaturas</h3>
-            <p class="mt-2 text-sm text-neutral-300">Edición de vídeo (Shorts/largo) + miniaturas enfocadas a CTR y coherencia visual.</p>
+            <p class="mt-2 text-sm text-neutral-300">Edición de vídeo (Shorts/Largo) + miniaturas centradas en CTR y coherencia visual.</p>
             <ul class="mt-4 space-y-2 text-sm text-neutral-300">
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Guion/ajuste de copy</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Edición en Premiere/DaVinci</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Corrección de color</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Miniatura optimizada (Photoshop/Canva)</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Corrección de color y entrega final</li>
             </ul>
+          </div>
+        </div>
+        <p class="mt-6 text-neutral-300">¿Quieres un <strong>pack</strong> o un <strong>flujo 100% a medida</strong>? Escríbeme y lo definimos juntos.</p>
+      </div>
+    </section>
+
+    <!-- ¿QUÉ ES UN FLUJO? -->
+    <section id="flujo" class="py-16 scroll-mt-24">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">¿Qué es un “flujo” y por qué importa?</h2>
+        <p class="text-neutral-300 mt-3 max-w-3xl">
+          Un flujo es una cadena de pasos automatizados (n8n) que ejecuta tareas por ti: recopilar datos, mover archivos, publicar, avisar y generar reportes.
+          Resultado: horas ahorradas cada mes y menos “trabajo pegamento”.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          <div class="card rounded-2xl p-5">
+            <h3 class="font-semibold">Publicación</h3>
+            <p class="text-sm text-neutral-300 mt-2">Al subir un vídeo, se crean clips, se programan posts y se notifica al equipo.</p>
+          </div>
+          <div class="card rounded-2xl p-5">
+            <h3 class="font-semibold">Reporting</h3>
+            <p class="text-sm text-neutral-300 mt-2">Cada lunes recibes un informe con KPIs en tu correo y en Sheets.</p>
+          </div>
+          <div class="card rounded-2xl p-5">
+            <h3 class="font-semibold">Alertas</h3>
+            <p class="text-sm text-neutral-300 mt-2">Avisos automáticos si hay picos de búsquedas o menciones de tu marca.</p>
           </div>
         </div>
       </div>
@@ -298,25 +357,63 @@
           <div class="card rounded-2xl p-6">
             <div class="flex items-center gap-3">
               <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="link-2" class="w-6 h-6"></i></div>
-              <h3 class="font-semibold">1) Alineamos metas</h3>
+              <h3 class="font-semibold">1) Alineamos metas (30–45 min)</h3>
             </div>
-            <p class="mt-3 text-sm text-neutral-300">Definimos objetivo, métricas razonables y caja de herramientas (contenido, vídeo, redes, automatizaciones).</p>
+            <p class="mt-3 text-sm text-neutral-300">Objetivo, métricas y caja de herramientas (contenido, vídeo, redes, automatizaciones).</p>
           </div>
           <div class="card rounded-2xl p-6">
             <div class="flex items-center gap-3">
               <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="rocket" class="w-6 h-6"></i></div>
               <h3 class="font-semibold">2) Ejecutamos sprints</h3>
             </div>
-            <p class="mt-3 text-sm text-neutral-300">Producción ágil con entregables semanales (piezas, ediciones, flujos). Documentación clara y SOPs.</p>
+            <p class="mt-3 text-sm text-neutral-300">Entregables semanales y documentación clara (SOPs).</p>
           </div>
           <div class="card rounded-2xl p-6">
             <div class="flex items-center gap-3">
               <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="bar-chart-3" class="w-6 h-6"></i></div>
               <h3 class="font-semibold">3) Medimos y escalamos</h3>
             </div>
-            <p class="mt-3 text-sm text-neutral-300">Iteración con datos (YouTube Studio / Search Console). Lo que funciona, se multiplica; lo que no, se descarta.</p>
+            <p class="mt-3 text-sm text-neutral-300">Repetimos lo que funciona; lo que no, se descarta.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- LOCUCIÓN / VOZ -->
+    <section id="locucion" class="py-20 scroll-mt-24">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="mb-6">
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Locución y voz en off</h2>
+          <p class="text-neutral-300 mt-2 max-w-3xl">
+            Voz masculina joven, clara y versátil para anuncios, vídeos corporativos y contenido digital. Formación en
+            <strong>Escuela de Doblaje de Barcelona</strong> y <strong>Radiophonics</strong>. Experiencia en radio y canales de YouTube (economía, fútbol y baloncesto).
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">Spot / Anuncio</h3>
+            <audio controls class="w-full mt-3">
+              <source src="assets/audio/demo-spot.mp3" type="audio/mpeg" />
+              Tu navegador no soporta audio.
+            </audio>
+            <p class="text-xs text-neutral-400 mt-2">Tono enérgico y comercial.</p>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">Video explicativo</h3>
+            <audio controls class="w-full mt-3">
+              <source src="assets/audio/demo-explicativo.mp3" type="audio/mpeg" />
+            </audio>
+            <p class="text-xs text-neutral-400 mt-2">Tono claro y didáctico.</p>
+          </div>
+          <div class="card rounded-2xl p-6">
+            <h3 class="font-semibold">Narración / Documental</h3>
+            <audio controls class="w-full mt-3">
+              <source src="assets/audio/demo-narracion.mp3" type="audio/mpeg" />
+            </audio>
+            <p class="text-xs text-neutral-400 mt-2">Tono pausado y cercano.</p>
+          </div>
+        </div>
+        <p class="text-neutral-300 mt-6">¿Necesitas una <strong>demo adaptada</strong> a tu guion? Te la preparo sin compromiso.</p>
       </div>
     </section>
 
@@ -331,12 +428,12 @@
             <ul class="space-y-2 text-sm text-neutral-300">
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Grado en Periodismo — URV.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Experiencia: RAC1, COPE, SER Catalunya.</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Trabajo remoto en medio digital: rol transversal (redacción, edición, miniaturas, coordinación, automatizaciones, análisis de audiencia/competencia).</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Colaboraciones con medios locales y clientes particulares.</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Cursos: doblaje y edición de vídeo.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Rol transversal: redacción, edición, miniaturas, coordinación, automatizaciones, análisis de audiencia/competencia.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Cursos: doblaje de voz (EDB) y Radiophonics.</li>
               <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Speaker en torneos de baloncesto y eventos públicos.</li>
-              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Habilidades: redacción, guion YouTube, edición (CapCut Pro, Premiere, DaVinci Resolve), miniaturas (Photoshop/Canva), gestión de redes, análisis de audiencia, Search Console, Sheets, Trello/Notion, n8n, Node.js, Claude, ChatGPT, Murf.ai, Figma, Marfeel, documentación/SOPs.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Habilidades: YouTube, Search Console, Sheets, n8n, Node.js, Premiere, DaVinci, CapCut, Photoshop/Canva, Figma, documentación/SOPs.</li>
             </ul>
+            <p class="text-neutral-300 mt-4">Compromiso: comunicación clara, documentación de procesos y entregables a tiempo.</p>
           </div>
           <div class="card rounded-2xl p-6">
             <h3 class="font-semibold">Modalidades</h3>
@@ -344,44 +441,8 @@
               <li>• Proyecto cerrado con hitos y entregas</li>
               <li>• Bolsa de horas (10/20/40) con prioridad</li>
               <li>• Retainer mensual (crecimiento continuo)</li>
+              <li>• Pack personalizado (definimos alcance + precio juntos)</li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="py-20 scroll-mt-24">
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="mb-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Contacto</h2>
-          <p class="text-neutral-400 mt-2 max-w-3xl">Cuéntame qué objetivo quieres conseguir y te propongo el camino más corto.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="card rounded-2xl p-6">
-            <div class="flex items-center gap-2 text-neutral-300"><i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i><span data-text="email"></span></div>
-            <div class="mt-2 text-neutral-300">Instagram: <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer"></a></div>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a data-href="email" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
-                Escríbeme <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-          <div class="card rounded-2xl p-6 md:col-span-2">
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <label class="sr-only" for="nombre">Nombre</label>
-              <input id="nombre" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Nombre" />
-              <label class="sr-only" for="correo">Email</label>
-              <input id="correo" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Email" />
-              <label class="sr-only" for="asunto">Asunto</label>
-              <input id="asunto" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Asunto" />
-              <label class="sr-only" for="mensaje">Mensaje</label>
-              <textarea id="mensaje" rows="5" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Cuéntame brevemente tu proyecto"></textarea>
-              <button type="button" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
-                Enviar (conéctalo luego a Formspree / n8n)
-              </button>
-              <p class="text-xs text-neutral-500 md:col-span-2">Cuando quieras, conectamos este formulario a Formspree, Airtable, Notion o n8n.</p>
-            </form>
           </div>
         </div>
       </div>
@@ -396,13 +457,13 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder1.svg" alt="Proyecto o pieza 1" class="w-full h-56 object-cover" />
+            <img src="assets/placeholder1.svg" alt="Proyecto o pieza 1" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
           </figure>
           <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder2.svg" alt="Proyecto o pieza 2" class="w-full h-56 object-cover" />
+            <img src="assets/placeholder2.svg" alt="Proyecto o pieza 2" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
           </figure>
           <figure class="card rounded-2xl overflow-hidden">
-            <img src="assets/placeholder3.svg" alt="Proyecto o pieza 3" class="w-full h-56 object-cover" />
+            <img src="assets/placeholder3.svg" alt="Proyecto o pieza 3" class="w-full h-56 object-cover" loading="lazy" decoding="async" />
           </figure>
         </div>
       </div>
@@ -430,6 +491,43 @@
       </div>
     </section>
 
+    <!-- CONTACTO -->
+    <section id="contacto" class="py-20 scroll-mt-24">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="mb-10">
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Contacto</h2>
+          <p class="text-neutral-400 mt-2 max-w-3xl">Cuéntame tu objetivo, el plazo y el punto de partida. Te propongo el camino más corto y un alcance claro.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card rounded-2xl p-6">
+            <div class="flex items-center gap-2 text-neutral-300"><i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i><span data-text="email"></span></div>
+            <div class="mt-2 text-neutral-300">Instagram: <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer"></a></div>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a data-href="email" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Escríbeme por email">
+                Escríbeme <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="card rounded-2xl p-6 md:col-span-2">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <label class="sr-only" for="nombre">Nombre</label>
+              <input id="nombre" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Nombre" />
+              <label class="sr-only" for="correo">Email</label>
+              <input id="correo" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Email" />
+              <label class="sr-only" for="asunto">Asunto</label>
+              <input id="asunto" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Asunto" />
+              <label class="sr-only" for="mensaje">Mensaje</label>
+              <textarea id="mensaje" rows="5" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Cuéntame brevemente tu proyecto (objetivo, canales, deadline, presupuesto orientativo)"></textarea>
+              <button type="button" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Enviar mensaje">
+                Enviar (conéctalo luego a Formspree / n8n)
+              </button>
+              <p class="text-xs text-neutral-500 md:col-span-2">Incluye: objetivo, canales implicados, deadline y presupuesto orientativo.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="border-t border-neutral-900/80 py-10">
       <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -439,7 +537,7 @@
           <a data-href="ig" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
         </div>
       </div>
-      <p class="text-center text-neutral-500 text-sm mt-6">El contenido que transforma no se improvisa. Se diseña. Se mide. Se mejora.</p>
+      <p class="text-center text-neutral-500 text-sm mt-6">El contenido que transforma no se improvisa: se diseña, se mide y se mejora.</p>
       <script>document.getElementById('year').textContent = new Date().getFullYear(); lucide.createIcons();</script>
     </footer>
   </body>
