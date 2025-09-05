@@ -12,46 +12,23 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              accent: {
-                50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',
-                400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',
-                800:'#5b21b6',900:'#4c1d95'
-              }
-            }
-          }
-        }
-      };
+      tailwind.config = { theme: { extend: { colors: { accent: { 50: '#f5f3ff',100: '#ede9fe',200: '#ddd6fe',300: '#c4b5fd',400: '#a78bfa',500: '#8b5cf6',600: '#7c3aed',700: '#6d28d9',800: '#5b21b6',900: '#4c1d95'}}}}};
     </script>
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- IMPORTANTE: sin 'defer' para que esté disponible antes de createIcons() -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
       /* Fondo lila original SIN halo */
-      body {
-        background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615);
-      }
+      body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615); }
       .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
       .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
       .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
       html { scroll-behavior: smooth; }
-      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-        outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px;
-      }
+      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
       :root { --accent: #8b5cf6; }
 
       /* Logos: estilo discreto y responsive */
       .logo-wrap img { filter: grayscale(100%); opacity: .7; transition: opacity .2s ease, filter .2s ease, transform .2s ease; }
       .logo-wrap img:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-2px); }
-
-      /* Fallback cuando aún no tengas el PNG: caja con texto */
-      .logo-fallback{
-        display:flex; align-items:center; justify-content:center;
-        height:2.5rem; border:1px dashed rgba(255,255,255,.15);
-        border-radius:.75rem; padding:.5rem 1rem; color:#d4d4d8; font-size:.875rem;
-        background: rgba(0,0,0,.2);
-      }
     </style>
 
     <!-- Schema Person -->
@@ -126,7 +103,7 @@
           <a href="#flujo" class="hover:text-white">¿Qué es un flujo?</a>
           <a href="#proceso" class="hover:text-white">Proceso</a>
           <a href="#formacion" class="hover:text-white">Formación</a>
-          <a href="#confian" class="hover:text-white">Confían en mí</a>
+          <a href="#logos" class="hover:text-white">Clientes</a>
           <a href="#faq" class="hover:text-white">FAQ</a>
           <a href="#contacto" class="hover:text-white">Contacto</a>
         </nav>
@@ -159,8 +136,8 @@
             <a href="#servicios" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Ver qué hago">
               Ver qué hago <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
             </a>
-            <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800" aria-label="Solicitar presupuesto">
-              Solicitar presupuesto
+            <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800" aria-label="Solicitar propuesta">
+              Solicitar propuesta
             </a>
           </div>
           <p class="mt-2 text-xs text-neutral-400">⏱️ Respondo en 24–48 h laborables.</p>
@@ -201,24 +178,17 @@
       </div>
     </header>
 
-    <!-- CONFÍAN EN MÍ / PRUEBA SOCIAL -->
-    <section id="confian" class="py-8 md:py-10">
+    <!-- LOGOS / PRUEBA SOCIAL -->
+    <section id="logos" class="py-8 md:py-10">
       <div class="mx-auto max-w-6xl px-4">
-        <p class="text-center text-neutral-300 text-sm mb-4">Personas, empresas y clubes que <span class="text-white font-medium">confían en mí</span> o con los que he colaborado</p>
         <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 items-center">
           <!-- Sustituye src por tus PNG/SVG en /assets/logos/ -->
           <img src="assets/logos/rac1.png" alt="RAC1" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
           <img src="assets/logos/cope.png" alt="COPE" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
           <img src="assets/logos/ser-catalunya.png" alt="SER Catalunya" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
-          <img src="assets/logos/tornech.png" alt="Tornech" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
-          <img src="assets/logos/marenostrum.png" alt="MareNostrum" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
-          <img src="assets/logos/basket.png" alt="Basket" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
-          <img src="assets/logos/cb-salou.png" alt="Club Bàsquet Salou" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
-          <img src="assets/logos/ad-torreforta.png" alt="AD Torreforta" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
-          <img src="assets/logos/yo-mas-yo.png" alt="Yo Más Yo" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
-          <!-- Fallback por si algún logo aún no está -->
-          <div class="logo-fallback">Añade tu logo aquí</div>
-          <div class="logo-fallback">Otro logo</div>
+          <img src="assets/logos/marfeel.png" alt="Marfeel" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+          <img src="assets/logos/cliente1.png" alt="Cliente 1" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
+          <img src="assets/logos/cliente2.png" alt="Cliente 2" class="mx-auto h-8 sm:h-10 w-auto" loading="lazy" decoding="async" />
         </div>
       </div>
     </section>
@@ -291,6 +261,18 @@
             </ul>
           </div>
 
+          <div class="card rounded-2xl p-6 hover:bg-neutral-900">
+            <div class="flex items-center gap-3">
+              <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="settings-2" class="w-6 h-6" aria-hidden="true"></i></div>
+              <h3 class="text-lg font-semibold">Coordinación & Ops</h3>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Feedbacks, QA y coordinación del equipo creativo.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> SOPs claros y handoffs sin fricción.</li>
+              <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Onboarding limpio para freelance o agencias.</li>
+            </ul>
+          </div>
+
           <!-- Locución como servicio (sin reproductores) -->
           <div class="card rounded-2xl p-6 hover:bg-neutral-900">
             <div class="flex items-center gap-3">
@@ -356,18 +338,7 @@
             </ul>
           </div>
         </div>
-
-        <!-- Callout: pack/flujo 100% a medida -->
-        <div class="card rounded-2xl p-5 mt-6 border border-accent-700/40">
-          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <p class="text-neutral-200 text-base md:text-lg">
-              ¿Quieres un <strong>pack</strong> o un <strong>flujo 100% a medida</strong>? Escríbeme y lo definimos juntos. Acordamos alcance y <strong>presupuesto</strong> según tu operación.
-            </p>
-            <a href="#contacto" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
-              Pedir presupuesto a medida <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
+        <p class="mt-6 text-neutral-300">¿Quieres un <strong>pack</strong> o un <strong>flujo 100% a medida</strong>? Escríbeme y lo definimos juntos.</p>
       </div>
     </section>
 
@@ -507,6 +478,7 @@
       <div class="mx-auto max-w-6xl px-4">
         <div class="mb-10">
           <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Contacto</h2>
+        <p class="text-neutral-400 mt-2 max-w-3xl">Cuéntame tu objetivo, el plazo y el punto de partida. Te propongo el camino más corto y un alcance claro.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="card rounded-2xl p-6">
@@ -547,8 +519,17 @@
           <a data-href="ig" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
         </div>
       </div>
-      <p class="text-center text-neutral-400 text-base md:text-lg mt-6">El contenido que transforma no se improvisa: se diseña, se mide y se mejora.</p>
-      <script>document.getElementById('year').textContent = new Date().getFullYear(); lucide.createIcons();</script>
+      <p class="text-center text-neutral-500 text-sm mt-6">El contenido que transforma no se improvisa: se diseña, se mide y se mejora.</p>
+      <script>
+        // Año + render de iconos con fallback robusto
+        document.getElementById('year').textContent = new Date().getFullYear();
+        if (window.lucide && window.lucide.createIcons) {
+          window.lucide.createIcons();
+        }
+        window.addEventListener('load', () => {
+          if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+        });
+      </script>
     </footer>
   </body>
 </html>
