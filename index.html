@@ -680,6 +680,7 @@
 
       form.reset();
       okEl.classList.remove('hidden');
+      okEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     } catch (err) {
       errEl.classList.remove('hidden');
     } finally {
