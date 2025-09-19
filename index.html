@@ -595,20 +595,100 @@
             </div>
           </div>
           <div class="card rounded-2xl p-6 md:col-span-2">
-            <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <label class="sr-only" for="nombre">Nombre</label>
-              <input id="nombre" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Nombre" />
-              <label class="sr-only" for="correo">Email</label>
-              <input id="correo" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Email" />
-              <label class="sr-only" for="asunto">Asunto</label>
-              <input id="asunto" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Asunto" />
-              <label class="sr-only" for="mensaje">Mensaje</label>
-              <textarea id="mensaje" rows="5" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Cuéntame brevemente tu proyecto (objetivo, canales, deadline, presupuesto orientativo)"></textarea>
-              <button type="button" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Enviar mensaje">
-                Enviar (conéctalo luego a Formspree / n8n)
-              </button>
-              <p class="text-xs text-neutral-500 md:col-span-2">Incluye: objetivo, canales implicados, deadline y presupuesto orientativo.</p>
-            </form>
+          <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-4" novalidate>
+  <label class="sr-only" for="nombre">Nombre</label>
+  <input id="nombre" name="nombre" required autocomplete="name"
+         class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500"
+         placeholder="Nombre" />
+
+  <label class="sr-only" for="correo">Email</label>
+  <input id="correo" name="email" type="email" required autocomplete="email"
+         class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500"
+         placeholder="Email" />
+
+  <label class="sr-only" for="asunto">Asunto</label>
+  <input id="asunto" name="asunto" required
+         class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2"
+         placeholder="Asunto" />
+
+  <label class="sr-only" for="mensaje">Mensaje</label>
+  <textarea id="mensaje" name="mensaje" rows="5" required
+            class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2"
+            placeholder="Cuéntame brevemente tu proyecto (objetivo, canales, deadline, presupuesto orientativo)"></textarea>
+
+  <!-- anti‑spam (honeypot) -->
+  <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <!-- extras -->
+  <input type="hidden" name="_subject" value="Nueva consulta — maxriveras.com">
+  <input type="hidden" name="origen" value="web-landing">
+  <input type="hidden" name="_replyto" value="" id="replyto-hidden"><!-- lo rellenamos con el email del usuario -->
+
+  <button id="sendBtn" type="submit"
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
+    Enviar
+  </button>
+
+  <p id="form-ok" class="hidden text-green-400 text-sm md:col-span-2" aria-live="polite">
+    ¡Gracias! Te respondo en 24–48 h a <strong>maxtona@gmail.com</strong> si me escribiste desde otra cuenta, mencionalo en el mensaje.
+  </p>
+  <p id="form-err" class="hidden text-red-400 text-sm md:col-span-2" aria-live="assertive">
+    Ups, no se pudo enviar. Escríbeme a <a href="mailto:maxtona@gmail.com" class="underline">maxtona@gmail.com</a>.
+  </p>
+
+  <p class="text-xs text-neutral-500 md:col-span-2">
+    Incluye: objetivo, canales implicados, deadline y presupuesto orientativo.
+  </p>
+</form>
+
+<script>
+  // Tu endpoint de Formspree
+  const ENDPOINT = "https://formspree.io/f/mgvlgaov";
+
+  const form  = document.getElementById('contact-form');
+  const btn   = document.getElementById('sendBtn');
+  const okEl  = document.getElementById('form-ok');
+  const errEl = document.getElementById('form-err');
+  const emailInput = document.getElementById('correo');
+  const replytoHidden = document.getElementById('replyto-hidden');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    okEl.classList.add('hidden');
+    errEl.classList.add('hidden');
+
+    // pequeña validación nativa
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // aseguramos Reply-To en Formspree
+    replytoHidden.value = emailInput.value;
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!res.ok) throw new Error('bad status');
+
+      form.reset();
+      okEl.classList.remove('hidden');
+    } catch (err) {
+      errEl.classList.remove('hidden');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Enviar';
+    }
+  });
+</script>
+
           </div>
         </div>
       </div>
