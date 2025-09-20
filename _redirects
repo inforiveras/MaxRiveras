@@ -1,0 +1,4 @@
+# fuerza https y sin www
+http://maxriveras.com/*      https://maxriveras.com/:splat 301!
+http://www.maxriveras.com/*  https://maxriveras.com/:splat 301!
+https://www.maxriveras.com/* https://maxriveras.com/:splat 301!
