@@ -1,89 +1,115 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil</title>
-    <meta name="description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
-    <meta property="og:title" content="Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil" />
-    <meta property="og:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
-    <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#8b5cf6" />
-    <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = { theme: { extend: { colors: { accent: { 50: '#f5f3ff',100: '#ede9fe',200: '#ddd6fe',300: '#c4b5fd',400: '#a78bfa',500: '#8b5cf6',600: '#7c3aed',700: '#6d28d9',800: '#5b21b6',900: '#4c1d95'}}}}};
-    </script>
-    <!-- IMPORTANTE: sin 'defer' para que esté disponible antes de createIcons() -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-   <style>
-  /* Fondo lila original SIN halo */
-  body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615); }
-  .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
-  .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
-  .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
-  html { scroll-behavior: smooth; }
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
-  :root { --accent: #8b5cf6; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil</title>
+  <meta name="description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
+  <meta name="theme-color" content="#8b5cf6" />
 
-  /* Logos: estabilidad + GPU (evita parpadeos y saltos) */
-  .logo-wrap { contain: layout paint; }
-  .logo-wrap img{
-    display:block;
-    max-height:100%;
-    width:auto;
-    object-fit:contain;
-    filter:grayscale(100%);
-    opacity:.75;
-    transition:opacity .2s ease, filter .2s ease, transform .2s ease;
-    backface-visibility:hidden;
-    transform:translateZ(0);
+  <!-- Canonical -->
+  <link rel="canonical" href="https://maxriveras.com/">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="mask-icon" href="/favicon.svg" color="#8b5cf6">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil" />
+  <meta property="og:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maxriveras.com/" />
+  <meta property="og:locale" content="es_ES" />
+  <!-- Si más adelante subes una imagen 1200x630 como /og-cover.jpg, descomenta:
+  <meta property="og:image" content="https://maxriveras.com/og-cover.jpg">
+  <meta property="og:image:alt" content="Max Riveras Gil — Contenido, Vídeo y Automatización">
+  -->
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil">
+  <meta name="twitter:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes.">
+  <!-- <meta name="twitter:image" content="https://maxriveras.com/og-cover.jpg"> -->
+
+  <!-- Tailwind -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { accent: { 50: '#f5f3ff',100: '#ede9fe',200: '#ddd6fe',300: '#c4b5fd',400: '#a78bfa',500: '#8b5cf6',600: '#7c3aed',700: '#6d28d9',800: '#5b21b6',900: '#4c1d95'}}}}};
+  </script>
+
+  <!-- Iconos (sin defer para createIcons) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Fondo lila original SIN halo */
+    body { background: radial-gradient(80% 50% at 50% -10%, rgba(109,40,217,0.30), #0a0615); }
+    .card { border: 1px solid rgb(38,38,38); background: rgba(20,20,20,0.88); }
+    .chip { border: 1px solid rgb(58,58,58); background: rgb(15,15,15); }
+    .glass { background: rgba(15,15,15,0.85); backdrop-filter: blur(10px); }
+    html { scroll-behavior: smooth; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px; }
+    :root { --accent: #8b5cf6; }
+
+    /* Logos: estabilidad */
+    .logo-wrap { contain: layout paint; }
+    .logo-wrap img{
+      display:block;
+      max-height:100%;
+      width:auto;
+      object-fit:contain;
+      filter:grayscale(100%);
+      opacity:.75;
+      transition:opacity .2s ease, filter .2s ease, transform .2s ease;
+      backface-visibility:hidden;
+      transform:translateZ(0);
+    }
+    .logo-wrap img:hover{ filter:grayscale(0%); opacity:1; transform:translateY(-2px) translateZ(0); }
+
+    /* Añadidos */
+    .logo-wrap a { display:block; border-radius:12px; }
+    .logo-wrap a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+    .logo-wrap figure{ height:3.5rem; display:flex; align-items:center; justify-content:center; }
+    @media (min-width:640px){ .logo-wrap figure{ height:3.5rem; } }
+    @media (min-width:768px){ .logo-wrap figure{ height:4rem; } }
+    .logo-wrap img { max-width:100%; }
+  </style>
+
+  <!-- Schema Person (añadimos url del sitio) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Max Riveras Gil",
+    "jobTitle": "Consultor de contenido y automatización",
+    "email": "mailto:inforiveras.yt@gmail.com",
+    "url": "https://maxriveras.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Tarragona", "addressCountry": "ES" },
+    "sameAs": ["https://instagram.com/maxxriveras"]
   }
-  .logo-wrap img:hover{ filter:grayscale(0%); opacity:1; transform:translateY(-2px) translateZ(0); }
+  </script>
 
-  /* === AÑADIDOS === */
-  .logo-wrap a { display:block; border-radius:12px; }
-  .logo-wrap a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
-  .logo-wrap figure{ height:3.5rem; display:flex; align-items:center; justify-content:center; }
-  @media (min-width:640px){ .logo-wrap figure{ height:3.5rem; } }
-  @media (min-width:768px){ .logo-wrap figure{ height:4rem; } }
-  .logo-wrap img { max-width:100%; }
-</style>
+  <!-- Afiliaciones -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Max Riveras Gil",
+    "affiliation": [
+      { "@type": "Organization", "name": "RAC1" },
+      { "@type": "Organization", "name": "SER Catalunya" },
+      { "@type": "Organization", "name": "COPE" },
+      { "@type": "Organization", "name": "XCatalunya" },
+      { "@type": "Organization", "name": "MareNostrum Sport" },
+      { "@type": "Organization", "name": "Entitat Municipal Descentralitzada de Valldoreix" },
+      { "@type": "SportsOrganization", "name": "Club Bàsquet Salou" },
+      { "@type": "SportsOrganization", "name": "Club Bàsquet AD Torreforta" },
+      { "@type": "CollegeOrUniversity", "name": "Universitat Rovira i Virgili (URV)" }
+    ]
+  }
+  </script>
+</head>
 
-
-    <!-- Schema Person -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Max Riveras Gil",
-      "jobTitle": "Consultor de contenido y automatización",
-      "email": "mailto:inforiveras.yt@gmail.com",
-      "address": { "@type": "PostalAddress", "addressLocality": "Tarragona", "addressCountry": "ES" },
-      "sameAs": ["https://instagram.com/maxxriveras"]
-    }
-    </script>
-
-    <!-- Afiliaciones para reforzar autoridad (TOP SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Max Riveras Gil",
-      "affiliation": [
-        { "@type": "Organization", "name": "RAC1" },
-        { "@type": "Organization", "name": "SER Catalunya" },
-        { "@type": "Organization", "name": "COPE" },
-        { "@type": "Organization", "name": "XCatalunya" },
-        { "@type": "Organization", "name": "MareNostrum Sport" },
-        { "@type": "Organization", "name": "Entitat Municipal Descentralitzada de Valldoreix" },
-        { "@type": "SportsOrganization", "name": "Club Bàsquet Salou" },
-        { "@type": "SportsOrganization", "name": "Club Bàsquet AD Torreforta" },
-        { "@type": "CollegeOrUniversity", "name": "Universitat Rovira i Virgili (URV)" }
-      ]
-    }
-    </script>
-  </head>
 
   <body class="text-neutral-100 min-h-screen">
     <!-- =============== QUICK EDIT ZONE =============== -->
