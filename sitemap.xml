@@ -5,4 +5,28 @@
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://maxriveras.com/#servicios</loc>
+  </url>
+  <url>
+    <loc>https://maxriveras.com/#packs</loc>
+  </url>
+  <url>
+    <loc>https://maxriveras.com/#flujo</loc>
+  </url>
+  <url>
+    <loc>https://maxriveras.com/#proceso</loc>
+  </url>
+  <url>
+    <loc>https://maxriveras.com/#formacion</loc>
+  </url>
+  <url>
+    <loc>https://maxriveras.com/#logos</loc>
+  </url>
+  <url>
+    <loc>https://maxriveras.com/#faq</loc>
+  </url>
+  <url>
+    <loc>https://maxriveras.com/#contacto</loc>
+  </url>
 </urlset>
