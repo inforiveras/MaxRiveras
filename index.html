@@ -42,20 +42,26 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-  /* --- FONDO: degradado + vignette (mejor contraste) --- */
+  /* === FONDO (más suave al inicio + caída más marcada al hacer scroll) === */
   body{
-    /* capa profunda morado->antracita */
     background:
-      radial-gradient(120% 80% at 50% -20%, rgba(109,40,217,.28) 0%, rgba(10,6,21,1) 55%),
-      linear-gradient(180deg, rgba(6,4,12,1) 0%, rgba(10,6,21,1) 60%, rgba(8,6,14,1) 100%);
+      radial-gradient(140% 90% at 50% -30%,
+        rgba(167,139,250,.38) 0%,
+        rgba(167,139,250,.20) 26%,
+        rgba(18,14,28,.98) 58%),
+      linear-gradient(180deg,
+        #0c0814 0%,
+        #0a0712 55%,
+        #08060f 100%);
+    background-attachment: scroll, scroll; /* comportamiento normal pero con transición más notoria */
   }
 
-  /* Tarjetas/chips */
-  .card { border: 1px solid rgb(38,38,38); background: rgba(18,18,18,0.9); }
+  /* Tarjetas / chips */
+  .card { border: 1px solid rgb(38,38,38); background: rgba(18,18,18,0.90); }
   .chip { border: 1px solid rgb(58,58,58); background: rgba(18,18,18,.85); }
   .chip:hover { background: rgba(24,24,24,.95); }
 
-  /* Navbar glass un poco más sólido (reduce ruido del fondo tras texto) */
+  /* Navbar con glass */
   .glass { background: rgba(14,14,14,0.85); backdrop-filter: blur(10px); }
 
   html { scroll-behavior: smooth; }
@@ -64,42 +70,41 @@
   }
   :root { --accent: #8b5cf6; }
 
-  /* --- Texto en gradiente (para highlights del H1) --- */
+  /* === Texto en gradiente (highlights del H1) === */
   .text-grad-1{
     background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    text-shadow: 0 0 0.01px rgba(0,0,0,0); /* evita aliasing en Safari */
+    text-shadow: 0 0 0.01px rgba(0,0,0,0);
   }
   .text-grad-2{
     background: linear-gradient(90deg, #c4b5fd 0%, #8b5cf6 45%, #22d3ee 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
     text-shadow: 0 0 0.01px rgba(0,0,0,0);
   }
-  /* leve sombra sobre heading para asegurar legibilidad en fondos claros */
   .heading-shadow { text-shadow: 0 1px 0 rgba(0,0,0,.25); }
 
-  /* --- Logos: estabilidad + foco accesible --- */
+  /* === Logos flotantes: estabilidad + hover === */
   .logo-wrap { contain: layout paint; }
   .logo-wrap img{
     display:block; max-height:100%; width:auto; object-fit:contain;
-    filter:grayscale(100%); opacity:.8; transition:opacity .2s ease, filter .2s ease, transform .2s ease;
+    filter:grayscale(100%); opacity:.85;
+    transition:opacity .2s ease, filter .2s ease, transform .2s ease;
     backface-visibility:hidden; transform:translateZ(0);
   }
   .logo-wrap img:hover{ filter:grayscale(0%); opacity:1; transform:translateY(-2px) translateZ(0); }
   .logo-wrap a { display:block; border-radius:12px; }
   .logo-wrap a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
   .logo-wrap figure{ height:3.25rem; display:flex; align-items:center; justify-content:center; }
-  @media (min-width:640px){ .logo-wrap figure{ height:3.5rem; } }
+  @media (min-width:640px){ .logo-wrap figure{ height:3.6rem; } }
   @media (min-width:768px){ .logo-wrap figure{ height:4rem; } }
   .logo-wrap img { max-width:100%; }
 
-  /* --- Foto del hero: limitamos altura para evitar hueco raro --- */
-  .hero-photo { max-height: 560px; }
+  /* === Foto del hero: reducimos para cerrar hueco === */
+  .hero-photo { max-height: 480px; }
   @media (min-width:1024px){
-    .hero-photo { max-height: 520px; }
+    .hero-photo { max-height: 500px; } /* un pelín más en desktop pero controlado */
   }
 </style>
-
 
   <!-- Schema Person (añadimos url del sitio) -->
   <script type="application/ld+json">
@@ -207,7 +212,7 @@
 
     <!-- HERO -->
 <header class="relative overflow-hidden">
-  <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 px-4 pt-16 pb-12 md:pb-16">
+  <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 px-4 pt-16 pb-8 md:pb-10">
     <!-- Columna izquierda -->
     <div>
       <!-- Badge -->
@@ -290,51 +295,49 @@
 </header>
 
 
-    <!-- LOGOS / COLABORACIONES (clic a web oficial) -->
-<section id="logos" aria-labelledby="confian-title" class="py-10 md:py-12">
+    <!-- LOGOS / COLABORACIONES -->
+<section id="logos" aria-labelledby="confian-title" class="pt-8 pb-12 md:pt-10 md:pb-14">
   <div class="mx-auto max-w-6xl px-4">
     <div class="mb-5 flex items-center justify-between gap-4">
       <h2 id="confian-title"
-          class="text-xs md:text-sm font-semibold uppercase tracking-[.18em] text-neutral-200 flex items-center gap-2">
+          class="text-[11px] md:text-xs font-semibold uppercase tracking-[.18em] text-neutral-200/95 flex items-center gap-2">
         <i data-lucide="shield-check" class="w-4 h-4" aria-hidden="true"></i>
         CONFÍAN EN MÍ / HE COLABORADO CON
       </h2>
-      <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-[11px] text-neutral-300 border border-neutral-800">
+      <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-[11px] text-neutral-300/90 border border-neutral-800/70">
         Medios, instituciones y clubes
       </span>
     </div>
 
-    <div class="rounded-2xl border border-neutral-900/70 bg-neutral-950/40 p-4 md:p-5">
-      <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
-        <!-- (deja tus <a><figure><img> tal cual) -->
-        <a href="https://www.rac1.cat/" target="_blank" rel="noopener noreferrer" aria-label="RAC1 (se abre en nueva pestaña)" title="RAC1 — web oficial">
-          <figure><img src="assets/logos/rac1.png" alt="RAC1" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://cadenaser.com/cataluna/" target="_blank" rel="noopener noreferrer" aria-label="SER Catalunya" title="SER Catalunya — web oficial">
-          <figure><img src="assets/logos/ser-catalunya.png" alt="SER Catalunya" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://www.cope.es/" target="_blank" rel="noopener noreferrer" aria-label="COPE" title="COPE — web oficial">
-          <figure><img src="assets/logos/cope.png" alt="COPE" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://www.xcatalunya.cat/" target="_blank" rel="noopener noreferrer" aria-label="XCatalunya" title="XCatalunya — web oficial">
-          <figure><img src="assets/logos/xcatalunya.png" alt="XCatalunya" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://marenostrumbasket.com/" target="_blank" rel="noopener noreferrer" aria-label="MareNostrum Basket" title="MareNostrum Basket — web oficial">
-          <figure><img src="assets/logos/marenostrum-basket.png" alt="MareNostrum Basket" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://www.emdvalldoreix.cat/" target="_blank" rel="noopener noreferrer" aria-label="EMD Valldoreix" title="EMD Valldoreix — web oficial">
-          <figure><img src="assets/logos/emd-valldoreix.png" alt="EMD Valldoreix" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://www.cbsalou.com/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet Salou" title="CB Salou — web oficial">
-          <figure><img src="assets/logos/cb-salou.png" alt="Club Bàsquet Salou" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://adtorreforta.cat/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet AD Torreforta" title="AD Torreforta — web oficial">
-          <figure><img src="assets/logos/ad-torreforta.png" alt="Club Bàsquet AD Torreforta" loading="lazy" decoding="async"></figure>
-        </a>
-        <a href="https://www.urv.cat/" target="_blank" rel="noopener noreferrer" aria-label="Universitat Rovira i Virgili" title="URV — web oficial">
-          <figure><img src="assets/logos/urv.png" alt="Universitat Rovira i Virgili (URV)" loading="lazy" decoding="async"></figure>
-        </a>
-      </div>
+    <!-- Logos flotantes (sin fondo ni borde envolvente) -->
+    <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
+      <a href="https://www.rac1.cat/" target="_blank" rel="noopener noreferrer" aria-label="RAC1 (se abre en nueva pestaña)" title="RAC1 — web oficial">
+        <figure><img src="assets/logos/rac1.png" alt="RAC1" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://cadenaser.com/cataluna/" target="_blank" rel="noopener noreferrer" aria-label="SER Catalunya" title="SER Catalunya — web oficial">
+        <figure><img src="assets/logos/ser-catalunya.png" alt="SER Catalunya" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://www.cope.es/" target="_blank" rel="noopener noreferrer" aria-label="COPE" title="COPE — web oficial">
+        <figure><img src="assets/logos/cope.png" alt="COPE" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://www.xcatalunya.cat/" target="_blank" rel="noopener noreferrer" aria-label="XCatalunya" title="XCatalunya — web oficial">
+        <figure><img src="assets/logos/xcatalunya.png" alt="XCatalunya" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://marenostrumbasket.com/" target="_blank" rel="noopener noreferrer" aria-label="MareNostrum Basket" title="MareNostrum Basket — web oficial">
+        <figure><img src="assets/logos/marenostrum-basket.png" alt="MareNostrum Basket" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://www.emdvalldoreix.cat/" target="_blank" rel="noopener noreferrer" aria-label="EMD Valldoreix" title="EMD Valldoreix — web oficial">
+        <figure><img src="assets/logos/emd-valldoreix.png" alt="EMD Valldoreix" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://www.cbsalou.com/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet Salou" title="CB Salou — web oficial">
+        <figure><img src="assets/logos/cb-salou.png" alt="Club Bàsquet Salou" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://adtorreforta.cat/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet AD Torreforta" title="AD Torreforta — web oficial">
+        <figure><img src="assets/logos/ad-torreforta.png" alt="Club Bàsquet AD Torreforta" loading="lazy" decoding="async"></figure>
+      </a>
+      <a href="https://www.urv.cat/" target="_blank" rel="noopener noreferrer" aria-label="Universitat Rovira i Virgili" title="URV — web oficial">
+        <figure><img src="assets/logos/urv.png" alt="Universitat Rovira i Virgili (URV)" loading="lazy" decoding="async"></figure>
+      </a>
     </div>
   </div>
 </section>
