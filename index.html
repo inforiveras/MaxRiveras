@@ -42,7 +42,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-  /* === FONDO (más suave al inicio + caída más marcada al hacer scroll) === */
+  /* === FONDO === */
   body{
     background:
       radial-gradient(140% 90% at 50% -30%,
@@ -53,7 +53,7 @@
         #0c0814 0%,
         #0a0712 55%,
         #08060f 100%);
-    background-attachment: scroll, scroll; /* comportamiento normal pero con transición más notoria */
+    background-attachment: scroll, scroll;
   }
 
   /* Tarjetas / chips */
@@ -70,7 +70,7 @@
   }
   :root { --accent: #8b5cf6; }
 
-  /* === Texto en gradiente (highlights del H1) === */
+  /* === Texto en gradiente (H1) === */
   .text-grad-1{
     background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -83,7 +83,7 @@
   }
   .heading-shadow { text-shadow: 0 1px 0 rgba(0,0,0,.25); }
 
-  /* === Logos flotantes: estabilidad + hover === */
+  /* === Logos flotantes === */
   .logo-wrap { contain: layout paint; }
   .logo-wrap img{
     display:block; max-height:100%; width:auto; object-fit:contain;
@@ -100,7 +100,7 @@
   .logo-wrap img { max-width:100%; }
   </style>
 
-  <!-- Schema Person (añadimos url del sitio) -->
+  <!-- Schema Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -159,7 +159,8 @@
           "[data-text=location]": MAX_DATA.location,
           "[data-text=ig]": MAX_DATA.instagramHandle
         })) document.querySelectorAll(k).forEach(n => n.textContent = v);
-        document.querySelectorAll("[data-href=email]").forEach(n => n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`);
+        document.querySelectorAll("[data-href=email]").forEach(n => n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`;
+        );
         document.querySelectorAll("[data-href=ig]").forEach(n => n.href = MAX_DATA.instagramUrl);
         document.querySelectorAll("[data-cond=phone]").forEach(n => { if (!MAX_DATA.phone) n.style.display = "none"; });
         document.querySelectorAll("[data-border-accent]").forEach(n => n.style.borderColor = MAX_DATA.accentHex);
@@ -208,12 +209,10 @@
   <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 px-4 pt-16 pb-6 md:pb-8">
     <!-- Columna izquierda -->
     <div>
-      <!-- Badge -->
       <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/80 px-4 py-2 text-sm text-neutral-200">
         <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i> Disponible para proyectos
       </span>
 
-      <!-- H1 -->
       <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight heading-shadow">
         <span class="text-white" data-text="role"></span>:
         <span class="text-white">
@@ -225,7 +224,6 @@
 
       <p class="mt-4 text-neutral-300" data-text="tagline"></p>
 
-      <!-- CTA -->
       <div class="mt-6 flex flex-wrap items-center gap-3">
         <a href="#servicios"
            class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200
@@ -343,7 +341,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      <!-- NUEVO: Web / Landing -->
+      <!-- Web / Landing -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="globe-2" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -356,6 +354,7 @@
         </ul>
       </div>
 
+      <!-- Contenido -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="pen-square" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -368,6 +367,7 @@
         </ul>
       </div>
 
+      <!-- Edición -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="video" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -380,6 +380,7 @@
         </ul>
       </div>
 
+      <!-- Redes -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="images" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -392,6 +393,7 @@
         </ul>
       </div>
 
+      <!-- Audiencia -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="bar-chart-3" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -404,19 +406,41 @@
         </ul>
       </div>
 
+      <!-- Automatizaciones (NUEVO DL RESPONSIVO) -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="workflow" class="w-6 h-6" aria-hidden="true"></i></div>
           <h3 class="text-lg font-semibold">Automatizaciones (n8n)</h3>
         </div>
-        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i><strong>Atención 24/7 que convierte:</strong> chat que responde dudas, capta leads y agenda citas.</li>
-          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i><strong>Publicación sin manos:</strong> de un vídeo largo salen clips, copies y posts programados.</li>
-          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i><strong>Dirección por datos:</strong> informe semanal claro con qué repetir y qué parar.</li>
-        </ul>
-        <p class="text-sm text-neutral-400 mt-2">Ahorro típico: 5–20 h/semana. Menos tareas repetidas, más foco en crecer.</p>
+
+        <!-- Lista en dos columnas en desktop, una en móvil -->
+        <dl class="mt-4 space-y-3 text-sm">
+          <div class="grid grid-cols-1 md:grid-cols-[max-content,1fr] gap-x-3 gap-y-1 items-start">
+            <dt class="font-medium md:text-neutral-100 md:before:content-['•'] md:before:mr-2 whitespace-nowrap">
+              Atención 24/7 que convierte
+            </dt>
+            <dd class="text-neutral-300 leading-relaxed">Chat que responde dudas, capta leads y agenda citas.</dd>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-[max-content,1fr] gap-x-3 gap-y-1 items-start">
+            <dt class="font-medium md:text-neutral-100 md:before:content-['•'] md:before:mr-2 whitespace-nowrap">
+              Publicación sin manos
+            </dt>
+            <dd class="text-neutral-300 leading-relaxed">De un vídeo largo salen clips, copies y posts programados.</dd>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-[max-content,1fr] gap-x-3 gap-y-1 items-start">
+            <dt class="font-medium md:text-neutral-100 md:before:content-['•'] md:before:mr-2 whitespace-nowrap">
+              Dirección por datos
+            </dt>
+            <dd class="text-neutral-300 leading-relaxed">Informe semanal claro con qué repetir y qué parar.</dd>
+          </div>
+        </dl>
+
+        <p class="text-sm text-neutral-400 mt-3">Ahorro típico: 5–20 h/semana. Menos tareas repetidas, más foco en crecer.</p>
       </div>
 
+      <!-- Coordinación -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="settings-2" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -455,7 +479,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <!-- NUEVO: Pack Web express -->
+      <!-- Pack Web express -->
       <div class="card rounded-2xl p-6">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="layout" class="w-6 h-6"></i></div>
@@ -567,25 +591,24 @@
       <p class="text-sm text-neutral-400 mt-3">Impacto habitual: + velocidad de respuesta, + consistencia de publicación y ahorro de 5–20 h semanales.</p>
     </div>
   </div>
-  <!-- CTA intermedio: Automatización -->
-<div class="mt-8">
-  <div class="card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-    <div>
-      <h3 class="text-xl font-semibold">¿Listo para automatizar lo repetitivo?</h3>
-      <p class="text-neutral-300 mt-1">
-        En una llamada de 30′ definimos 1–2 automatizaciones de impacto para tu marca.
-      </p>
-    </div>
 
-    <a href="#contacto"
-       class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200
-              focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30"
-       aria-label="Quiero automatizar">
-      Quiero automatizar
-      <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i>
-    </a>
+  <!-- CTA intermedio: Automatización -->
+  <div class="mt-8 mx-auto max-w-6xl px-4">
+    <div class="card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div>
+        <h3 class="text-xl font-semibold">¿Listo para automatizar lo repetitivo?</h3>
+        <p class="text-neutral-300 mt-1">En una llamada de 30′ definimos 1–2 automatizaciones de impacto para tu marca.</p>
+      </div>
+
+      <a href="#contacto"
+         class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200
+                focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30"
+         aria-label="Quiero automatizar">
+        Quiero automatizar
+        <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
-</div>
 </section>
 
     <!-- PROCESO -->
@@ -764,9 +787,7 @@
         </form>
 
         <script>
-          // Tu endpoint de Formspree
           const ENDPOINT = "https://formspree.io/f/mpwjvddb";
-
           const form  = document.getElementById('contact-form');
           const btn   = document.getElementById('sendBtn');
           const okEl  = document.getElementById('form-ok');
@@ -784,9 +805,7 @@
               return;
             }
 
-            // aseguramos Reply-To en Formspree
             replytoHidden.value = emailInput.value;
-
             btn.disabled = true;
             btn.textContent = 'Enviando…';
 
@@ -827,11 +846,8 @@
   </div>
   <p class="text-center text-neutral-500 text-sm mt-6">El contenido que transforma no se improvisa: se diseña, se mide y se mejora.</p>
   <script>
-    // Año + render de iconos con fallback robusto
     document.getElementById('year').textContent = new Date().getFullYear();
-    if (window.lucide && window.lucide.createIcons) {
-      window.lucide.createIcons();
-    }
+    if (window.lucide && window.lucide.createIcons) { window.lucide.createIcons(); }
     window.addEventListener('load', () => {
       if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
     });
