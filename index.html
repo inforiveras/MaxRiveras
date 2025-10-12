@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil</title>
-  <meta name="description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para optimizar tu operación y ahorrar horas cada mes." />
+  <meta name="description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
   <meta name="theme-color" content="#8b5cf6" />
 
   <!-- Canonical -->
@@ -16,7 +16,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil" />
-  <meta property="og:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para optimizar tu operación y ahorrar horas cada mes." />
+  <meta property="og:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://maxriveras.com/" />
   <meta property="og:locale" content="es_ES" />
@@ -28,7 +28,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Consultor de Contenido, Vídeo y Automatización (n8n) — Max Riveras Gil">
-  <meta name="twitter:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para optimizar tu operación y ahorrar horas cada mes.">
+  <meta name="twitter:description" content="Sistemas de contenido que rinden: guiones, edición, miniaturas, redes y automatizaciones n8n. Packs base y flujos personalizados para ahorrar horas cada mes.">
   <!-- <meta name="twitter:image" content="https://maxriveras.com/og-cover.jpg"> -->
 
   <!-- Tailwind -->
@@ -53,7 +53,7 @@
         #0c0814 0%,
         #0a0712 55%,
         #08060f 100%);
-    background-attachment: scroll, scroll;
+    background-attachment: scroll, scroll; /* comportamiento normal pero con transición más notoria */
   }
 
   /* Tarjetas / chips */
@@ -100,7 +100,7 @@
   .logo-wrap img { max-width:100%; }
   </style>
 
-  <!-- Schema Person -->
+  <!-- Schema Person (añadimos url del sitio) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -141,7 +141,7 @@
       const MAX_DATA = {
         name: "Max Riveras Gil",
         role: "Contenido, Vídeo y Automatización",
-        tagline: "Implanto sistemas de contenido que te ahorran horas y, además, optimizan tu operación: guiones, edición y miniaturas, gestión de redes y automatizaciones n8n a medida. Más consistencia, menos tareas repetitivas y decisiones con datos.",
+        tagline: "Implanto sistemas de contenido que te ahorran horas y hacen crecer tu marca: guiones, edición y miniaturas, gestión de redes y automatizaciones n8n a medida. Resultado: más consistencia, menos tareas repetitivas y decisiones con datos.",
         email: "inforiveras.yt@gmail.com",
         phone: "",
         location: "Tarragona, España",
@@ -159,8 +159,7 @@
           "[data-text=location]": MAX_DATA.location,
           "[data-text=ig]": MAX_DATA.instagramHandle
         })) document.querySelectorAll(k).forEach(n => n.textContent = v);
-        document.querySelectorAll("[data-href=email]").forEach(n => n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`;
-        );
+        document.querySelectorAll("[data-href=email]").forEach(n => n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`);
         document.querySelectorAll("[data-href=ig]").forEach(n => n.href = MAX_DATA.instagramUrl);
         document.querySelectorAll("[data-cond=phone]").forEach(n => { if (!MAX_DATA.phone) n.style.display = "none"; });
         document.querySelectorAll("[data-border-accent]").forEach(n => n.style.borderColor = MAX_DATA.accentHex);
@@ -344,7 +343,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      <!-- Web / Landing -->
+      <!-- NUEVO: Web / Landing -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="globe-2" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -354,11 +353,9 @@
           <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Diseño limpio y rápido. 100% responsive.</li>
           <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Dominio configurado y alta en Google Search Console.</li>
           <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Velocidad y SEO base: títulos, descripciones y sitemap.</li>
-          <li class="flex gap-2"><i data-lucide="clock-4" class="w-4 h-4 mt-0.5"></i> Entrega típica: <strong>3–5 días</strong>.</li>
         </ul>
       </div>
 
-      <!-- Contenido y guiones -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="pen-square" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -371,7 +368,6 @@
         </ul>
       </div>
 
-      <!-- Edición -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="video" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -384,7 +380,6 @@
         </ul>
       </div>
 
-      <!-- Gestión de redes -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="images" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -397,7 +392,6 @@
         </ul>
       </div>
 
-      <!-- Audiencia -->
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="bar-chart-3" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -410,58 +404,59 @@
         </ul>
       </div>
 
-      <!-- Automatizaciones (n8n) — REESCRITA CLARA Y ATRACTIVA -->
-      <div class="card rounded-2xl p-6 hover:bg-neutral-900">
-        <div class="flex items-center gap-3">
-          <div class="rounded-xl bg-neutral-800 p-3">
-            <i data-lucide="workflow" class="w-6 h-6" aria-hidden="true"></i>
-          </div>
-          <h3 class="text-lg font-semibold">Automatizaciones (n8n)</h3>
-        </div>
-        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Implemento <strong>sistemas que facilitan y optimizan</strong> tu negocio: tú pones la idea, yo la materializo.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Atención al cliente 24/7 (web/WhatsApp/teléfono) con IA y derivaciones al equipo.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Publicación automática: de un vídeo largo salen clips, copies y posts programados.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Correo sin caos: clasifica, resume, plantillas y asignación por prioridad.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Leads y ventas: formularios → CRM, scoring, emails/SMS y facturas automáticas.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Operativa: inventario y stock, pedidos a proveedores y sincronización entre apps.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Dirección por datos: informe semanal con métricas y próximos pasos claros.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Alertas: picos de búsquedas, menciones de marca o caídas de rendimiento.
-          </li>
-          <li class="flex gap-2">
-            <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
-            Conecta con Sheets, Notion, CRM, ecommerce y más — sin copiar/pegar.
-          </li>
-        </ul>
-        <p class="text-sm text-neutral-400 mt-3">
-          Setup inicial listo en la <strong>primera semana</strong>. Flujos personalizados disponibles (coste según alcance).
-        </p>
-      </div>
+      <!-- Automatizaciones (n8n) -->
+<div class="card rounded-2xl p-6 hover:bg-neutral-900">
+  <div class="flex items-center gap-3">
+    <div class="rounded-xl bg-neutral-800 p-3">
+      <i data-lucide="workflow" class="w-6 h-6" aria-hidden="true"></i>
+    </div>
+    <h3 class="text-lg font-semibold">Automatizaciones (n8n)</h3>
+  </div>
 
-      <!-- Coordinación -->
+  <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Chat/IA que atiende 24/7 (web, WhatsApp y teléfono).
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Publicación automática: de un vídeo largo salen clips, copies y posts programados.
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Correos sin caos: clasifica, resume, usa plantillas y deriva a la persona correcta.
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Captación y nutrición de leads: formularios → CRM, scoring y emails de seguimiento.
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Ventas y cobros: presupuestos/facturas automáticas y conciliación básica.
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Operativa: inventario y stock, pedidos a proveedores y sincronización entre apps.
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Dirección por datos: informe semanal con métricas y próximos pasos claros.
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Alertas: picos de búsquedas, menciones de marca o caídas de rendimiento.
+    </li>
+    <li class="flex gap-2">
+      <i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i>
+      Conecta con Sheets, Notion, CRM, ecommerce y más—sin copiar/pegar.
+    </li>
+  </ul>
+
+  <p class="text-sm text-neutral-400 mt-3">
+    Ahorro típico: 5–20 h/semana. Menos tareas repetidas, más foco en crecer.
+  </p>
+</div>
+
       <div class="card rounded-2xl p-6 hover:bg-neutral-900">
         <div class="flex items-center gap-3">
           <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="settings-2" class="w-6 h-6" aria-hidden="true"></i></div>
@@ -488,6 +483,75 @@
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+    <!-- PACKS -->
+<section id="packs" class="py-20 scroll-mt-24">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="mb-10">
+      <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Packs ideales para ti</h2>
+      <p class="text-neutral-400 mt-2 max-w-3xl">Empieza ya. Si necesitas algo más específico, lo ajustamos a medida y cerramos presupuesto según tu operación.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- NUEVO: Pack Web express -->
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3">
+          <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="layout" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-semibold">Web express (5–7 días)</h3>
+        </div>
+        <p class="mt-2 text-sm text-neutral-300">
+          Landing o web sencilla para vender/solicitar contacto. Rápida, clara y lista para indexar.
+        </p>
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Dominio configurado y analítica básica.</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> SEO base + sitemap en Google Search Console.</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Formularios de contacto funcionando.</li>
+        </ul>
+        <p class="mt-3 text-sm text-neutral-400">¿Necesitas blog o más secciones? Lo ampliamos a medida.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3">
+          <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="workflow" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-semibold">Pack n8n — 3 flujos</h3>
+        </div>
+        <p class="mt-2 text-sm text-neutral-300">Elige tres áreas para que trabajen solas: atención 24/7, publicación de contenidos, informes semanales, alertas, traspaso de datos entre apps… Incluye diagnóstico, diseño e implementación + pruebas + monitorización inicial.</p>
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Ahorro estimado: 8–40 h/mes según volumen</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Sin lock-in: sistemas documentados y editables</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Soporte y ajustes iniciales incluidos</li>
+        </ul>
+        <p class="mt-3 text-sm text-neutral-400">¿Necesitas un flujo específico? Personalizamos el pack y alineamos el precio contigo.</p>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3">
+          <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="share-2" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-semibold">Gestión de redes</h3>
+        </div>
+        <p class="mt-2 text-sm text-neutral-300">Plan mensual + publicación + reporting simple. Crecimiento consistente con foco en aprendizajes por plataforma.</p>
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Calendario y guidelines</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Adaptaciones por canal</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Informe con “qué repetir” y “qué cortar”</li>
+        </ul>
+      </div>
+
+      <div class="card rounded-2xl p-6">
+        <div class="flex items-center gap-3">
+          <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="clapperboard" class="w-6 h-6"></i></div>
+          <h3 class="text-lg font-semibold">Edición y miniaturas</h3>
+        </div>
+        <p class="mt-2 text-sm text-neutral-300">Edición de vídeo (Shorts/Largo) + miniaturas centradas en CTR y coherencia visual.</p>
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Guion/ajuste de copy</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Edición en Premiere/DaVinci</li>
+          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Corrección de color y entrega final</li>
+        </ul>
+      </div>
+    </div>
 
     <p class="mt-6 text-neutral-300">¿Quieres un <strong>pack</strong> o un <strong>flujo 100% a medida</strong>? Escríbeme y lo definimos juntos.</p>
   </div>
@@ -499,37 +563,35 @@
     <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Automatización: tu equipo extra que no duerme</h2>
     <p class="text-neutral-300 mt-3 max-w-3xl">
       Piensa en tareas que te roban tiempo cada semana. Ahora imagina que se hacen solas y siempre igual de bien.
-      Mis automatizaciones no solo <em>ahorran horas</em>: también <strong>facilitan y optimizan</strong> cómo funciona tu negocio.
-      Tú propones la idea, yo la materializo (dentro de lo razonable). Flujos personalizados disponibles.
+      Mis automatizaciones conectan tus herramientas, responden a tus clientes y publican por ti. Resultado: más ingresos, menos tareas y cero olvidos.
     </p>
-
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
       <div class="card rounded-2xl p-5">
         <h3 class="font-semibold">Atención 24/7 que convierte</h3>
-        <p class="text-sm text-neutral-300 mt-2">Un chat/IA responde preguntas, capta leads y agenda citas. Nada se queda sin atender.</p>
+        <p class="text-sm text-neutral-300 mt-2">Un chat responde preguntas frecuentes, capta leads cualificados y agenda citas. Sin guardias ni mensajes perdidos.</p>
       </div>
       <div class="card rounded-2xl p-5">
         <h3 class="font-semibold">Publicación sin manos</h3>
-        <p class="text-sm text-neutral-300 mt-2">De un vídeo largo salen clips, copies y miniaturas; se adaptan y se programan solos.</p>
+        <p class="text-sm text-neutral-300 mt-2">De un vídeo largo salen clips, copies y miniaturas. Todo se adapta y se programa en tus redes.</p>
       </div>
       <div class="card rounded-2xl p-5">
         <h3 class="font-semibold">Dirección por datos</h3>
-        <p class="text-sm text-neutral-300 mt-2">Cada semana recibes un resumen claro: qué funcionó, qué repetir y qué parar.</p>
+        <p class="text-sm text-neutral-300 mt-2">Cada semana, un resumen claro en tu email: qué funcionó, qué repetir y qué parar. Decidir es fácil.</p>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
       <div class="card rounded-2xl p-5">
         <h3 class="font-semibold">Operativa sin fricción</h3>
-        <p class="text-sm text-neutral-300 mt-2">Pedidos al CRM, pagos conciliados, archivos ordenados y alertas… sin copiar/pegar.</p>
+        <p class="text-sm text-neutral-300 mt-2">Pedidos al CRM, pagos conciliados, archivos ordenados y alertas de última hora… sin duplicar trabajo ni copiar/pegar.</p>
       </div>
       <div class="card rounded-2xl p-5">
         <h3 class="font-semibold">Velocidad de reacción</h3>
-        <p class="text-sm text-neutral-300 mt-2">Si hay noticia o tendencia, el sistema prepara y publica al momento.</p>
+        <p class="text-sm text-neutral-300 mt-2">Si ocurre algo relevante, el sistema prepara y publica al momento: “agencia de última hora” sin depender de disponibilidad.</p>
       </div>
       <div class="card rounded-2xl p-5">
         <h3 class="font-semibold">Bandeja de entrada ligera</h3>
-        <p class="text-sm text-neutral-300 mt-2">Clasifica, resume y prioriza correos. Llegas a lo importante en minutos.</p>
+        <p class="text-sm text-neutral-300 mt-2">Clasifica, resume y prioriza correos. Llegas a lo importante en minutos, no en horas.</p>
       </div>
     </div>
 
@@ -540,32 +602,30 @@
         <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> “Agencia de última hora”: publicación automática ante noticias o tendencias.</li>
         <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Sistema de contenidos: de una pieza salen 5 y se programan solas.</li>
         <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Asistente de bandeja de entrada: clasifica, resume y prioriza.</li>
-        <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Agentes para WhatsApp o teléfono con triaje y traspaso a humano.</li>
         <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Sincronización entre herramientas (web, CRM, hojas, analítica) sin copias manuales.</li>
       </ul>
-      <p class="text-sm text-neutral-400 mt-3">
-        Setup funcional listo en la <strong>primera semana</strong>. Seguimos <em>mano a mano</em> para ajustar detalles.
+      <p class="text-sm text-neutral-400 mt-3">Impacto habitual: + velocidad de respuesta, + consistencia de publicación y ahorro de 5–20 h semanales.</p>
+    </div>
+  </div>
+  <!-- CTA intermedio: Automatización -->
+<div class="mt-8">
+  <div class="card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div>
+      <h3 class="text-xl font-semibold">¿Listo para automatizar lo repetitivo?</h3>
+      <p class="text-neutral-300 mt-1">
+        En una llamada de 30′ definimos 1–2 automatizaciones de impacto para tu marca.
       </p>
     </div>
-  </div>
 
-  <!-- CTA intermedio: Automatización -->
-  <div class="mt-8">
-    <div class="card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-      <div>
-        <h3 class="text-xl font-semibold">¿Listo para automatizar y optimizar?</h3>
-        <p class="text-neutral-300 mt-1">En una llamada de 30′ definimos 1–2 automatizaciones de impacto para tu marca.</p>
-      </div>
-
-      <a href="#contacto"
-         class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200
-                focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30"
-         aria-label="Quiero automatizar">
-        Quiero automatizar
-        <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i>
-      </a>
-    </div>
+    <a href="#contacto"
+       class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200
+              focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30"
+       aria-label="Quiero automatizar">
+      Quiero automatizar
+      <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i>
+    </a>
   </div>
+</div>
 </section>
 
     <!-- PROCESO -->
@@ -652,8 +712,8 @@
       </div>
 
       <div class="card rounded-2xl p-6">
-        <h3 class="font-semibold">¿Qué es un “flujo” y qué mejora?</h3>
-        <p class="text-sm text-neutral-300 mt-2">Un flujo es una automatización en n8n. Además de ahorrarte 8–40 horas/mes según volumen, mejora la calidad y consistencia de tus procesos.</p>
+        <h3 class="font-semibold">¿Qué es un “flujo” y cuántas horas ahorra?</h3>
+        <p class="text-sm text-neutral-300 mt-2">Un flujo es una automatización en n8n. Según el volumen, puede ahorrarte de 8 a 40 horas al mes eliminando tareas repetitivas.</p>
       </div>
 
       <div class="card rounded-2xl p-6">
@@ -663,7 +723,7 @@
 
       <div class="card rounded-2xl p-6">
         <h3 class="font-semibold">Plazos y forma de trabajo</h3>
-        <p class="text-sm text-neutral-300 mt-2">Web/Landing en <strong>3–5 días</strong>. Automatización con setup funcional en la <strong>primera semana</strong>. Trabajamos en sprints con entregables y ajustes mano a mano.</p>
+        <p class="text-sm text-neutral-300 mt-2">Trabajamos en sprints semanales con entregables. Alineamos metas al inicio y medimos resultados de forma continua.</p>
       </div>
 
       <div class="card rounded-2xl p-6">
@@ -744,6 +804,7 @@
         </form>
 
         <script>
+          // Tu endpoint de Formspree
           const ENDPOINT = "https://formspree.io/f/mpwjvddb";
 
           const form  = document.getElementById('contact-form');
@@ -763,6 +824,7 @@
               return;
             }
 
+            // aseguramos Reply-To en Formspree
             replytoHidden.value = emailInput.value;
 
             btn.disabled = true;
@@ -801,8 +863,11 @@
     <div class="flex items-center gap-4">
       <a data-href="email" class="hover:text-white">Email</a>
       <a data-href="ig" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
-      <a href="/privacidad.html" class="hover:text-white">Política de Privacidad</a>
     </div>
+  <a data-href="email" class="hover:text-white">Email</a>
+  <a data-href="ig" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
+  <a href="/privacidad.html" class="hover:text-white">Política de Privacidad</a>
+</div>
   </div>
   <p class="text-center text-neutral-500 text-sm mt-6">El contenido que transforma no se improvisa: se diseña, se mide y se mejora.</p>
   <script>
