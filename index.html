@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>Periodista deportivo, creador de contenido y locutor — Max Riveras</title>
-  <meta name="description" content="Soy periodista deportivo, creador de contenido y locutor. He trabajado en RAC1, COPE y SER Catalunya; speaker en CB Salou, MareNostrum Basket y carreras; moderador URV y ponente en el Centenario de la SER. Demos en vídeo y audio, edición y guiones listos para publicar." />
+  <meta name="description" content="Voz y contenido para marcas y medios. Periodista deportivo licenciado; locución, edición y guiones. Reels NBA, piezas para RAC1 y COPE, y trabajos desde los 17 años. Escucha y mira demos." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#8b5cf6" />
 
@@ -19,7 +19,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Periodista deportivo, creador de contenido y locutor — Max Riveras" />
-  <meta property="og:description" content="Demos en vídeo y audio, edición y guiones. Trabajos en RAC1, COPE y SER Catalunya; speaker CB Salou y MareNostrum Basket; moderador URV; ponente Centenario SER." />
+  <meta property="og:description" content="Voz y contenido para marcas y medios. Locución, edición y guiones. Reels NBA y piezas de radio. Mira y escucha demos." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://maxriveras.com/" />
   <meta property="og:locale" content="es_ES" />
@@ -28,7 +28,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Periodista deportivo, creador de contenido y locutor — Max Riveras">
-  <meta name="twitter:description" content="Demos en vídeo y audio, edición y guiones. Speaker deportivo y radio.">
+  <meta name="twitter:description" content="Voz y contenido para marcas y medios. Locución, edición y guiones. Demos en vídeo y audio.">
 
   <!-- Tailwind -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
@@ -54,12 +54,15 @@
       background:
         radial-gradient(140% 90% at 50% -30%, rgba(167,139,250,.38) 0%, rgba(167,139,250,.20) 26%, rgba(18,14,28,.98) 58%),
         linear-gradient(180deg, #0c0814 0%, #0a0712 55%, #08060f 100%);
+      background-attachment: scroll, scroll;
     }
+
     /* Tarjetas / chips */
     .card { border: 1px solid rgb(38,38,38); background: rgba(18,18,18,0.90); }
     .chip { border: 1px solid rgb(58,58,58); background: rgba(18,18,18,.85); }
     .chip:hover { background: rgba(24,24,24,.95); }
-    /* Navbar */
+
+    /* Navbar glass */
     .glass { background: rgba(14,14,14,0.85); backdrop-filter: blur(10px); }
 
     html { scroll-behavior: smooth; }
@@ -68,11 +71,21 @@
     }
     :root { --accent: #8b5cf6; }
 
-    /* Texto gradiente */
-    .text-grad-1{ background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 0 0.01px rgba(0,0,0,0); }
+    /* H1 moderno y legible */
     .heading-shadow { text-shadow: 0 1px 0 rgba(0,0,0,.25); }
+    .balance { text-wrap: balance; }
+    .h1-grad-1{
+      background: linear-gradient(90deg, #c4b5fd 0%, #8b5cf6 35%, #22d3ee 90%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 0 0.01px rgba(0,0,0,0);
+    }
+    .h1-grad-2{
+      background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 0 0.01px rgba(0,0,0,0);
+    }
 
-    /* Logos clientes */
+    /* Logos flotantes */
     .logo-wrap { contain: layout paint; }
     .logo-wrap img{
       display:block; max-height:100%; width:auto; object-fit:contain;
@@ -90,14 +103,14 @@
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
 
-    /* Tarjetas Links */
+    /* Tarjetas de marca (Links) */
     .brand-card { position: relative; overflow: hidden; }
     .brand-card .shade { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0)); }
     .brand-card .content { position:absolute; bottom:0; left:0; right:0; padding:1rem; display:flex; align-items:center; gap:.5rem; color:white; }
     .brand-card svg { filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
   </style>
 
-  <!-- Schema.org (Person + Demos) -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -114,7 +127,7 @@
       "https://www.tiktok.com/@detrasdeltriple",
       "https://www.facebook.com/profile.php?id=61583070523705"
     ],
-    "knowsAbout": ["Periodismo deportivo","Locución","Edición de vídeo","Guion para YouTube"],
+    "knowsAbout": ["Locución","Periodismo deportivo","Edición de vídeo","Guion para YouTube"],
     "hasPart": [
       {
         "@type": "VideoObject",
@@ -134,7 +147,7 @@
       },
       {
         "@type": "VideoObject",
-        "name": "YouTube — 30s",
+        "name": "YouTube — 30s (demo)",
         "thumbnailUrl": "https://maxriveras.com/assets/demos/covers/youtube30.jpg",
         "contentUrl": "https://maxriveras.com/assets/demos/max-youtube-30s.mp4",
         "encodingFormat": "video/mp4",
@@ -153,7 +166,7 @@
     const MAX_DATA = {
       name: "Max Riveras Gil",
       role: "Periodista deportivo, creador de contenido y locutor",
-      tagline: "Voz y contenido para marcas y medios. Formación en radiofònics y doblaje (EDB). Trabajos en RAC1, COPE y SER Catalunya.",
+      tagline: "Voz y contenido para marcas y medios. Periodista licenciado; locución como foco y, como extras, edición de vídeo/miniaturas y guiones optimizados para YouTube. Experiencia en RAC1, COPE y SER Catalunya.",
       email: "inforiveras.yt@gmail.com",
       phone: "",
       location: "Tarragona, España",
@@ -172,7 +185,8 @@
         "[data-text=ig]": MAX_DATA.instagramHandle
       })) document.querySelectorAll(k).forEach(n => n.textContent = v);
 
-      document.querySelectorAll("[data-href=email]").forEach(n => n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`);
+      // FIX: mailto correcto
+      document.querySelectorAll("[data-href=email]").forEach(n => { n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`; });
       document.querySelectorAll("[data-href=ig]").forEach(n => n.href = MAX_DATA.instagramUrl);
       document.querySelectorAll("[data-cond=phone]").forEach(n => { if (!MAX_DATA.phone) n.style.display = "none"; });
       document.querySelectorAll("[data-border-accent]").forEach(n => n.style.borderColor = MAX_DATA.accentHex);
@@ -222,43 +236,50 @@
     <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 px-4 pt-16 pb-6 md:pb-8">
       <!-- Columna izquierda -->
       <div class="reveal">
+        <!-- Badge -->
         <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/80 px-4 py-2 text-sm text-neutral-200">
           <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i> Disponible para proyectos
         </span>
 
-        <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-tight heading-shadow">
-          <span class="text-white" data-text="role"></span>
+        <!-- H1 balanceado con gradientes -->
+        <h1 class="mt-4 text-4xl md:text-[46px] lg:text-5xl font-semibold leading-[1.08] heading-shadow balance">
+          <span class="block">Periodista deportivo,</span>
+          <span class="block h1-grad-1">creador de contenido</span>
+          <span class="block">y <span class="h1-grad-2">locutor</span></span>
         </h1>
 
         <p class="mt-4 text-neutral-300 max-w-[65ch]" data-text="tagline"></p>
 
-        <ul class="mt-4 text-neutral-300 text-sm space-y-2">
-          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Speaker deportivo: <strong>CB Salou</strong> y <strong>MareNostrum Basket</strong>, además de carreras.</li>
-          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Moderador en evento de la <strong>URV</strong> y ponente en la conmemoración de los <strong>100 años de la SER</strong>.</li>
-          <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Formación: curso de <strong>radiofònics</strong> y curso de <strong>doblaje de voz</strong> (EDB).</li>
+        <!-- Bullets breves y ordenados -->
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex flex-wrap items-center gap-2"><i data-lucide="mic" class="w-4 h-4 mt-0.5"></i><span>Speaker deportivo:</span><span class="font-semibold">CB Salou</span><span>y</span><span class="font-semibold">MareNostrum Basket</span><span>, además de carreras.</span></li>
+          <li class="flex flex-wrap items-center gap-2"><i data-lucide="users" class="w-4 h-4 mt-0.5"></i><span>Moderador en evento de la</span><span class="font-semibold">URV</span><span> y ponente en la conmemoración </span><span class="font-semibold">100 años de la SER</span>.</li>
+          <li class="flex flex-wrap items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4 mt-0.5"></i><span>Periodista licenciado; curso de</span><span class="font-semibold">radiofònics</span><span> y curso de</span><span class="font-semibold">doblaje de voz</span><span> (EDB). Trayectoria desde los 17 años.</span></li>
         </ul>
 
+        <!-- CTAs -->
         <div class="mt-6 flex flex-wrap items-center gap-3">
-          <a href="#servicios" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Ver qué hago">
+          <a href="#servicios" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200 focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30" aria-label="Ver qué hago">
             Ver qué hago <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
           </a>
-          <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800" aria-label="Pedir propuesta">
+          <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30" aria-label="Pedir propuesta">
             Pedir propuesta
           </a>
         </div>
 
         <p class="mt-2 text-xs text-neutral-400">⏱️ Respondo en 24–48 h laborables.</p>
 
-        <div class="mt-8 flex flex-wrap gap-2 text-xs text-neutral-300">
+        <!-- Chips -->
+        <div class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-300">
           <span class="chip px-3 py-1 rounded-full">CapCut Pro</span>
           <span class="chip px-3 py-1 rounded-full">Adobe Premiere</span>
           <span class="chip px-3 py-1 rounded-full">Adobe Photoshop</span>
           <span class="chip px-3 py-1 rounded-full">DaVinci Resolve</span>
-          <span class="chip px-3 py-1 rounded-full">n8n</span>
           <span class="chip px-3 py-1 rounded-full">YouTube Studio</span>
           <span class="chip px-3 py-1 rounded-full">Google Search Console</span>
           <span class="chip px-3 py-1 rounded-full">Figma</span>
           <span class="chip px-3 py-1 rounded-full">Canva</span>
+          <span class="chip px-3 py-1 rounded-full">Trello/Notion</span>
         </div>
       </div>
 
@@ -266,14 +287,13 @@
       <div class="card rounded-2xl p-5 reveal">
         <h2 class="text-lg font-semibold">Quién soy</h2>
         <ul class="mt-3 space-y-2 text-sm text-neutral-300">
-          <li class="flex gap-2"><i data-lucide="user" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Max Riveras Gil — 21 años</li>
-          <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> Tarragona, España</li>
+          <li class="flex gap-2"><i data-lucide="user" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <span data-text="name"></span> — 21 años</li>
+          <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <span data-text="location"></span></li>
           <li class="flex gap-2"><i data-lucide="instagram" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer" aria-label="Instagram"></a></li>
           <li class="flex gap-2"><i data-lucide="mail" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-text="email" data-href="email" href="#" aria-label="Email"></a></li>
         </ul>
 
         <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 h-80 md:h-96 lg:h-[22rem]">
-          <!-- Sube tu retrato a /max_riveras_foto_1.jpg (1200x1500 aprox.) -->
           <img src="max_riveras_foto_1.jpg" alt="Foto profesional de Max Riveras Gil" class="w-full h-full object-cover object-[50%_30%] block" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async" />
         </div>
       </div>
@@ -287,7 +307,7 @@
         <h2 id="confian-title" class="text-[11px] md:text-xs font-semibold uppercase tracking-[.18em] text-neutral-200/95 flex items-center gap-2">
           <i data-lucide="shield-check" class="w-4 h-4" aria-hidden="true"></i> CONFÍAN EN MÍ / HE COLABORADO CON
         </h2>
-        <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-[11px] text-neutral-300/90 border border-neutral-800/70"> Medios, instituciones y clubes </span>
+        <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-[11px] text-neutral-300/90 border border-neutral-800/70">Medios, instituciones y clubes</span>
       </div>
 
       <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6 reveal">
@@ -297,7 +317,7 @@
         <a href="https://www.xcatalunya.cat/" target="_blank" rel="noopener noreferrer" aria-label="XCatalunya" title="XCatalunya — web oficial"><figure><img src="assets/logos/xcatalunya.png" alt="XCatalunya" loading="lazy" decoding="async" width="320" height="120"></figure></a>
         <a href="https://marenostrumbasket.com/" target="_blank" rel="noopener noreferrer" aria-label="MareNostrum Basket" title="MareNostrum Basket — web oficial"><figure><img src="assets/logos/marenostrum-basket.png" alt="MareNostrum Basket" loading="lazy" decoding="async" width="320" height="120"></figure></a>
         <a href="https://www.emdvalldoreix.cat/" target="_blank" rel="noopener noreferrer" aria-label="EMD Valldoreix" title="EMD Valldoreix — web oficial"><figure><img src="assets/logos/emd-valldoreix.png" alt="EMD Valldoreix" loading="lazy" decoding="async" width="320" height="120"></figure></a>
-        <a href="https://www.cbsalou.com/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet Salou" title="CB Salou — web oficial"><figure><img src="assets/logos/cb-salou.png" alt="CB Salou" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://www.cbsalou.com/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet Salou" title="CB Salou — web oficial"><figure><img src="assets/logos/cb-salou.png" alt="Club Bàsquet Salou" loading="lazy" decoding="async" width="320" height="120"></figure></a>
         <a href="https://adtorreforta.cat/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet AD Torreforta" title="AD Torreforta — web oficial"><figure><img src="assets/logos/ad-torreforta.png" alt="AD Torreforta" loading="lazy" decoding="async" width="320" height="120"></figure></a>
         <a href="https://www.urv.cat/" target="_blank" rel="noopener noreferrer" aria-label="Universitat Rovira i Virgili" title="URV — web oficial"><figure><img src="assets/logos/urv.png" alt="URV" loading="lazy" decoding="async" width="320" height="120"></figure></a>
       </div>
@@ -309,7 +329,7 @@
     <div class="mx-auto max-w-6xl px-4">
       <div class="mb-8 reveal">
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Servicios</h2>
-        <p class="text-neutral-300 mt-2 max-w-[65ch]">Mi foco es la voz y el contenido. También edición y guiones para que tus piezas rindan.</p>
+        <p class="text-neutral-300 mt-2 max-w-[65ch]">Mi foco es la voz. Como extras, edición y guiones para que tus piezas rindan.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -319,7 +339,7 @@
             <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="mic" class="w-6 h-6" aria-hidden="true"></i></div>
             <h3 class="text-lg font-semibold">Voz y locución</h3>
           </div>
-          <p class="mt-3 text-sm text-neutral-300">Spots, vídeos, narraciones y piezas deportivas (NBA).</p>
+          <p class="mt-3 text-sm text-neutral-300">Voz profesional para spots, vídeos, narraciones y piezas deportivas (NBA).</p>
           <ul class="mt-3 space-y-2 text-sm text-neutral-300">
             <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Entrega con calidad de estudio</li>
             <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Tono y ritmo a medida</li>
@@ -350,7 +370,7 @@
             <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="pen-square" class="w-6 h-6" aria-hidden="true"></i></div>
             <h3 class="text-lg font-semibold">Guiones y adaptación</h3>
           </div>
-          <p class="mt-3 text-sm text-neutral-300">Guiones listos para grabar (YouTube como caso típico).</p>
+          <p class="mt-3 text-sm text-neutral-300">Guiones listos para grabar (YouTube como caso típico) y adaptados a tu voz.</p>
           <ul class="mt-3 space-y-2 text-sm text-neutral-300">
             <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Hooks claros y estructura</li>
             <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Optimización para retención</li>
@@ -370,7 +390,6 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <!-- Instagram personal -->
         <a href="https://www.instagram.com/maxxriveras/" target="_blank" rel="me noopener noreferrer"
            class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="Instagram personal de Max">
           <img src="assets/links/ig-gradient.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
@@ -381,7 +400,6 @@
           </div>
         </a>
 
-        <!-- Instagram NBA -->
         <a href="https://www.instagram.com/detrasdeltriple/" target="_blank" rel="me noopener noreferrer"
            class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="Instagram Detrás del Triple">
           <img src="assets/links/ig-nba.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
@@ -392,7 +410,6 @@
           </div>
         </a>
 
-        <!-- YouTube NBA -->
         <a href="https://www.youtube.com/@DetrasDelTriple" target="_blank" rel="me noopener noreferrer"
            class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="YouTube Detrás del Triple">
           <img src="assets/links/yt-red.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
@@ -403,7 +420,6 @@
           </div>
         </a>
 
-        <!-- TikTok -->
         <a href="https://www.tiktok.com/@detrasdeltriple" target="_blank" rel="me noopener noreferrer"
            class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="TikTok Detrás del Triple">
           <img src="assets/links/tt-black.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
@@ -414,7 +430,6 @@
           </div>
         </a>
 
-        <!-- Facebook -->
         <a href="https://www.facebook.com/profile.php?id=61583070523705" target="_blank" rel="me noopener noreferrer"
            class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="Facebook de Max">
           <img src="assets/links/fb-blue.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
@@ -428,12 +443,12 @@
     </div>
   </section>
 
-  <!-- DEMOS -->
+  <!-- DEMOS: 3 vídeo (YT 30s horizontal) + 2 audio -->
   <section id="demos" class="py-16 scroll-mt-24">
     <div class="mx-auto max-w-6xl px-4">
       <div class="mb-8 reveal">
         <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Demos</h2>
-        <p class="text-neutral-400 mt-2 max-w-[65ch]">Tres vídeos (2 reels NBA + 30s YouTube) y dos piezas de audio. Solo una demo se reproduce a la vez.</p>
+        <p class="text-neutral-400 mt-2 max-w-[65ch]">Dos reels NBA y una demo de YouTube (vídeo horizontal). Además, dos piezas de radio. Solo una demo se reproduce a la vez.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -465,6 +480,20 @@
           </div>
         </article>
 
+        <!-- VIDEO: YouTube 30s horizontal -->
+        <article class="card rounded-2xl p-6 reveal md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="youtube" class="w-6 h-6"></i></div>
+            <div><h3 class="font-semibold">YouTube — 30s</h3><p class="text-sm text-neutral-400">Demo de locución (formato horizontal)</p></div>
+          </div>
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
+            <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/youtube30.jpg">
+              <source src="assets/demos/max-youtube-30s.mp4" type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
+          </div>
+        </article>
+
         <!-- AUDIO: RAC1 -->
         <article class="card rounded-2xl p-6 reveal">
           <div class="flex items-center gap-3">
@@ -488,20 +517,6 @@
           </div>
           <audio class="mt-4 w-full" controls preload="none" src="assets/demos/max-cope.mp3">Tu navegador no soporta audio HTML5.</audio>
         </article>
-
-        <!-- VIDEO: YouTube 30s (horizontal) -->
-        <article class="card rounded-2xl p-6 reveal md:col-span-2">
-          <div class="flex items-center gap-3">
-            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="youtube" class="w-6 h-6"></i></div>
-            <div><h3 class="font-semibold">YouTube — 30s</h3><p class="text-sm text-neutral-400">Ejemplo de locución (formato horizontal)</p></div>
-          </div>
-          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
-            <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/youtube30.jpg">
-              <source src="assets/demos/max-youtube-30s.mp4" type="video/mp4" />
-              Tu navegador no soporta video HTML5.
-            </video>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -515,22 +530,18 @@
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        <!-- Sube thumbs 800x600 y full 1920x1280 -->
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/1.jpg" aria-label="Abrir imagen 1">
           <img src="assets/galeria/1_thumb.jpg" alt="Max en cabina de locución" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
         </button>
-
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/2.jpg" aria-label="Abrir imagen 2">
           <img src="assets/galeria/2_thumb.jpg" alt="Grabación para proyecto de cliente" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
         </button>
-
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/3.jpg" aria-label="Abrir imagen 3">
           <img src="assets/galeria/3_thumb.jpg" alt="Sesión de voz en estudio" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
         </button>
-
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/4.jpg" aria-label="Abrir imagen 4">
           <img src="assets/galeria/4_thumb.jpg" alt="Evento deportivo narrado" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
@@ -538,7 +549,7 @@
       </div>
     </div>
 
-    <!-- Lightbox accesible -->
+    <!-- Lightbox -->
     <dialog id="lightbox" class="backdrop:bg-black/70 p-0 rounded-xl">
       <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[80vh] object-contain">
     </dialog>
@@ -590,27 +601,22 @@
           <h3 class="font-semibold">¿Qué incluye cada servicio?</h3>
           <p class="text-sm text-neutral-300 mt-2">Un alcance cerrado (entregables definidos) y ajustes menores tras la entrega.</p>
         </div>
-
         <div class="card rounded-2xl p-6 reveal">
           <h3 class="font-semibold">¿Puedo pedir solo voz?</h3>
           <p class="text-sm text-neutral-300 mt-2">Sí. La voz es el servicio principal. Edición y guiones son extras opcionales.</p>
         </div>
-
         <div class="card rounded-2xl p-6 reveal">
           <h3 class="font-semibold">Plazos</h3>
           <p class="text-sm text-neutral-300 mt-2">Demos/pruebas rápidas. Entrega final según duración y revisiones acordadas.</p>
         </div>
-
         <div class="card rounded-2xl p-6 reveal">
           <h3 class="font-semibold">¿Necesito conocimientos técnicos?</h3>
           <p class="text-sm text-neutral-300 mt-2">No. Te entrego archivos listos y, si lo pides, versiones para publicar.</p>
         </div>
-
         <div class="card rounded-2xl p-6 reveal">
           <h3 class="font-semibold">Formatos de entrega</h3>
           <p class="text-sm text-neutral-300 mt-2">Audio WAV/MP3 a medida. Vídeo en el códec y tamaño que necesites.</p>
         </div>
-
         <div class="card rounded-2xl p-6 reveal">
           <h3 class="font-semibold">¿Ofreces soporte?</h3>
           <p class="text-sm text-neutral-300 mt-2">Sí. Soporte inicial incluido; ampliable según tus necesidades.</p>
@@ -756,7 +762,7 @@
       }, { threshold: 0.12 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-      // Reproducción exclusiva
+      // Reproducción exclusiva (audio y vídeo)
       function pauseOthers(exceptEl){
         document.querySelectorAll('audio, video').forEach(m => { if (m !== exceptEl) { m.pause && m.pause(); } });
       }
