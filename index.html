@@ -38,7 +38,11 @@
       theme: {
         extend: {
           colors: {
-            accent: {50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',800:'#5b21b6',900:'#4c1d95'}
+            accent: {
+              50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',
+              400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',
+              800:'#5b21b6',900:'#4c1d95'
+            }
           }
         }
       }
@@ -119,7 +123,11 @@
     "jobTitle": "Periodista deportivo, creador de contenido y locutor",
     "email": "mailto:inforiveras.yt@gmail.com",
     "url": "https://maxriveras.com",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tarragona", "addressCountry": "ES" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tarragona",
+      "addressCountry": "ES"
+    },
     "sameAs": [
       "https://www.instagram.com/maxxriveras/",
       "https://www.instagram.com/detrasdeltriple/",
@@ -153,8 +161,22 @@
         "encodingFormat": "video/mp4",
         "uploadDate": "2025-01-01"
       },
-      { "@type": "AudioObject", "name": "Demo RAC1 — Corte", "inLanguage": "es-ES", "contentUrl": "https://maxriveras.com/assets/demos/max-rac1.mp3", "encodingFormat": "audio/mpeg", "duration": "PT0M30S" },
-      { "@type": "AudioObject", "name": "Demo COPE — Corte", "inLanguage": "es-ES", "contentUrl": "https://maxriveras.com/assets/demos/max-cope.mp3", "encodingFormat": "audio/mpeg", "duration": "PT0M30S" }
+      {
+        "@type": "AudioObject",
+        "name": "Demo SER — Corte",
+        "inLanguage": "ca-ES",
+        "contentUrl": "https://maxriveras.com/assets/demos/max-rac1.mp3",
+        "encodingFormat": "audio/mpeg",
+        "duration": "PT0M30S"
+      },
+      {
+        "@type": "AudioObject",
+        "name": "Demo COPE — Corte",
+        "inLanguage": "es-ES",
+        "contentUrl": "https://maxriveras.com/assets/demos/max-cope.mp3",
+        "encodingFormat": "audio/mpeg",
+        "duration": "PT0M30S"
+      }
     ]
   }
   </script>
@@ -174,6 +196,7 @@
       instagramUrl: "https://www.instagram.com/maxxriveras/",
       accentHex: "#8b5cf6"
     };
+
     document.addEventListener("DOMContentLoaded", () => {
       for (const [k,v] of Object.entries({
         "[data-text=name]": MAX_DATA.name,
@@ -183,15 +206,21 @@
         "[data-text=phone]": MAX_DATA.phone,
         "[data-text=location]": MAX_DATA.location,
         "[data-text=ig]": MAX_DATA.instagramHandle
-      })) document.querySelectorAll(k).forEach(n => n.textContent = v);
+      })) {
+        document.querySelectorAll(k).forEach(n => n.textContent = v);
+      }
 
       // FIX: mailto correcto
       document.querySelectorAll("[data-href=email]").forEach(n => {
-  n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`;
-});
+        n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`;
+      });
       document.querySelectorAll("[data-href=ig]").forEach(n => n.href = MAX_DATA.instagramUrl);
-      document.querySelectorAll("[data-cond=phone]").forEach(n => { if (!MAX_DATA.phone) n.style.display = "none"; });
-      document.querySelectorAll("[data-border-accent]").forEach(n => n.style.borderColor = MAX_DATA.accentHex);
+      document.querySelectorAll("[data-cond=phone]").forEach(n => {
+        if (!MAX_DATA.phone) n.style.display = "none";
+      });
+      document.querySelectorAll("[data-border-accent]").forEach(n => {
+        n.style.borderColor = MAX_DATA.accentHex;
+      });
     });
   </script>
 
@@ -254,9 +283,21 @@
 
         <!-- Bullets breves y ordenados -->
         <ul class="mt-4 space-y-2 text-sm text-neutral-300">
-          <li class="flex flex-wrap items-center gap-2"><i data-lucide="mic" class="w-4 h-4 mt-0.5"></i><span>Speaker deportivo:</span><span class="font-semibold">CB Salou</span><span>y</span><span class="font-semibold">MareNostrum Basket</span><span>, además de carreras.</span></li>
-          <li class="flex flex-wrap items-center gap-2"><i data-lucide="users" class="w-4 h-4 mt-0.5"></i><span>Moderador en evento de la</span><span class="font-semibold">URV</span><span> y ponente en la conmemoración </span><span class="font-semibold">100 años de la SER</span>.</li>
-          <li class="flex flex-wrap items-center gap-2"><i data-lucide="graduation-cap" class="w-4 h-4 mt-0.5"></i><span>Periodista licenciado; curso de</span><span class="font-semibold">radiofònics</span><span> y curso de</span><span class="font-semibold">doblaje de voz</span><span> (EDB). Trayectoria desde los 17 años.</span></li>
+          <li class="flex flex-wrap items-center gap-2">
+            <i data-lucide="mic" class="w-4 h-4 mt-0.5"></i>
+            <span>Speaker deportivo:</span><span class="font-semibold">CB Salou</span><span>y</span>
+            <span class="font-semibold">MareNostrum Basket</span><span>, además de carreras.</span>
+          </li>
+          <li class="flex flex-wrap items-center gap-2">
+            <i data-lucide="users" class="w-4 h-4 mt-0.5"></i>
+            <span>Moderador en evento de la</span><span class="font-semibold">URV</span>
+            <span> y ponente en la conmemoración </span><span class="font-semibold">100 años de la SER</span>.
+          </li>
+          <li class="flex flex-wrap items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-4 h-4 mt-0.5"></i>
+            <span>Periodista licenciado; curso de</span><span class="font-semibold">radiofònics</span>
+            <span> y curso de</span><span class="font-semibold">doblaje de voz</span><span> (EDB). Trayectoria desde los 17 años.</span>
+          </li>
         </ul>
 
         <!-- CTAs -->
@@ -289,10 +330,22 @@
       <div class="card rounded-2xl p-5 reveal">
         <h2 class="text-lg font-semibold">Quién soy</h2>
         <ul class="mt-3 space-y-2 text-sm text-neutral-300">
-          <li class="flex gap-2"><i data-lucide="user" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <span data-text="name"></span> — 21 años</li>
-          <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <span data-text="location"></span></li>
-          <li class="flex gap-2"><i data-lucide="instagram" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer" aria-label="Instagram"></a></li>
-          <li class="flex gap-2"><i data-lucide="mail" class="w-4 h-4 mt-0.5" aria-hidden="true"></i> <a class="underline hover:text-white" data-text="email" data-href="email" href="#" aria-label="Email"></a></li>
+          <li class="flex gap-2">
+            <i data-lucide="user" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <span data-text="name"></span> — 21 años
+          </li>
+          <li class="flex gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <span data-text="location"></span>
+          </li>
+          <li class="flex gap-2">
+            <i data-lucide="instagram" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer" aria-label="Instagram"></a>
+          </li>
+          <li class="flex gap-2">
+            <i data-lucide="mail" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <a class="underline hover:text-white" data-text="email" data-href="email" href="#" aria-label="Email"></a>
+          </li>
         </ul>
 
         <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 h-80 md:h-96 lg:h-[22rem]">
@@ -460,11 +513,25 @@
             <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="video" class="w-6 h-6"></i></div>
             <div><h3 class="font-semibold">NBA — Reel #1</h3><p class="text-sm text-neutral-400">Selección narrada</p></div>
           </div>
-          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
             <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/nba1.jpg">
               <source src="assets/demos/max-nba-reel-1.mp4" type="video/mp4" />
               Tu navegador no soporta video HTML5.
             </video>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo NBA Reel 1">
+              <span class="pointer-events-auto inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-7 h-7" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-7 h-7 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
           </div>
         </article>
 
@@ -474,11 +541,25 @@
             <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="video" class="w-6 h-6"></i></div>
             <div><h3 class="font-semibold">NBA — Reel #2</h3><p class="text-sm text-neutral-400">Selección narrada</p></div>
           </div>
-          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
             <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/nba2.jpg">
               <source src="assets/demos/max-nba-reel-2.mp4" type="video/mp4" />
               Tu navegador no soporta video HTML5.
             </video>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo NBA Reel 2">
+              <span class="pointer-events-auto inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-7 h-7" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-7 h-7 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
           </div>
         </article>
 
@@ -488,11 +569,25 @@
             <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="youtube" class="w-6 h-6"></i></div>
             <div><h3 class="font-semibold">YouTube — 30s</h3><p class="text-sm text-neutral-400">Demo de locución (formato horizontal)</p></div>
           </div>
-          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
             <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/youtube30.jpg">
               <source src="assets/demos/max-youtube-30s.mp4" type="video/mp4" />
               Tu navegador no soporta video HTML5.
             </video>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo YouTube 30s">
+              <span class="pointer-events-auto inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-7 h-7" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-7 h-7 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
           </div>
         </article>
 
@@ -502,10 +597,24 @@
             <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="radio" class="w-6 h-6"></i></div>
             <div><h3 class="font-semibold">RAC1 — Corte</h3><p class="text-sm text-neutral-400">Pieza de radio</p></div>
           </div>
-          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
             <img src="assets/demos/covers/rac1.jpg" alt="Portada demo RAC1" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+            <audio preload="none" src="assets/demos/max-rac1.mp3"></audio>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo RAC1">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-6 h-6" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-6 h-6 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
           </div>
-          <audio class="mt-4 w-full" controls preload="none" src="assets/demos/max-rac1.mp3">Tu navegador no soporta audio HTML5.</audio>
         </article>
 
         <!-- AUDIO: COPE -->
@@ -514,10 +623,24 @@
             <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="radio-tower" class="w-6 h-6"></i></div>
             <div><h3 class="font-semibold">COPE — Corte</h3><p class="text-sm text-neutral-400">Pieza de radio</p></div>
           </div>
-          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800">
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
             <img src="assets/demos/covers/cope.jpg" alt="Portada demo COPE" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+            <audio preload="none" src="assets/demos/max-cope.mp3"></audio>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo COPE">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-6 h-6" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-6 h-6 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
           </div>
-          <audio class="mt-4 w-full" controls preload="none" src="assets/demos/max-cope.mp3">Tu navegador no soporta audio HTML5.</audio>
         </article>
       </div>
     </div>
@@ -533,19 +656,19 @@
 
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/1.jpg" aria-label="Abrir imagen 1">
-          <img src="assets/galeria/1_thumb.jpg" alt="Max en cabina de locución" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <img src="assets/galeria/1.jpg" alt="Max en cabina de locución" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
         </button>
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/2.jpg" aria-label="Abrir imagen 2">
-          <img src="assets/galeria/2_thumb.jpg" alt="Grabación para proyecto de cliente" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <img src="assets/galeria/2.jpg" alt="Grabación para proyecto de cliente" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
         </button>
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/3.jpg" aria-label="Abrir imagen 3">
-          <img src="assets/galeria/3_thumb.jpg" alt="Sesión de voz en estudio" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <img src="assets/galeria/3.jpg" alt="Sesión de voz en estudio" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
         </button>
         <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/4.jpg" aria-label="Abrir imagen 4">
-          <img src="assets/galeria/4_thumb.jpg" alt="Evento deportivo narrado" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <img src="assets/galeria/4.jpg" alt="Evento deportivo narrado" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
         </button>
       </div>
@@ -656,8 +779,14 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="card rounded-2xl p-6 reveal">
-          <div class="flex items-center gap-2 text-neutral-300"><i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i><span data-text="email"></span></div>
-          <div class="mt-2 text-neutral-300">Instagram: <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer"></a></div>
+          <div class="flex items-center gap-2 text-neutral-300">
+            <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+            <span data-text="email"></span>
+          </div>
+          <div class="mt-2 text-neutral-300">
+            Instagram:
+            <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer"></a>
+          </div>
           <div class="mt-6 flex flex-wrap gap-3">
             <a data-href="email" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Escríbeme por email">
               Escríbeme <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
@@ -691,10 +820,17 @@
               Enviar
             </button>
 
-            <p id="form-ok" class="hidden text-green-400 text-sm md:col-span-2" aria-live="polite">¡Gracias! Te respondo en 24–48 h desde <strong>inforiveras.yt@gmail.com</strong>.</p>
-            <p id="form-err" class="hidden text-red-400 text-sm md:col-span-2" aria-live="assertive">Ups, no se pudo enviar. Escríbeme a <a href="mailto:inforiveras.yt@gmail.com" class="underline">inforiveras.yt@gmail.com</a>.</p>
+            <p id="form-ok" class="hidden text-green-400 text-sm md:col-span-2" aria-live="polite">
+              ¡Gracias! Te respondo en 24–48 h desde <strong>inforiveras.yt@gmail.com</strong>.
+            </p>
+            <p id="form-err" class="hidden text-red-400 text-sm md:col-span-2" aria-live="assertive">
+              Ups, no se pudo enviar. Escríbeme a
+              <a href="mailto:inforiveras.yt@gmail.com" class="underline">inforiveras.yt@gmail.com</a>.
+            </p>
 
-            <p class="text-xs text-neutral-500 md:col-span-2">Incluye: objetivo, canales implicados, deadline y presupuesto orientativo.</p>
+            <p class="text-xs text-neutral-500 md:col-span-2">
+              Incluye: objetivo, canales implicados, deadline y presupuesto orientativo.
+            </p>
           </form>
 
           <script>
@@ -711,7 +847,10 @@
               okEl.classList.add('hidden');
               errEl.classList.add('hidden');
 
-              if (!form.checkValidity()) { form.reportValidity(); return; }
+              if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+              }
 
               replytoHidden.value = emailInput.value;
 
@@ -755,21 +894,39 @@
     <script>
       // Año + iconos
       document.getElementById('year').textContent = new Date().getFullYear();
-      if (window.lucide && window.lucide.createIcons) { window.lucide.createIcons(); }
-      window.addEventListener('load', () => { if (window.lucide && window.lucide.createIcons) window.lucide.createIcons(); });
+      if (window.lucide && window.lucide.createIcons) {
+        window.lucide.createIcons();
+      }
+      window.addEventListener('load', () => {
+        if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+      });
 
       // Aparición al entrar en viewport
       const obs = new IntersectionObserver((entries) => {
-        for (const e of entries) { if (e.isIntersecting) { e.target.classList.add('show'); obs.unobserve(e.target); } }
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('show');
+            obs.unobserve(e.target);
+          }
+        }
       }, { threshold: 0.12 });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
       // Reproducción exclusiva (audio y vídeo)
       function pauseOthers(exceptEl){
-        document.querySelectorAll('audio, video').forEach(m => { if (m !== exceptEl) { m.pause && m.pause(); } });
+        document.querySelectorAll('audio, video').forEach(m => {
+          if (m !== exceptEl) {
+            if (typeof m.pause === 'function') {
+              m.pause();
+            }
+          }
+        });
       }
       document.addEventListener('play', (e) => {
-        if (e.target.tagName === 'AUDIO' || e.target.tagName === 'VIDEO') pauseOthers(e.target);
+        const t = e.target;
+        if (t && (t.tagName === 'AUDIO' || t.tagName === 'VIDEO')) {
+          pauseOthers(t);
+        }
       }, true);
 
       // Lightbox
@@ -783,8 +940,67 @@
           img.alt = btn.querySelector('img')?.alt || 'Imagen';
           dlg.showModal();
         });
-        dlg?.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && dlg.open) dlg.close(); });
+        dlg?.addEventListener('click', (e) => {
+          if (e.target === dlg) dlg.close();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && dlg.open) dlg.close();
+        });
+      })();
+
+      // Precarga de imágenes de la galería (para que el lightbox vaya fluido)
+      (function () {
+        const urls = Array.from(document.querySelectorAll('button[data-full]'))
+          .map(btn => btn.getAttribute('data-full'))
+          .filter(Boolean);
+        urls.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+      })();
+
+      // Controles de play centrados (vídeo + audio)
+      (function () {
+        function setupWrapper(wrapper) {
+          const media = wrapper.querySelector('video, audio');
+          const overlay = wrapper.querySelector('[data-play-overlay]');
+          if (!media || !overlay) return;
+
+          const playIcon  = overlay.querySelector('svg[data-icon="play"]');
+          const pauseIcon = overlay.querySelector('svg[data-icon="pause"]');
+
+          function syncOverlay() {
+            if (media.paused) {
+              if (playIcon) playIcon.classList.remove('hidden');
+              if (pauseIcon) pauseIcon.classList.add('hidden');
+              if (media.tagName === 'VIDEO') {
+                overlay.classList.remove('opacity-0');
+              }
+            } else {
+              if (playIcon) playIcon.classList.add('hidden');
+              if (pauseIcon) pauseIcon.classList.remove('hidden');
+              if (media.tagName === 'VIDEO') {
+                overlay.classList.add('opacity-0');
+              }
+            }
+          }
+
+          overlay.addEventListener('click', () => {
+            if (media.paused) {
+              media.play();
+            } else {
+              media.pause();
+            }
+          });
+
+          media.addEventListener('play', syncOverlay);
+          media.addEventListener('pause', syncOverlay);
+
+          // Estado inicial
+          syncOverlay();
+        }
+
+        document.querySelectorAll('[data-media-wrapper]').forEach(setupWrapper);
       })();
     </script>
   </footer>
