@@ -186,7 +186,9 @@
       })) document.querySelectorAll(k).forEach(n => n.textContent = v);
 
       // FIX: mailto correcto
-      document.querySelectorAll("[data-href=email]").forEach(n => { n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`; });
+      document.querySelectorAll("[data-href=email]").forEach(n => {
+  n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`;
+});
       document.querySelectorAll("[data-href=ig]").forEach(n => n.href = MAX_DATA.instagramUrl);
       document.querySelectorAll("[data-cond=phone]").forEach(n => { if (!MAX_DATA.phone) n.style.display = "none"; });
       document.querySelectorAll("[data-border-accent]").forEach(n => n.style.borderColor = MAX_DATA.accentHex);
