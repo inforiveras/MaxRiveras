@@ -850,6 +850,121 @@ ul {
 }
 
 /* ===================================
+   Metrics Bar (Above Fold)
+   =================================== */
+.metrics-bar {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.metrics-bar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+    text-align: center;
+}
+
+.metric-bar-item {
+    padding: var(--spacing-sm);
+    border-right: 1px solid var(--color-border);
+}
+
+.metric-bar-item:last-child {
+    border-right: none;
+}
+
+.metric-bar-value {
+    font-size: 40px;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.metric-bar-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+/* ===================================
+   Hero CTA Note
+   =================================== */
+.hero-cta-note {
+    margin-top: var(--spacing-sm);
+    font-size: 13px;
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+}
+
+/* ===================================
+   Context Note (Contenido Destacado)
+   =================================== */
+.context-note {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.context-note strong {
+    color: var(--color-accent);
+}
+
+/* ===================================
+   CTA Note (Partnerships)
+   =================================== */
+.cta-note {
+    margin-top: var(--spacing-md);
+    font-size: 14px;
+    color: var(--color-text-muted);
+    letter-spacing: 0.03em;
+}
+
+/* ===================================
+   Sticky Mobile CTA
+   =================================== */
+.sticky-cta-mobile {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--color-bg-dark);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.sticky-cta-mobile a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #FF8C5A 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 16px rgba(255, 107, 53, 0.4);
+}
+
+/* ===================================
    Responsive Design
    =================================== */
 @media (max-width: 1024px) {
@@ -870,6 +985,18 @@ ul {
     .why-grid,
     .packages-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metrics-bar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metric-bar-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .metric-bar-item:nth-child(3) {
+        border-right: 1px solid var(--color-border);
     }
 }
 
@@ -901,6 +1028,20 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    .metrics-bar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metric-bar-item {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: var(--spacing-md);
+    }
+
+    .metric-bar-item:last-child {
+        border-bottom: none;
+    }
+
     .stats-bar {
         flex-direction: column;
         gap: var(--spacing-md);
@@ -921,6 +1062,14 @@ ul {
     .footer-social {
         justify-content: center;
     }
+
+    .sticky-cta-mobile {
+        display: block;
+    }
+
+    body {
+        padding-bottom: 80px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -932,5 +1081,9 @@ ul {
 
     .quote-text {
         font-size: 20px;
+    }
+
+    .metric-bar-value {
+        font-size: 32px;
     }
 }
