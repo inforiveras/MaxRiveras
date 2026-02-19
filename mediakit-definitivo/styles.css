@@ -1070,6 +1070,35 @@ ul {
     body {
         padding-bottom: 80px;
     }
+
+    /* Package cards mobile */
+    .package-cta {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .extras-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+        padding: 0 var(--spacing-sm);
+    }
+
+    .extra-item {
+        white-space: normal;
+    }
+
+    .custom-proposal-box {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .custom-proposal-title {
+        font-size: 18px;
+    }
+
+    .package-price {
+        font-size: 22px;
+    }
 }
 
 
@@ -1161,8 +1190,8 @@ ul {
 @media (max-width: 480px) {
 
     :root {
-        --font-size-h1: 32px;
-        --font-size-h2: 28px;
+        --font-size-h1: 30px;
+        --font-size-h2: 24px;
         --font-size-base: 16px;
     }
 
@@ -1171,6 +1200,62 @@ ul {
     }
 
     .metric-bar-value {
-        font-size: 32px;
+        font-size: 28px;
+    }
+
+    /* 1 col metrics bar on very small screens */
+    .metrics-bar-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-bar-item {
+        border-right: none;
+    }
+
+    /* Hero legibility */
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    /* Bigger touch targets */
+    .btn {
+        padding: 16px 24px;
+        min-height: 48px;
+    }
+
+    /* Section title readable */
+    .section-title {
+        font-size: 22px;
+        letter-spacing: -0.01em;
+    }
+
+    /* Package cards */
+    .package-price {
+        font-size: 20px;
+    }
+
+    .package-title {
+        font-size: 18px;
+    }
+
+    .custom-proposal-box {
+        padding: var(--spacing-md);
+    }
+
+    .custom-proposal-title {
+        font-size: 16px;
+    }
+
+    /* Stat values readable */
+    .stat-value {
+        font-size: 28px;
+    }
+
+    .stat-card-value {
+        font-size: 30px;
     }
 }
