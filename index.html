@@ -1,492 +1,1008 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Media Kit de Detrás del Triple - Accede a 3.6M de vistas orgánicas en el nicho NBA hispanohablante. 96.9% retención en shorts, 97.3% alcance orgánico, audiencia masculina 18-44 años. Colaboraciones con marcas deportivas.">
-    <meta name="keywords"
-        content="NBA, creador de contenido, YouTube, influencer deportivo, Max Riveras, Detrásdeltriple, sponsorships">
-    <meta name="author" content="Max Riveras">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://maxriveras.com/mediakit/">
-    <meta property="og:title" content="Detrás del Triple - Media Kit | Creador de Contenido NBA">
-    <meta property="og:description"
-        content="Análisis NBA en español con +1M de vistas y engagement excepcional. Disponible para colaboraciones.">
-    <meta property="og:image" content="https://maxriveras.com/mediakit/fotos/IALOGO1111.png">
+  <!-- SEO -->
+  <title>Periodista deportivo, creador de contenido y locutor — Max Riveras</title>
+  <meta name="description" content="Voz y contenido para marcas y medios. Periodista deportivo licenciado; locución, edición y guiones. Videos/audios para YouTube, piezas para RAC1,  COPE y SER, y trabajos desde los 17 años. Escucha y mira demos." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#8b5cf6" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="fotos/IALOGO1111.png">
-    <link rel="shortcut icon" href="fotos/IALOGO1111.png">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://maxriveras.com/">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://maxriveras.com/mediakit/">
-    <meta property="twitter:title" content="Detrás del Triple - Media Kit | Creador de Contenido NBA">
-    <meta property="twitter:description" content="Análisis NBA en español con +1M de vistas y engagement excepcional.">
-    <meta property="twitter:image" content="https://maxriveras.com/mediakit/fotos/IALOGO1111.png">
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+  <link rel="mask-icon" href="/favicon.svg" color="#8b5cf6">
 
-    <title>Detrás del Triple - Media Kit | Creador de Contenido NBA</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Periodista deportivo, creador de contenido y locutor — Max Riveras" />
+  <meta property="og:description" content="Voz y contenido para marcas y medios. Locución, edición y guiones. Reels NBA y piezas de radio. Mira y escucha demos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maxriveras.com/" />
+  <meta property="og:locale" content="es_ES" />
+  <!-- <meta property="og:image" content="https://maxriveras.com/og-cover.jpg" /> -->
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Periodista deportivo, creador de contenido y locutor — Max Riveras">
+  <meta name="twitter:description" content="Voz y contenido para marcas y medios. Locución, edición y guiones. Demos en vídeo y audio.">
 
-    <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: {
+              50:'#f5f3ff',100:'#ede9fe',200:'#ddd6fe',300:'#c4b5fd',
+              400:'#a78bfa',500:'#8b5cf6',600:'#7c3aed',700:'#6d28d9',
+              800:'#5b21b6',900:'#4c1d95'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Iconos -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Fondo */
+    body{
+      background:
+        radial-gradient(140% 90% at 50% -30%, rgba(167,139,250,.38) 0%, rgba(167,139,250,.20) 26%, rgba(18,14,28,.98) 58%),
+        linear-gradient(180deg, #0c0814 0%, #0a0712 55%, #08060f 100%);
+      background-attachment: scroll, scroll;
+    }
+
+    /* Tarjetas / chips */
+    .card { border: 1px solid rgb(38,38,38); background: rgba(18,18,18,0.90); }
+    .chip { border: 1px solid rgb(58,58,58); background: rgba(18,18,18,.85); }
+    .chip:hover { background: rgba(24,24,24,.95); }
+
+    /* Navbar glass */
+    .glass { background: rgba(14,14,14,0.85); backdrop-filter: blur(10px); }
+
+    html { scroll-behavior: smooth; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--accent, #8b5cf6); outline-offset: 2px;
+    }
+    :root { --accent: #8b5cf6; }
+
+    /* H1 moderno y legible */
+    .heading-shadow { text-shadow: 0 1px 0 rgba(0,0,0,.25); }
+    .balance { text-wrap: balance; }
+    .h1-grad-1{
+      background: linear-gradient(90deg, #c4b5fd 0%, #8b5cf6 35%, #22d3ee 90%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 0 0.01px rgba(0,0,0,0);
+    }
+    .h1-grad-2{
+      background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 0 0.01px rgba(0,0,0,0);
+    }
+
+    /* Logos flotantes */
+    .logo-wrap { contain: layout paint; }
+    .logo-wrap img{
+      display:block; max-height:100%; width:auto; object-fit:contain;
+      filter:grayscale(100%); opacity:.85;
+      transition:opacity .2s ease, filter .2s ease, transform .2s ease;
+      backface-visibility:hidden; transform:translateZ(0);
+    }
+    .logo-wrap img:hover{ filter:grayscale(0%); opacity:1; transform:translateY(-2px) translateZ(0); }
+    .logo-wrap a { display:block; border-radius:12px; }
+    .logo-wrap figure{ height:3.25rem; display:flex; align-items:center; justify-content:center; }
+    @media (min-width:640px){ .logo-wrap figure{ height:3.6rem; } }
+    @media (min-width:768px){ .logo-wrap figure{ height:4rem; } }
+
+    /* Animaciones suaves */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    /* Tarjetas de marca (Links) */
+    .brand-card { position: relative; overflow: hidden; }
+    .brand-card .shade { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0)); }
+    .brand-card .content { position:absolute; bottom:0; left:0; right:0; padding:1rem; display:flex; align-items:center; gap:.5rem; color:white; }
+    .brand-card svg { filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+  </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Max Riveras Gil",
+    "jobTitle": "Periodista deportivo, creador de contenido y locutor",
+    "email": "mailto:inforiveras.yt@gmail.com",
+    "url": "https://maxriveras.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tarragona",
+      "addressCountry": "ES"
+    },
+    "sameAs": [
+      "https://www.instagram.com/maxxriveras/",
+      "https://www.instagram.com/detrasdeltriple/",
+      "https://www.youtube.com/@DetrasDelTriple",
+      "https://www.tiktok.com/@detrasdeltriple",
+      "https://www.facebook.com/profile.php?id=61583070523705"
+    ],
+    "knowsAbout": ["Locución","Periodismo deportivo","Edición de vídeo","Guion para YouTube"],
+    "hasPart": [
+      {
+        "@type": "VideoObject",
+        "name": "NBA Reel #1",
+        "thumbnailUrl": "https://maxriveras.com/assets/demos/covers/nba1.jpg",
+        "contentUrl": "https://maxriveras.com/assets/demos/max-nba-reel-1.mp4",
+        "encodingFormat": "video/mp4",
+        "uploadDate": "2025-01-01"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "NBA Reel #2",
+        "thumbnailUrl": "https://maxriveras.com/assets/demos/covers/nba2.jpg",
+        "contentUrl": "https://maxriveras.com/assets/demos/max-nba-reel-2.mp4",
+        "encodingFormat": "video/mp4",
+        "uploadDate": "2025-01-01"
+      },
+      {
+        "@type": "VideoObject",
+        "name": "YouTube — 30s (demo)",
+        "thumbnailUrl": "https://maxriveras.com/assets/demos/covers/youtube30.jpg",
+        "contentUrl": "https://maxriveras.com/assets/demos/max-youtube-30s.mp4",
+        "encodingFormat": "video/mp4",
+        "uploadDate": "2025-01-01"
+      },
+      {
+        "@type": "AudioObject",
+        "name": "Demo SER — Corte",
+        "inLanguage": "ca-ES",
+        "contentUrl": "https://maxriveras.com/assets/demos/max-ser.mp3",
+        "encodingFormat": "audio/mpeg",
+        "duration": "PT0M30S"
+      },
+      {
+        "@type": "AudioObject",
+        "name": "Demo COPE — Corte",
+        "inLanguage": "es-ES",
+        "contentUrl": "https://maxriveras.com/assets/demos/max-cope.mp3",
+        "encodingFormat": "audio/mpeg",
+        "duration": "PT0M30S"
+      }
+    ]
+  }
+  </script>
 </head>
 
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-left">
-                    <h1 class="hero-title">DETRÁS DEL TRIPLE</h1>
-                    <p class="hero-subtitle">por Max Riveras — Análisis NBA en español</p>
-                    <p class="hero-description">
-                        <span class="highlight">3.6M de vistas orgánicas</span> en el nicho NBA hispanohablante.
-                        Audiencia masculina 18-44 años con <span class="highlight">96.9% de retención</span> en shorts
-                        y <span class="highlight">97.3% de alcance a nuevas audiencias</span> — sin un solo euro en
-                        publicidad.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="mailto:inforiveras.yt@gmail.com" class="btn btn-primary">Ver disponibilidad</a>
-                        <a href="#performance" class="btn btn-secondary">Ver Estadísticas</a>
-                    </div>
-                    <p class="hero-cta-note">Sin compromiso · Respuesta en menos de h</p>
-                </div>
-                <div class="hero-right">
-                    <div class="mockup-container">
-                        <img src="fotos/captura-24-feb.png" alt="Canal de YouTube Detrás del Triple" class="hero-mockup">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<body class="text-neutral-100 min-h-screen">
+  <!-- QUICK EDIT -->
+  <script>
+    const MAX_DATA = {
+      name: "Max Riveras Gil",
+      role: "Periodista deportivo, creador de contenido y locutor",
+      tagline: "Voz y contenido para marcas y medios. Periodista licenciado; locución como foco y, como extras, edición de vídeo/miniaturas y guiones optimizados para YouTube. Experiencia en RAC1, COPE y SER Catalunya.",
+      email: "inforiveras.yt@gmail.com",
+      phone: "",
+      location: "Tarragona, España",
+      instagramHandle: "@maxxriveras",
+      instagramUrl: "https://www.instagram.com/maxxriveras/",
+      accentHex: "#8b5cf6"
+    };
 
-    <!-- Above-fold metrics bar -->
-    <section class="metrics-bar">
-        <div class="container">
-            <div class="metrics-bar-grid">
-                <div class="metric-bar-item">
-                    <div class="metric-bar-value">3.6M</div>
-                    <div class="metric-bar-label">Vistas orgánicas acumuladas</div>
-                </div>
-                <div class="metric-bar-item">
-                    <div class="metric-bar-value">96.9%</div>
-                    <div class="metric-bar-label">Retención media en Shorts</div>
-                </div>
-                <div class="metric-bar-item">
-                    <div class="metric-bar-value">97.3%</div>
-                    <div class="metric-bar-label">Alcance a nuevas audiencias</div>
-                </div>
-                <div class="metric-bar-item">
-                    <div class="metric-bar-value">7.7%</div>
-                    <div class="metric-bar-label">Engagement rate Instagram</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    document.addEventListener("DOMContentLoaded", () => {
+      for (const [k,v] of Object.entries({
+        "[data-text=name]": MAX_DATA.name,
+        "[data-text=role]": MAX_DATA.role,
+        "[data-text=tagline]": MAX_DATA.tagline,
+        "[data-text=email]": MAX_DATA.email,
+        "[data-text=phone]": MAX_DATA.phone,
+        "[data-text=location]": MAX_DATA.location,
+        "[data-text=ig]": MAX_DATA.instagramHandle
+      })) {
+        document.querySelectorAll(k).forEach(n => n.textContent = v);
+      }
 
-    <!-- Audience Overview -->
-    <section class="audience-overview">
-        <div class="container">
-            <h2 class="section-title">AUDIENCIA</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3 class="card-title">Perfil de Audiencia</h3>
-                    <ul class="card-list">
-                        <li>~94% hombres fans de NBA</li>
-                        <li>67% entre 18-44 años (poder adquisitivo)</li>
-                        <li>32% en el segmento 25-34 — el más valioso para marcas</li>
-                        <li>Consumen contenido completo: 96.9% retención en shorts</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Comportamiento</h3>
-                    <ul class="card-list">
-                        <li>Audiencia activa: 7.7% engagement rate (vs 1-3% promedio)</li>
-                        <li>Alta compartibilidad: 43.5K interacciones en 28 días</li>
-                        <li>Consumen videos largos: 45% retención en vídeos de 10+ min</li>
-                        <li>Interesados en deporte, tech y lifestyle masculino</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3 class="card-title">Distribución Geográfica</h3>
-                    <ul class="card-list">
-                        <li>🇪🇸 España: 26% — mercado #1</li>
-                        <li>🇲🇽 México: 18%</li>
-                        <li>🇩🇴 Rep. Dominicana: 10%</li>
-                        <li>🇺🇸 USA (hispano): 7% — mercado clave</li>
-                        <li>🇦🇷 Argentina: 6% · 🇨🇱 Chile: 6%</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+      // FIX: mailto correcto
+      document.querySelectorAll("[data-href=email]").forEach(n => {
+        n.href = `mailto:${MAX_DATA.email}?subject=Colaboración`;
+      });
+      document.querySelectorAll("[data-href=ig]").forEach(n => n.href = MAX_DATA.instagramUrl);
+      document.querySelectorAll("[data-cond=phone]").forEach(n => {
+        if (!MAX_DATA.phone) n.style.display = "none";
+      });
+      document.querySelectorAll("[data-border-accent]").forEach(n => {
+        n.style.borderColor = MAX_DATA.accentHex;
+      });
+    });
+  </script>
 
-    <!-- Channel Performance -->
-    <section id="performance" class="performance">
-        <div class="container">
-            <h2 class="section-title">RENDIMIENTO</h2>
-            <p class="performance-subtitle">Crecimiento constante y orgánico en todas las plataformas. Los videos
-                continúan generando vistas y conversiones mucho después de su publicación.</p>
+  <!-- NAV -->
+  <div class="sticky top-0 z-50 border-b border-neutral-900/80 glass">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between gap-4">
+      <!-- Logo MR -->
+      <a href="/" class="flex items-center gap-3 group" aria-label="Inicio">
+        <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true" class="shrink-0">
+          <defs>
+            <linearGradient id="mrGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a78bfa"/>
+              <stop offset="1" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="url(#mrGrad)" stroke-width="2"/>
+          <g fill="url(#mrGrad)">
+            <path d="M7.5 22V10h2.6l2.1 4.2 2.1-4.2h2.6v12h-2.4v-7.2l-2.3 4.5h-0.1l-2.3-4.5V22H7.5z"/>
+            <path d="M20 10h4.2c2.3 0 3.8 1.3 3.8 3.3 0 1.5-0.8 2.6-2.1 3.1l2.4 5.6h-2.7l-2.1-5h-1.1V22H20V10zm2.6 4.7h1.4c1.1 0 1.8-0.6 1.8-1.5 0-0.9-0.7-1.5-1.8-1.5h-1.4v3z"/>
+          </g>
+        </svg>
+        <span class="text-sm font-medium group-hover:text-white transition-colors" data-text="name"></span>
+      </a>
 
-            <!-- YouTube Stats -->
-            <div class="platform-section">
-                <h3 class="platform-title"><svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                    </svg> YouTube</h3>
-                <div class="stats-bar">
-                    <div class="stat-item">
-                        <div class="stat-label">Suscriptores</div>
-                        <div class="stat-value">4.8K</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Top Video Largo</div>
-                        <div class="stat-value">81.7K</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Top Short</div>
-                        <div class="stat-value">165K</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Retención Videos Largos</div>
-                        <div class="stat-value">45-55%</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Retención Shorts</div>
-                        <div class="stat-value">96.9%</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Swipe Rate Shorts</div>
-                        <div class="stat-value">86%</div>
-                    </div>
-                </div>
-            </div>
+      <nav class="hidden md:flex gap-6 text-sm text-neutral-300" aria-label="Principal">
+        <a href="#servicios" class="hover:text-white">Servicios</a>
+        <a href="#demos" class="hover:text-white">Demos</a>
+        <a href="#links" class="hover:text-white">Links</a>
+        <a href="#galeria" class="hover:text-white">Galería</a>
+        <a href="#logos" class="hover:text-white">Clientes</a>
+        <a href="#proceso" class="hover:text-white">Proceso</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+        <a href="#contacto" class="hover:text-white">Contacto</a>
+      </nav>
 
-            <!-- Instagram Stats -->
-            <div class="platform-section">
-                <h3 class="platform-title"><svg class="platform-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg> Instagram</h3>
-                <div class="stats-bar">
-                    <div class="stat-item">
-                        <div class="stat-label">Seguidores</div>
-                        <div class="stat-value">1.1K</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Visualizaciones <strong style="color:var(--color-accent)">28
-                                días</strong></div>
-                        <div class="stat-value">614K</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Alcance Orgánico</div>
-                        <div class="stat-value">97.3%</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Engagement Rate</div>
-                        <div class="stat-value">7.7%</div>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <div class="stat-label">Top Reel</div>
-                        <div class="stat-value">319K</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-card-icon">📈</div>
-                    <div class="stat-card-value">+484</div>
-                    <div class="stat-card-label">Suscriptores ganados en un solo video</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-card-icon">🌎</div>
-                    <div class="stat-card-value">4</div>
-                    <div class="stat-card-label">Plataformas activas (YouTube, Instagram, TikTok, Facebook)</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Top Videos -->
-    <section class="top-videos">
-        <div class="container">
-            <h2 class="section-title">CONTENIDO DESTACADO</h2>
-            <div class="videos-grid">
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="fotos/draft52019.png" alt="Draft 2019 NBA">
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">DRAFT 2019: La Clase MÁS DECEPCIONANTE</h3>
-                        <p style="color: var(--color-text-muted); font-size: 14px; margin-bottom: 8px;">Video Largo
-                            (11:18)</p>
-                        <div class="video-stats">
-                            <span class="video-stat">81.7K vistas</span>
-                            <span class="video-stat">+484 suscriptores</span>
-                            <span class="video-stat">44% retención</span>
-                            <span class="video-stat">4:58 AVD</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="fotos/THUMB.png" alt="Reel viral NBA">
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">Kobe se enfadó con Lebron James</h3>
-                        <p style="color: var(--color-text-muted); font-size: 14px; margin-bottom: 8px;">Reel de
-                            Instagram</p>
-                        <div class="video-stats">
-                            <span class="video-stat">319K vistas</span>
-                            <span class="video-stat">11.3K likes</span>
-                            <span class="video-stat">397 comentarios</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumbnail">
-                        <img src="fotos/draft-2018-luka-shai-brunson.png" alt="Draft 2018 NBA">
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title">DRAFT 2018: Los ERRORES que Cambiaron la NBA — Luka, Shai, Brunson...
-                        </h3>
-                        <p style="color: var(--color-text-muted); font-size: 14px; margin-bottom: 8px;">Video Largo
-                            (12:33)</p>
-                        <div class="video-stats">
-                            <span class="video-stat">19.9K vistas</span>
-                            <span class="video-stat">+69 suscriptores</span>
-                            <span class="video-stat">47.7% retención</span>
-                            <span class="video-stat">5:58 AVD</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <p class="context-note">💡 Un canal típico con 4.8K suscriptores genera 2K–5K vistas por vídeo. El top vídeo
-                de Detrás del Triple alcanzó <strong>81.7K vistas</strong> — 16x la media del nicho.</p>
-            <div class="video-cta">
-                <a href="https://youtube.com/@DetrasDelTriple" target="_blank" class="btn btn-secondary">Ver más en
-                    YouTube</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Work With Me -->
-    <section class="why-work">
-        <div class="container">
-            <h2 class="section-title">POR QUÉ TRABAJAR CONMIGO</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">🚀</div>
-                    <h3 class="why-title">Tu marca llega donde otros no llegan</h3>
-                    <p class="why-description">El 97.3% de mis vistas son de personas que aún no me seguían. Presencia
-                        en España (26%), México (18%), USA hispano (7%) y +10 países más. Cada vídeo llega a audiencia
-                        nueva — sin pagar un solo euro en ads.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">📊</div>
-                    <h3 class="why-title">Engagement que los canales grandes no tienen</h3>
-                    <p class="why-description">Los canales con 100K+ subs tienen 1-3% de engagement. El mío tiene 7.7%.
-                        Tu mensaje no se pierde entre el ruido — la audiencia lo consume y lo comparte.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">⏳</div>
-                    <h3 class="why-title">Ven el contenido hasta el final</h3>
-                    <p class="why-description">96.9% de retención media en shorts y 45% en vídeos de 10+ minutos. Si tu
-                        marca aparece en mi contenido, la audiencia la ve. No la saltea.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">🎯</div>
-                    <h3 class="why-title">El público que los sponsors buscan</h3>
-                    <p class="why-description">~94% hombres, 67% entre 18-44 años. España (26%), México (18%),
-                        Latinoamérica. Fans hardcore de NBA con poder adquisitivo real.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">📱</div>
-                    <h3 class="why-title">Una colaboración, cuatro plataformas</h3>
-                    <p class="why-description">YouTube, Instagram (1.1K), TikTok (2.4K) y Facebook (2.8K). Un único
-                        acuerdo distribuye tu marca en todo el ecosistema NBA en español.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">📈</div>
-                    <h3 class="why-title">Resultados que los números no mienten</h3>
-                    <p class="why-description">Con 4.8K suscriptores, un solo vídeo largo alcanzó 81.7K vistas y sumó
-                        +484 nuevos suscriptores. Eso es 16x el rendimiento medio del nicho.</p>
-                </div>
-            </div>
-
-            <div class="quote-box">
-                <p class="quote-text">"Con solo 4.8K suscriptores, genero más vistas y engagement que canales con 50K.
-                    No pago ads. No tengo equipo. Solo contenido que la gente quiere ver."</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sponsorship Packages -->
-    <section class="packages">
-        <div class="container">
-            <h2 class="section-title">PAQUETES DE COLABORACIÓN</h2>
-            <p class="performance-subtitle">Tres formatos pensados para que tu marca entre con confianza — y vea
-                resultados antes de comprometerse a más.</p>
-            <div class="packages-grid">
-
-                <div class="package-card package-featured">
-                    <div class="package-badge">⭐ Recomendado para empezar</div>
-                    <h3 class="package-title">Test de Marca</h3>
-                    <div class="package-price">Desde 150€
-                        <span class="package-price-note package-price-block">Propuesta en 24h</span>
-                    </div>
-                    <div class="package-includes">
-                        <ul>
-                            <li>1 integración de 60–90s en vídeo largo</li>
-                            <li>Mención natural + contexto NBA + CTA</li>
-                            <li>Link en descripción + comentario fijado (30 días)</li>
-                            <li>1 ronda de revisión del texto/CTA</li>
-                            <li>Reporte a 7 días (views, retención, clics trackeados)</li>
-                        </ul>
-                    </div>
-                    <div class="package-best-for">
-                        <strong>Ideal para:</strong> Apps NBA, camisetas, suplementos, tech, marcas deportivas
-                    </div>
-                    <a href="mailto:inforiveras.yt@gmail.com?subject=Propuesta%20Pack%20Test%20de%20Marca"
-                        class="btn btn-secondary package-cta">Pedir propuesta</a>
-                </div>
-
-                <div class="package-card">
-                    <h3 class="package-title">Viral Multiplataforma</h3>
-                    <div class="package-price">Propuesta personalizada
-                        <span class="package-price-note package-price-block">Propuesta en 24h</span>
-                    </div>
-                    <div class="package-includes">
-                        <ul>
-                            <li>4 piezas (publicadas en 4 plataformas: YT + IG + TikTok + FB)</li>
-                            <li>Hook + mención natural (sin parecer anuncio)</li>
-                            <li>CTA simple: visitar / descargar / usar código</li>
-                            <li>Link en bio/descripción por plataforma</li>
-                            <li>Reporte a 7 días (views, interacciones, compartidos)</li>
-                        </ul>
-                    </div>
-                    <div class="package-best-for">
-                        <strong>Ideal para:</strong> Lanzamientos, promos, ecom, campañas de awareness
-                    </div>
-                    <a href="mailto:inforiveras.yt@gmail.com?subject=Propuesta%20Pack%20Viral%20Multiplataforma"
-                        class="btn btn-secondary package-cta">Pedir propuesta</a>
-                </div>
-
-                <div class="package-card">
-                    <h3 class="package-title">Impacto NBA</h3>
-                    <div class="package-price">Propuesta personalizada
-                        <span class="package-price-note package-price-block">Propuesta en 24h</span>
-                    </div>
-                    <div class="package-includes">
-                        <ul>
-                            <li>1 vídeo largo con integración de 60–90s</li>
-                            <li>2 shorts/reels reforzando el mismo mensaje</li>
-                            <li>Link + comentario fijado (30 días mínimo)</li>
-                            <li>Código descuento/UTM para medir resultados</li>
-                            <li>Reporte a 7 días + actualización opcional a 30 días</li>
-                        </ul>
-                    </div>
-                    <div class="package-best-for">
-                        <strong>Ideal para:</strong> Marcas que quieren confianza (largo) + alcance (shorts)
-                    </div>
-                    <a href="mailto:inforiveras.yt@gmail.com?subject=Propuesta%20Pack%20Impacto%20NBA"
-                        class="btn btn-secondary package-cta">Pedir propuesta</a>
-                </div>
-
-            </div>
-
-            <div class="extras-box">
-                <p class="extras-title">En todos los paquetes, siempre incluido:</p>
-                <div class="extras-list">
-                    <span class="extra-item">✅ Aprobación previa del texto/CTA</span>
-                    <span class="extra-item">✅ Link y comentario fijado mínimo 30 días</span>
-                    <span class="extra-item">✅ Brand safety — contenido etiquetado como colaboración</span>
-                    <span class="extra-item">✅ Entrega en 7–10 días según calendario</span>
-                    <span class="extra-item">✅ Reporte post-campaña con capturas y métricas</span>
-                </div>
-            </div>
-
-            <!-- Custom Proposal -->
-            <div class="custom-proposal-box">
-                <h3 class="custom-proposal-title">¿Necesitas algo más específico?</h3>
-                <p class="custom-proposal-text">Si tu objetivo no encaja exactamente en uno de los packs, podemos
-                    diseñar una propuesta personalizada adaptada a tu marca, mercado y calendario.</p>
-                <a href="mailto:inforiveras.yt@gmail.com?subject=Propuesta%20Personalizada"
-                    class="btn btn-primary">Pedir propuesta personalizada <span class="cta-note-inline">(respuesta en
-                        24h)</span></a>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- Long-Term Partnerships -->
-    <section class="partnerships">
-        <div class="container">
-            <div class="partnerships-content">
-                <h2 class="partnerships-title">Colaboraciones a Largo Plazo</h2>
-                <p class="partnerships-text">
-                    Abierto a colaboraciones puntuales, paquetes mensuales y programas de afiliados.
-                    Si tu marca quiere llegar a hombres de 18-44 años apasionados por la NBA en España y Latinoamérica,
-                    hablemos sin compromiso.
-                </p>
-                <a href="mailto:inforiveras.yt@gmail.com" class="btn btn-primary">Ver disponibilidad</a>
-                <p class="cta-note">Sin compromiso · Respuesta en menos de 24h</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="fotos/IALOGO1111.png" alt="Detrás del Triple Logo" class="footer-logo-img">
-                </div>
-                <div class="footer-contact">
-                    <p class="footer-email">
-                        <a href="mailto:inforiveras.yt@gmail.com">inforiveras.yt@gmail.com</a>
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://youtube.com/@DetrasDelTriple" target="_blank" class="social-link">YouTube</a>
-                        <a href="https://instagram.com/detrasdeltriple" target="_blank"
-                            class="social-link">Instagram</a>
-                        <a href="https://tiktok.com/@detrasdeltriple" target="_blank" class="social-link">TikTok</a>
-                        <a href="https://facebook.com/detrasdeltriple" target="_blank" class="social-link">Facebook</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Max Riveras. Todas las métricas actualizadas a Febrero 2026.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-
-    <!-- Sticky Mobile CTA -->
-    <div class="sticky-cta-mobile">
-        <a href="mailto:inforiveras.yt@gmail.com">Ver disponibilidad · Sin compromiso</a>
+      <a href="#contacto" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Pedir propuesta">
+        <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i> Pedir propuesta
+      </a>
     </div>
-</body>
+  </div>
 
+  <!-- HERO -->
+  <header class="relative overflow-hidden">
+    <div class="mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 px-4 pt-16 pb-6 md:pb-8">
+      <!-- Columna izquierda -->
+      <div class="reveal">
+        <!-- Badge -->
+        <span class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/80 px-4 py-2 text-sm text-neutral-200">
+          <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i> Disponible para proyectos
+        </span>
+
+        <!-- H1 balanceado con gradientes -->
+        <h1 class="mt-4 text-4xl md:text-[46px] lg:text-5xl font-semibold leading-[1.08] heading-shadow balance">
+          <span class="block">Periodista deportivo,</span>
+          <span class="block h1-grad-1">creador de contenido</span>
+          <span class="block">y <span class="h1-grad-2">locutor</span></span>
+        </h1>
+
+        <p class="mt-4 text-neutral-300 max-w-[65ch]" data-text="tagline"></p>
+
+        <!-- Bullets breves y ordenados -->
+        <ul class="mt-4 space-y-2 text-sm text-neutral-300">
+          <li class="flex flex-wrap items-center gap-2">
+            <i data-lucide="mic" class="w-4 h-4 mt-0.5"></i>
+            <span>Speaker deportivo:</span><span class="font-semibold">CB Salou</span><span>y</span>
+            <span class="font-semibold">MareNostrum Basket</span><span>, además de carreras.</span>
+          </li>
+          <li class="flex flex-wrap items-center gap-2">
+            <i data-lucide="users" class="w-4 h-4 mt-0.5"></i>
+            <span>Moderador en evento de la</span><span class="font-semibold">URV</span>
+            <span> y ponente en la conmemoración </span><span class="font-semibold">100 años de la SER</span>.
+          </li>
+          <li class="flex flex-wrap items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-4 h-4 mt-0.5"></i>
+            <span>Periodista licenciado; curso de</span><span class="font-semibold">radiofònics</span>
+            <span> y curso de</span><span class="font-semibold">doblaje de voz</span><span> (EDB). Trayectoria desde los 17 años.</span>
+          </li>
+        </ul>
+
+        <!-- CTAs -->
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="#servicios" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200 focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30" aria-label="Ver qué hago">
+            Ver qué hago <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+          </a>
+          <a href="#contacto" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-2 text-sm text-neutral-200 hover:bg-neutral-800 focus-visible:outline-none focus-visible:ring focus-visible:ring-accent-500/30" aria-label="Pedir propuesta">
+            Pedir propuesta
+          </a>
+        </div>
+
+        <p class="mt-2 text-xs text-neutral-400">⏱️ Respondo en 24–48 h laborables.</p>
+
+        <!-- Chips -->
+        <div class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-300">
+          <span class="chip px-3 py-1 rounded-full">CapCut Pro</span>
+          <span class="chip px-3 py-1 rounded-full">Adobe Premiere</span>
+          <span class="chip px-3 py-1 rounded-full">Adobe Photoshop</span>
+          <span class="chip px-3 py-1 rounded-full">DaVinci Resolve</span>
+          <span class="chip px-3 py-1 rounded-full">YouTube Studio</span>
+          <span class="chip px-3 py-1 rounded-full">Google Search Console</span>
+          <span class="chip px-3 py-1 rounded-full">Figma</span>
+          <span class="chip px-3 py-1 rounded-full">Canva</span>
+          <span class="chip px-3 py-1 rounded-full">Trello/Notion</span>
+        </div>
+      </div>
+
+      <!-- Columna derecha -->
+      <div class="card rounded-2xl p-5 reveal">
+        <h2 class="text-lg font-semibold">Quién soy</h2>
+        <ul class="mt-3 space-y-2 text-sm text-neutral-300">
+          <li class="flex gap-2">
+            <i data-lucide="user" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <span data-text="name"></span> — 22 años
+          </li>
+          <li class="flex gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <span data-text="location"></span>
+          </li>
+          <li class="flex gap-2">
+            <i data-lucide="instagram" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer" aria-label="Instagram"></a>
+          </li>
+          <li class="flex gap-2">
+            <i data-lucide="mail" class="w-4 h-4 mt-0.5" aria-hidden="true"></i>
+            <a class="underline hover:text-white" data-text="email" data-href="email" href="#" aria-label="Email"></a>
+          </li>
+        </ul>
+
+        <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 h-80 md:h-96 lg:h-[22rem]">
+          <img src="max_riveras_foto_1.jpg" alt="Foto profesional de Max Riveras Gil" class="w-full h-full object-cover object-[50%_30%] block" width="1200" height="1500" loading="eager" fetchpriority="high" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LOGOS / COLABORACIONES -->
+  <section id="logos" aria-labelledby="confian-title" class="pt-8 pb-12 md:pt-10 md:pb-14">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-5 flex items-center justify-between gap-4 reveal">
+        <h2 id="confian-title" class="text-[11px] md:text-xs font-semibold uppercase tracking-[.18em] text-neutral-200/95 flex items-center gap-2">
+          <i data-lucide="shield-check" class="w-4 h-4" aria-hidden="true"></i> CONFÍAN EN MÍ / HE COLABORADO CON
+        </h2>
+        <span class="hidden sm:inline-flex items-center px-3 py-1 rounded-full text-[11px] text-neutral-300/90 border border-neutral-800/70">Medios, instituciones y clubes</span>
+      </div>
+
+      <div class="logo-wrap grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6 reveal">
+        <a href="https://www.rac1.cat/" target="_blank" rel="noopener noreferrer" aria-label="RAC1 (se abre en nueva pestaña)" title="RAC1 — web oficial"><figure><img src="assets/logos/rac1.png" alt="RAC1" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://cadenaser.com/cataluna/" target="_blank" rel="noopener noreferrer" aria-label="SER Catalunya" title="SER Catalunya — web oficial"><figure><img src="assets/logos/ser-catalunya.png" alt="SER Catalunya" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://www.cope.es/" target="_blank" rel="noopener noreferrer" aria-label="COPE" title="COPE — web oficial"><figure><img src="assets/logos/cope.png" alt="COPE" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://www.xcatalunya.cat/" target="_blank" rel="noopener noreferrer" aria-label="XCatalunya" title="XCatalunya — web oficial"><figure><img src="assets/logos/xcatalunya.png" alt="XCatalunya" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://marenostrumbasket.com/" target="_blank" rel="noopener noreferrer" aria-label="MareNostrum Basket" title="MareNostrum Basket — web oficial"><figure><img src="assets/logos/marenostrum-basket.png" alt="MareNostrum Basket" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://www.emdvalldoreix.cat/" target="_blank" rel="noopener noreferrer" aria-label="EMD Valldoreix" title="EMD Valldoreix — web oficial"><figure><img src="assets/logos/emd-valldoreix.png" alt="EMD Valldoreix" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://www.cbsalou.com/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet Salou" title="CB Salou — web oficial"><figure><img src="assets/logos/cb-salou.png" alt="Club Bàsquet Salou" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://adtorreforta.cat/" target="_blank" rel="noopener noreferrer" aria-label="Club Bàsquet AD Torreforta" title="AD Torreforta — web oficial"><figure><img src="assets/logos/ad-torreforta.png" alt="AD Torreforta" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+        <a href="https://www.urv.cat/" target="_blank" rel="noopener noreferrer" aria-label="Universitat Rovira i Virgili" title="URV — web oficial"><figure><img src="assets/logos/urv.png" alt="URV" loading="lazy" decoding="async" width="320" height="120"></figure></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-20 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Servicios</h2>
+        <p class="text-neutral-300 mt-2 max-w-[65ch]">Mi foco es la voz. Como extras, edición y guiones para que tus piezas rindan.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Voz y locución -->
+        <div class="card rounded-2xl p-6 hover:bg-neutral-900 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="mic" class="w-6 h-6" aria-hidden="true"></i></div>
+            <h3 class="text-lg font-semibold">Voz y locución</h3>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300">Voz profesional para spots, vídeos, narraciones y piezas deportivas (NBA).</p>
+          <ul class="mt-3 space-y-2 text-sm text-neutral-300">
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Entrega con calidad de estudio</li>
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Tono y ritmo a medida</li>
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Demos disponibles</li>
+          </ul>
+          <a href="#demos" class="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
+            Ver/escuchar demos <i data-lucide="play" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Edición y miniaturas -->
+        <div class="card rounded-2xl p-6 hover:bg-neutral-900 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="clapperboard" class="w-6 h-6" aria-hidden="true"></i></div>
+            <h3 class="text-lg font-semibold">Edición y miniaturas</h3>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300">Edición orientada a retención (Shorts y largo) y miniaturas con foco en CTR.</p>
+          <ul class="mt-3 space-y-2 text-sm text-neutral-300">
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Corte fino + ritmo</li>
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Corrección de color</li>
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Pruebas e iteración</li>
+          </ul>
+        </div>
+
+        <!-- Guiones y adaptación -->
+        <div class="card rounded-2xl p-6 hover:bg-neutral-900 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="pen-square" class="w-6 h-6" aria-hidden="true"></i></div>
+            <h3 class="text-lg font-semibold">Guiones y adaptación</h3>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300">Guiones listos para grabar (YouTube como caso típico) y adaptados a tu voz.</p>
+          <ul class="mt-3 space-y-2 text-sm text-neutral-300">
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Hooks claros y estructura</li>
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Optimización para retención</li>
+            <li class="flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 mt-0.5"></i> Sin relleno, al grano</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS -->
+  <section id="links" class="py-16 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Links y proyectos</h2>
+        <p class="text-neutral-400 mt-2 max-w-[65ch]">Encuéntrame y descubre lo que hago.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="https://www.instagram.com/maxxriveras/" target="_blank" rel="me noopener noreferrer"
+           class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="Instagram personal de Max">
+          <img src="assets/links/ig-gradient.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+          <div class="shade"></div>
+          <div class="content">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13A5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13A3.5 3.5 0 0 0 12 9.5ZM17.75 6a1 1 0 1 0 1 1a1 1 0 0 0-1-1Z"/></svg>
+            <span class="font-semibold">@maxxriveras</span>
+          </div>
+        </a>
+
+        <a href="https://www.instagram.com/detrasdeltriple/" target="_blank" rel="me noopener noreferrer"
+           class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="Instagram Detrás del Triple">
+          <img src="assets/links/ig-nba.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+          <div class="shade"></div>
+          <div class="content">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13A5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13A3.5 3.5 0 0 0 12 9.5ZM17.75 6a1 1 0 1 0 1 1a1 1 0 0 0-1-1Z"/></svg>
+            <span class="font-semibold">@detrasdeltriple</span>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@DetrasDelTriple" target="_blank" rel="me noopener noreferrer"
+           class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="YouTube Detrás del Triple">
+          <img src="assets/links/yt-red.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+          <div class="shade"></div>
+          <div class="content">
+            <svg width="26" height="18" viewBox="0 0 26 18" aria-hidden="true"><path fill="white" d="M25.2 3.5a4 4 0 0 0-2.8-2.8C20 0 13 0 13 0S6 0 3.6.7A4 4 0 0 0 .8 3.5C0 5.9 0 9 0 9s0 3.1.8 5.5a4 4 0 0 0 2.8 2.8C6 18 13 18 13 18s7 0 9.4-.7a4 4 0 0 0 2.8-2.8C26 12.1 26 9 26 9s0-3.1-.8-5.5ZM10 13V5l7 4l-7 4Z"/></svg>
+            <span class="font-semibold">YouTube — Detrás del Triple</span>
+          </div>
+        </a>
+
+        <a href="https://www.tiktok.com/@detrasdeltriple" target="_blank" rel="me noopener noreferrer"
+           class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="TikTok Detrás del Triple">
+          <img src="assets/links/tt-black.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+          <div class="shade"></div>
+          <div class="content">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M14 3c.4 2.5 1.9 4 4.4 4.4V11c-1.9 0-3.5-.6-4.4-1.5V16a5 5 0 1 1-5-5c.5 0 1 .1 1.5.2v3a2 2 0 1 0 2 2V3z"/></svg>
+            <span class="font-semibold">TikTok — @detrasdeltriple</span>
+          </div>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=61583070523705" target="_blank" rel="me noopener noreferrer"
+           class="brand-card rounded-2xl border border-neutral-800 reveal" aria-label="Facebook de Max">
+          <img src="assets/links/fb-blue.jpg" alt="" class="w-full h-48 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+          <div class="shade"></div>
+          <div class="content">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="white" d="M13 22v-8h3l1-4h-4V8c0-1.1.9-2 2-2h2V2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4z"/></svg>
+            <span class="font-semibold">Facebook — Max Riveras</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMOS: 3 vídeo (YT 30s horizontal) + 2 audio -->
+  <section id="demos" class="py-16 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Demos</h2>
+        <p class="text-neutral-400 mt-2 max-w-[65ch]">Dos reels NBA y una demo de YouTube (vídeo horizontal). Además, dos piezas de radio. Solo una demo se reproduce a la vez.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- VIDEO: NBA Reel #1 -->
+        <article class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="video" class="w-6 h-6"></i></div>
+            <div><h3 class="font-semibold">NBA — Reel #1</h3><p class="text-sm text-neutral-400">Selección narrada</p></div>
+          </div>
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
+            <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/nba1.jpg">
+              <source src="assets/demos/max-nba-reel-1.mp4" type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo NBA Reel 1">
+              <span class="pointer-events-auto inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-7 h-7" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-7 h-7 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+
+        <!-- VIDEO: NBA Reel #2 -->
+        <article class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="video" class="w-6 h-6"></i></div>
+            <div><h3 class="font-semibold">NBA — Reel #2</h3><p class="text-sm text-neutral-400">Selección narrada</p></div>
+          </div>
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
+            <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/nba2.jpg">
+              <source src="assets/demos/max-nba-reel-2.mp4" type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo NBA Reel 2">
+              <span class="pointer-events-auto inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-7 h-7" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-7 h-7 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+
+        <!-- VIDEO: YouTube 30s horizontal -->
+        <article class="card rounded-2xl p-6 reveal md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="youtube" class="w-6 h-6"></i></div>
+            <div><h3 class="font-semibold">YouTube — 30s</h3><p class="text-sm text-neutral-400">Demo de locución (formato horizontal)</p></div>
+          </div>
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
+            <video class="w-full" controls preload="metadata" playsinline poster="assets/demos/covers/youtube30.jpg">
+              <source src="assets/demos/max-youtube-30s.mp4" type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo YouTube 30s">
+              <span class="pointer-events-auto inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-7 h-7" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-7 h-7 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+
+        <!-- AUDIO: SER -->
+        <article class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="radio" class="w-6 h-6"></i></div>
+            <div><h3 class="font-semibold">SER — Corte</h3><p class="text-sm text-neutral-400">Pieza de radio</p></div>
+          </div>
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
+            <img src="assets/demos/covers/rac1.jpg" alt="Portada demo SER" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+            <audio preload="none" src="assets/demos/max-ser.mp3"></audio>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo SER">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-6 h-6" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-6 h-6 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+
+        <!-- AUDIO: COPE -->
+        <article class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="radio-tower" class="w-6 h-6"></i></div>
+            <div><h3 class="font-semibold">COPE — Corte</h3><p class="text-sm text-neutral-400">Pieza de radio</p></div>
+          </div>
+          <div class="mt-4 rounded-xl overflow-hidden border border-neutral-800 relative group" data-media-wrapper>
+            <img src="assets/demos/covers/cope.jpg" alt="Portada demo COPE" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="1200" height="800">
+            <audio preload="none" src="assets/demos/max-cope.mp3"></audio>
+            <!-- Botón de play centrado -->
+            <button type="button"
+                    class="absolute inset-0 flex items-center justify-center"
+                    data-play-overlay
+                    aria-label="Reproducir o pausar demo COPE">
+              <span class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/95 text-neutral-900 shadow-lg transition-transform group-hover:scale-[1.05]">
+                <svg class="w-6 h-6" data-icon="play" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="w-6 h-6 hidden" data-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M7 5h4v14H7zm6 0h4v14h-4z"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="py-16 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Galería</h2>
+        <p class="text-neutral-400 mt-2 max-w-[65ch]">Momentos de trabajo, eventos y rodajes.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+        <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/1.jpg" aria-label="Abrir imagen 1">
+          <img src="assets/galeria/1.jpg" alt="Max en cabina de locución" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </button>
+        <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/2.jpg" aria-label="Abrir imagen 2">
+          <img src="assets/galeria/2.jpg" alt="Grabación para proyecto de cliente" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </button>
+        <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/3.jpg" aria-label="Abrir imagen 3">
+          <img src="assets/galeria/3.jpg" alt="Sesión de voz en estudio" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </button>
+        <button class="relative group overflow-hidden rounded-xl border border-neutral-800 reveal" data-full="assets/galeria/4.jpg" aria-label="Abrir imagen 4">
+          <img src="assets/galeria/4.jpg" alt="Evento deportivo narrado" class="w-full h-40 object-cover" loading="lazy" decoding="async" width="800" height="600">
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <dialog id="lightbox" class="backdrop:bg-black/70 p-0 rounded-xl">
+      <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[80vh] object-contain">
+    </dialog>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="py-20 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Proceso de trabajo</h2>
+        <p class="text-neutral-300 mt-2 max-w-[65ch]">Transparente, rápido y enfocado a resultados.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="link-2" class="w-6 h-6"></i></div>
+            <h3 class="font-semibold">1) Alineamos metas (30–45 min)</h3>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300 max-w-[65ch]">Definimos objetivo, público y qué vamos a medir. Alineamos calendario y prioridades.</p>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="rocket" class="w-6 h-6"></i></div>
+            <h3 class="font-semibold">2) Ejecutamos sprints</h3>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300 max-w-[65ch]">Entrego cada semana (voz, edición o guiones) y te pido feedback breve.</p>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-3">
+            <div class="rounded-xl bg-neutral-800 p-3"><i data-lucide="bar-chart-3" class="w-6 h-6"></i></div>
+            <h3 class="font-semibold">3) Medimos y escalamos</h3>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300 max-w-[65ch]">Revisamos números, repetimos lo que funciona y aparcamos lo que no. Sin complicarnos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Preguntas frecuentes (FAQ)</h2>
+        <p class="text-neutral-300 mt-2 max-w-[65ch]">Si no ves tu duda aquí, escríbeme y te respondo rápido.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card rounded-2xl p-6 reveal">
+          <h3 class="font-semibold">¿Qué incluye cada servicio?</h3>
+          <p class="text-sm text-neutral-300 mt-2">Un alcance cerrado (entregables definidos) y ajustes menores tras la entrega.</p>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <h3 class="font-semibold">¿Puedo pedir solo voz?</h3>
+          <p class="text-sm text-neutral-300 mt-2">Sí. La voz es el servicio principal. Edición y guiones son extras opcionales.</p>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <h3 class="font-semibold">Plazos</h3>
+          <p class="text-sm text-neutral-300 mt-2">Demos/pruebas rápidas. Entrega final según duración y revisiones acordadas.</p>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <h3 class="font-semibold">¿Necesito conocimientos técnicos?</h3>
+          <p class="text-sm text-neutral-300 mt-2">No. Te entrego archivos listos y, si lo pides, versiones para publicar.</p>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <h3 class="font-semibold">Formatos de entrega</h3>
+          <p class="text-sm text-neutral-300 mt-2">Audio WAV/MP3 a medida. Vídeo en el códec y tamaño que necesites.</p>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <h3 class="font-semibold">¿Ofreces soporte?</h3>
+          <p class="text-sm text-neutral-300 mt-2">Sí. Soporte inicial incluido; ampliable según tus necesidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="pb-6">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="card rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 reveal">
+        <div>
+          <h3 class="text-xl font-semibold">¿Te encaja lo que has visto?</h3>
+          <p class="text-neutral-300 mt-1 max-w-[65ch]">Pídeme una propuesta con alcance y plazos claros. Empezamos esta semana.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="#contacto" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
+            Pedir propuesta <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+          </a>
+          <a href="#demos" class="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-5 py-3 text-sm text-neutral-200 hover:bg-neutral-800">
+            Ver/escuchar demos
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="mb-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight">Contacto</h2>
+        <p class="text-neutral-300 mt-2 max-w-[65ch]">Cuéntame tu objetivo, el plazo y el punto de partida. Te propongo el camino más corto y un alcance claro.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card rounded-2xl p-6 reveal">
+          <div class="flex items-center gap-2 text-neutral-300">
+            <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
+            <span data-text="email"></span>
+          </div>
+          <div class="mt-2 text-neutral-300">
+            Instagram:
+            <a class="underline hover:text-white" data-href="ig" data-text="ig" href="#" target="_blank" rel="noreferrer"></a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a data-href="email" class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-200" aria-label="Escríbeme por email">
+              Escríbeme <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6 md:col-span-2 reveal">
+          <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-4" novalidate>
+            <label class="sr-only" for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" required autocomplete="name" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Nombre" />
+
+            <label class="sr-only" for="correo">Email</label>
+            <input id="correo" name="email" type="email" required autocomplete="email" class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500" placeholder="Email" />
+
+            <label class="sr-only" for="asunto">Asunto</label>
+            <input id="asunto" name="asunto" required class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Asunto" />
+
+            <label class="sr-only" for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required class="rounded-xl border border-neutral-800 bg-neutral-950 px-4 py-3 text-sm outline-none placeholder:text-neutral-500 md:col-span-2" placeholder="Proyecto en breve (objetivo, canales, deadline, presupuesto orientativo)"></textarea>
+
+            <!-- anti-spam -->
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <!-- extras -->
+            <input type="hidden" name="_subject" value="Nueva consulta — maxriveras.com">
+            <input type="hidden" name="origen" value="web-landing">
+            <input type="hidden" name="_replyto" value="" id="replyto-hidden">
+
+            <button id="sendBtn" type="submit" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-medium text-neutral-900 hover:bg-neutral-200">
+              Enviar
+            </button>
+
+            <p id="form-ok" class="hidden text-green-400 text-sm md:col-span-2" aria-live="polite">
+              ¡Gracias! Te respondo en 24–48 h desde <strong>inforiveras.yt@gmail.com</strong>.
+            </p>
+            <p id="form-err" class="hidden text-red-400 text-sm md:col-span-2" aria-live="assertive">
+              Ups, no se pudo enviar. Escríbeme a
+              <a href="mailto:inforiveras.yt@gmail.com" class="underline">inforiveras.yt@gmail.com</a>.
+            </p>
+
+            <p class="text-xs text-neutral-500 md:col-span-2">
+              Incluye: objetivo, canales implicados, deadline y presupuesto orientativo.
+            </p>
+          </form>
+
+          <script>
+            const ENDPOINT = "https://formspree.io/f/mpwjvddb";
+            const form  = document.getElementById('contact-form');
+            const btn   = document.getElementById('sendBtn');
+            const okEl  = document.getElementById('form-ok');
+            const errEl = document.getElementById('form-err');
+            const emailInput = document.getElementById('correo');
+            const replytoHidden = document.getElementById('replyto-hidden');
+
+            form.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              okEl.classList.add('hidden');
+              errEl.classList.add('hidden');
+
+              if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+              }
+
+              replytoHidden.value = emailInput.value;
+
+              btn.disabled = true;
+              btn.textContent = 'Enviando…';
+
+              try {
+                const res = await fetch(ENDPOINT, {
+                  method: 'POST',
+                  body: new FormData(form),
+                  headers: { 'Accept': 'application/json' }
+                });
+                if (!res.ok) throw new Error('bad status');
+                form.reset();
+                okEl.classList.remove('hidden');
+                okEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              } catch (err) {
+                errEl.classList.remove('hidden');
+              } finally {
+                btn.disabled = false;
+                btn.textContent = 'Enviar';
+              }
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-900/80 py-10">
+    <div class="mx-auto max-w-6xl px-4 text-sm text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>© <span id="year"></span> <span data-text="name"></span> · <span data-text="location"></span></div>
+      <div class="flex items-center gap-4">
+        <a data-href="email" class="hover:text-white">Email</a>
+        <a data-href="ig" target="_blank" rel="noreferrer" class="hover:text-white">Instagram</a>
+        <a href="/privacidad.html" class="hover:text-white">Política de Privacidad</a>
+      </div>
+    </div>
+    <p class="text-center text-neutral-500 text-sm mt-6">El contenido que transforma no se improvisa: se diseña, se mide y se mejora.</p>
+    <script>
+      // Año + iconos
+      document.getElementById('year').textContent = new Date().getFullYear();
+      if (window.lucide && window.lucide.createIcons) {
+        window.lucide.createIcons();
+      }
+      window.addEventListener('load', () => {
+        if (window.lucide && window.lucide.createIcons) window.lucide.createIcons();
+      });
+
+      // Aparición al entrar en viewport
+      const obs = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('show');
+            obs.unobserve(e.target);
+          }
+        }
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+      // Reproducción exclusiva (audio y vídeo)
+      function pauseOthers(exceptEl){
+        document.querySelectorAll('audio, video').forEach(m => {
+          if (m !== exceptEl) {
+            if (typeof m.pause === 'function') {
+              m.pause();
+            }
+          }
+        });
+      }
+      document.addEventListener('play', (e) => {
+        const t = e.target;
+        if (t && (t.tagName === 'AUDIO' || t.tagName === 'VIDEO')) {
+          pauseOthers(t);
+        }
+      }, true);
+
+      // Lightbox
+      (function(){
+        const dlg = document.getElementById('lightbox');
+        const img = document.getElementById('lightbox-img');
+        document.addEventListener('click', (e) => {
+          const btn = e.target.closest('button[data-full]');
+          if (!btn) return;
+          img.src = btn.getAttribute('data-full');
+          img.alt = btn.querySelector('img')?.alt || 'Imagen';
+          dlg.showModal();
+        });
+        dlg?.addEventListener('click', (e) => {
+          if (e.target === dlg) dlg.close();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && dlg.open) dlg.close();
+        });
+      })();
+
+      // Precarga de imágenes de la galería (para que el lightbox vaya fluido)
+      (function () {
+        const urls = Array.from(document.querySelectorAll('button[data-full]'))
+          .map(btn => btn.getAttribute('data-full'))
+          .filter(Boolean);
+        urls.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+      })();
+
+      // Controles de play centrados (vídeo + audio)
+      (function () {
+        function setupWrapper(wrapper) {
+          const media = wrapper.querySelector('video, audio');
+          const overlay = wrapper.querySelector('[data-play-overlay]');
+          if (!media || !overlay) return;
+
+          const playIcon  = overlay.querySelector('svg[data-icon="play"]');
+          const pauseIcon = overlay.querySelector('svg[data-icon="pause"]');
+
+          function syncOverlay() {
+            if (media.paused) {
+              if (playIcon) playIcon.classList.remove('hidden');
+              if (pauseIcon) pauseIcon.classList.add('hidden');
+              if (media.tagName === 'VIDEO') {
+                overlay.classList.remove('opacity-0');
+              }
+            } else {
+              if (playIcon) playIcon.classList.add('hidden');
+              if (pauseIcon) pauseIcon.classList.remove('hidden');
+              if (media.tagName === 'VIDEO') {
+                overlay.classList.add('opacity-0');
+              }
+            }
+          }
+
+          overlay.addEventListener('click', () => {
+            if (media.paused) {
+              media.play();
+            } else {
+              media.pause();
+            }
+          });
+
+          media.addEventListener('play', syncOverlay);
+          media.addEventListener('pause', syncOverlay);
+
+          // Estado inicial
+          syncOverlay();
+        }
+
+        document.querySelectorAll('[data-media-wrapper]').forEach(setupWrapper);
+      })();
+    </script>
+  </footer>
+</body>
 </html>
