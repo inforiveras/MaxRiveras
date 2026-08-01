@@ -76,6 +76,9 @@
 
 html {
     scroll-behavior: smooth;
+    /* Avisa al navegador de que el tema es oscuro: scrollbars y controles nativos
+       se pintan en oscuro en vez de en blanco. */
+    color-scheme: dark;
 }
 
 body {
@@ -186,7 +189,7 @@ ul {
     font-weight: 600;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     border: none;
     text-align: center;
     position: relative;
@@ -322,7 +325,7 @@ ul {
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
@@ -470,7 +473,7 @@ ul {
     text-align: center;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .stat-card:hover {
@@ -516,7 +519,7 @@ ul {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .video-card:hover {
@@ -600,7 +603,7 @@ ul {
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .why-card:hover {
@@ -659,7 +662,7 @@ ul {
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     position: relative;
 }
 
@@ -1115,7 +1118,7 @@ ul {
     padding: var(--spacing-lg) var(--spacing-xl);
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--radius-lg);
     text-align: center;
 }
 
@@ -1159,9 +1162,9 @@ ul {
 .custom-proposal-box {
     margin-top: var(--spacing-xl);
     padding: var(--spacing-xl) var(--spacing-2xl);
-    background: linear-gradient(135deg, rgba(var(--color-accent-rgb, 29, 185, 84), 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.06) 0%, rgba(255, 255, 255, 0.03) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--radius-lg);
     text-align: center;
 }
 
@@ -1257,5 +1260,67 @@ ul {
 
     .stat-card-value {
         font-size: 30px;
+    }
+}
+
+
+/* ===================================
+   Accesibilidad, cifras y foco
+   Añadido en la revisión mensual de agosto 2026.
+   =================================== */
+
+/* Las cifras de un media kit se leen en columna y comparándolas entre sí.
+   tabular-nums iguala el ancho de cada dígito para que no bailen al alinearse. */
+.metric-bar-value,
+.stat-value,
+.stat-card-value,
+.video-stat,
+.package-price {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Evita que un titular deje una palabra huérfana en la última línea. */
+.hero-title,
+.section-title,
+.card-title,
+.why-title,
+.package-title,
+.partnerships-title {
+    text-wrap: balance;
+}
+
+/* Foco visible para quien navega con teclado. Sin esto la página no se puede
+   recorrer sin ratón, y es lo primero que mira una auditoría de accesibilidad. */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/* Quita el retardo de 300 ms al tocar en móvil. */
+a,
+button {
+    touch-action: manipulation;
+}
+
+/* Si el visitante ha pedido menos movimiento en su sistema operativo, se respeta.
+   Es una preferencia de accesibilidad, no una opción estética. */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    body::before {
+        animation: none;
     }
 }
