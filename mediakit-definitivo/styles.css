@@ -2001,3 +2001,92 @@ a.video-card:active {
     font-size: 24px;
     line-height: 1.25;
 }
+
+/* ===================================
+   Colabora (13 oct 2026): un solo producto, la integración en YouTube
+   =================================== */
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    max-width: 980px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.offer-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-lead {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    margin: calc(var(--spacing-xs) * -1) 0 var(--spacing-md);
+}
+
+.offer-optional {
+    text-align: center;
+    font-size: 15px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-xl);
+}
+
+.offer-optional strong {
+    color: var(--color-text-secondary);
+}
+
+.process-steps {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    max-width: 1100px;
+    margin: 0 auto var(--spacing-2xl);
+}
+
+.process-steps li {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.process-steps strong {
+    color: var(--color-text-primary);
+}
+
+.process-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 800;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, var(--color-accent) 0%, #FF8C5A 100%);
+    box-shadow: 0 6px 14px -6px rgba(255, 107, 53, 0.8);
+}
+
+.custom-proposal-box .cta-note {
+    margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 1024px) {
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-grid,
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
