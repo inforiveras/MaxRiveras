@@ -146,3 +146,28 @@ if (!prefersReducedMotion) {
         }, { passive: true });
     }
 }
+
+// ===================================
+// Intros: cada clip se carga y se reproduce solo cuando está a la vista
+// ===================================
+// Sin sonido y en bucle. Fuera de la pantalla se pausa (ahorra batería y datos en móvil).
+// Con movimiento reducido no arranca solo: se dejan los controles para que lo decida quien mira.
+const intros = document.querySelectorAll('.intro-video');
+if (intros.length) {
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        intros.forEach(v => v.setAttribute('controls', ''));
+    } else {
+        const introsObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const v = entry.target;
+                if (entry.isIntersecting) {
+                    v.preload = 'auto';
+                    v.play().catch(() => v.setAttribute('controls', ''));
+                } else {
+                    v.pause();
+                }
+            });
+        }, { threshold: 0.35 });
+        intros.forEach(v => introsObserver.observe(v));
+    }
+}
