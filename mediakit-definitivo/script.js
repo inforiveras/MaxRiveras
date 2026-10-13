@@ -51,12 +51,26 @@ document.head.appendChild(style);
 document.addEventListener('DOMContentLoaded', () => {
     if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
 
+    // Entrada escalonada: cada bloque entra 70 ms después de su hermano (máximo 5 de retraso),
+    // con una curva de salida rápida. Al terminar se limpian los estilos en línea para que los
+    // efectos al pasar el ratón de cada tarjeta vuelvan a funcionar.
+    const EASE = 'cubic-bezier(0.23, 1, 0.32, 1)';
     document.querySelectorAll(
-        '.card, .stat-card, .video-card, .why-card, .package-card, .section-title'
+        '.metric-bar-item, .card, .stat-card, .video-card, .why-card, .package-card, .also-card, .section-title'
     ).forEach(el => {
+        const hermanos = [...el.parentElement.children].filter(c => c.className === el.className);
+        const retraso = Math.min(hermanos.indexOf(el), 5) * 70;
         el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = `opacity 600ms ${EASE} ${retraso}ms, transform 600ms ${EASE} ${retraso}ms`;
+        el.addEventListener('transitionend', function limpiar(e) {
+            if (e.propertyName !== 'transform') return;
+            el.classList.remove('fade-in');
+            el.style.removeProperty('opacity');
+            el.style.removeProperty('transform');
+            el.style.removeProperty('transition');
+            el.removeEventListener('transitionend', limpiar);
+        });
         observer.observe(el);
     });
 });
@@ -76,7 +90,8 @@ function animateCounter(element, original, target, duration = 1600) {
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.round(target * eased);
-        element.textContent = prefix + current.toLocaleString('es-ES') + suffix;
+        // Punto de miles siempre (toLocaleString no agrupa los números de 4 cifras en es-ES)
+        element.textContent = prefix + String(current).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + suffix;
         if (progress < 1) {
             requestAnimationFrame(frame);
         } else {
@@ -104,7 +119,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (prefersReducedMotion) return;
-    document.querySelectorAll('.stat-card-value').forEach(stat => statsObserver.observe(stat));
+    document.querySelectorAll('.stat-card-value, .metric-bar-value').forEach(stat => statsObserver.observe(stat));
 });
 
 // ===================================
