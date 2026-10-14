@@ -2,7 +2,7 @@
   "fecha": "2026-10-14",
   "fechaDatos": "2026-10-14",
   "via": "revision",
-  "sello": "760f3f23a67caaf5",
+  "sello": "053939b1f179c251",
   "filasCSV": 232,
   "crudo": {
     "subs": 17400,
@@ -23,6 +23,17 @@
       "fK2vK-3c9EY": 35449,
       "mdafulj1yhU": 32489
     },
-    "pctHisp": 94.8
+    "pctHisp": 94.8,
+    "top4": [
+      "OwPOiXNTae8",
+      "qOMXqhgcFO0",
+      "7Rw08XZnxPk",
+      "led1WgJTmIU"
+    ],
+    "records": [
+      "7Rw08XZnxPk",
+      "c1S8ZGM-0F8",
+      "oEllHLO90GE"
+    ]
   }
 }
