@@ -2310,3 +2310,9 @@ a.video-card:active {
         color: var(--color-accent-gold);
     }
 }
+
+/* Selector de idioma ES | EN (30 oct 2026) */
+.lang-switch { position: absolute; top: 16px; right: 20px; z-index: 5; display: flex; gap: 6px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; }
+.lang-switch a { padding: 5px 11px; border-radius: 999px; color: var(--color-text-secondary); text-decoration: none; border: 1px solid var(--color-border); transition: border-color 0.2s, color 0.2s; }
+.lang-switch a:hover { color: var(--color-text-primary); border-color: var(--color-border-hover); }
+.lang-switch a[aria-current="page"] { color: var(--color-bg-dark); background: var(--color-text-primary); border-color: var(--color-text-primary); }

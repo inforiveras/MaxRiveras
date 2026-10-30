@@ -90,8 +90,10 @@ function animateCounter(element, original, target, duration = 1600) {
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.round(target * eased);
-        // Punto de miles siempre (toLocaleString no agrupa los números de 4 cifras en es-ES)
-        element.textContent = prefix + String(current).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + suffix;
+        // Separador de miles siempre (toLocaleString no agrupa los números de 4 cifras en es-ES):
+        // punto en castellano, coma en la versión inglesa (/en/, 30 oct 2026)
+        const miles = document.documentElement.lang === 'en' ? ',' : '.';
+        element.textContent = prefix + String(current).replace(/\B(?=(\d{3})+(?!\d))/g, miles) + suffix;
         if (progress < 1) {
             requestAnimationFrame(frame);
         } else {
