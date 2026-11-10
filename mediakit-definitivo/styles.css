@@ -2316,3 +2316,30 @@ a.video-card:active {
 .lang-switch a { padding: 5px 11px; border-radius: 999px; color: var(--color-text-secondary); text-decoration: none; border: 1px solid var(--color-border); transition: border-color 0.2s, color 0.2s; }
 .lang-switch a:hover { color: var(--color-text-primary); border-color: var(--color-border-hover); }
 .lang-switch a[aria-current="page"] { color: var(--color-bg-dark); background: var(--color-text-primary); border-color: var(--color-text-primary); }
+
+/* --- 10 nov 2026: el crecimiento, a la vista (línea del hero y «+N» bajo las cifras) --- */
+.hero-momentum {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--color-text-secondary);
+    margin: calc(var(--spacing-md) * -1) 0 var(--spacing-xl);
+    padding-left: var(--spacing-sm);
+    border-left: 3px solid var(--color-accent);
+}
+
+.hero-momentum strong {
+    color: var(--color-text-primary);
+    font-weight: 700;
+}
+
+.metric-bar-delta {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4ADE80;
+    margin: -4px 0 10px;
+}
+
+.metric-bar-delta::before {
+    content: "▲ ";
+    font-size: 10px;
+}
