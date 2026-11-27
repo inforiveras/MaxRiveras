@@ -173,3 +173,28 @@ if (intros.length) {
         intros.forEach(v => introsObserver.observe(v));
     }
 }
+
+// ── 26 nov 2026: copiar el correo (el botón de correo no abre nada en muchos portátiles de empresa) ──
+document.querySelectorAll('.copy-mail').forEach((boton) => {
+    boton.addEventListener('click', async () => {
+        const texto = boton.textContent;
+        try {
+            await navigator.clipboard.writeText(boton.dataset.mail);
+            boton.textContent = boton.dataset.ok || 'Copiado';
+            setTimeout(() => { boton.textContent = texto; }, 2000);
+        } catch (e) { /* sin portapapeles: el correo ya está visible al lado */ }
+    });
+});
+
+// ── El botón fijo del móvil, solo cuando los de la portada ya no se ven (antes salían dos a la vez).
+//    Va tras DOMContentLoaded: el botón fijo está en el HTML DESPUÉS de este script.
+const vigilarBotonFijo = () => {
+    const botonesPortada = document.querySelector('.hero-buttons');
+    const botonFijo = document.querySelector('.sticky-cta-mobile');
+    if (!botonesPortada || !botonFijo || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(([entrada]) => {
+        botonFijo.classList.toggle('is-hidden', entrada.isIntersecting);
+    }).observe(botonesPortada);
+};
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vigilarBotonFijo);
+else vigilarBotonFijo();
